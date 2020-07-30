@@ -1,5 +1,6 @@
 export class Product {
   constructor(
+    public toyImage: string,
     public toyID: string,
     public toyName: string,
     public toyGender: string,

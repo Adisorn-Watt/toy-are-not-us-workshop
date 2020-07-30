@@ -17,7 +17,7 @@ export class PageSearchComponent implements OnInit {
   //productList: Products = [];
   //productSelected: Product;
 
-  constructor(public service: DataServiceService) {}
+  constructor(public service: DataServiceService) { }
 
   ngOnInit(): void {
     this.getAll();
