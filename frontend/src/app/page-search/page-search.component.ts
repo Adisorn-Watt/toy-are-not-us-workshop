@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { Product } from '../models/product';
 
 type Toys = Product[];
 @Component({
   selector: 'app-page-search',
   templateUrl: './page-search.component.html',
-  styleUrls: ['./page-search.component.css']
+  styleUrls: ['./page-search.component.css'],
 })
 export class PageSearchComponent implements OnInit {
-  inputSearch: string = "";
-  toyList: lorem = [];
+  inputSearch: String = '';
+  toyList: Toys = [];
 
   //productList: Products = [];
   //productSelected: Product;
 
-  constructor(public service: DataServiceService) { }
+  constructor(public service: DataServiceService) {}
 
   ngOnInit(): void {
     this.getAll();
@@ -25,5 +26,4 @@ export class PageSearchComponent implements OnInit {
       return (this.toyList = toys);
     });
   }
-
 }

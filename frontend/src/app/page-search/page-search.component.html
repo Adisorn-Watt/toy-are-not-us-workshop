@@ -1,53 +1,63 @@
-<form name="myform" method="POST">
-  <div>
-    Gender:
-    <select name="gender">
-      <option value="">Select gender..</option>
-      <option value="Jan">Male</option>
-      <option value="Feb">Female</option>
-      <option value="Mar">Neutral</option>
-    </select>
+<div class="card">
+  <div class="card-header">
+    List of Product Page
   </div>
-  <br />
-  <br />
-  <div>
-    Age :
-    <select name="age">
-      <option value="">Select age..</option>
-      <option value="01">Baby</option>
-      <option value="02">Toddler</option>
-      <option value="03">3 to 5</option>
-      <option value="03">6 to 8</option>
-      <option value="03">Over 8</option>
-
-    </select>
+  <div class="card-body">
+    <div>
+      Gender:
+      <select name="gender">
+        <option value="">Select gender..</option>
+        <option value="Jan">Male</option>
+        <option value="Feb">Female</option>
+        <option value="Mar">Neutral</option>
+      </select>
+    </div>
+    <br />
+    <br />
+    <div>
+      Age :
+      <select name="age">
+        <option value="">Select age..</option>
+        <option value="01">Baby</option>
+        <option value="02">Toddler</option>
+        <option value="03">3 to 5</option>
+        <option value="03">6 to 8</option>
+        <option value="03">Over 8</option>
+      </select>
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <button type="button" class="btn btn-primary">
+                Product Image
+              </button>
+            </th>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Price</th>
+            <th>Available</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="toyList.length > 0">
+          <tr *ngFor="let toy of toyList" [routerLink]="['/search', toy.toyID]">
+            <th>image</th>
+            <th>{{ toy.toyName | uppercase }}</th>
+            <th>{{ toy.toyBrand | uppercase }}</th>
+            <th>{{ toy.toyGender | uppercase }}</th>
+            <th>{{ toy.toyAge | uppercase }}</th>
+            <th>{{ toy.toyPrice | number: "1.2" }}</th>
+            <!-- 2 decimal point -->
+            <th *ngIf="toy.toyAvailable">Yes</th>
+            <!-- product available -->
+            <th *ngIf="!toy.toyAvailable">No</th>
+            <!-- product unavailable -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <input type="text" [(ngModel)]="inputSearch">
-
-
-  <tbody *ngIf="toyList.length > 0">
-    <tr *ngFor="let toy of toyList | filterbyName: inputSearch" [routerLink]="['/product',product.code]">
-      <th>{{ toy.toyName | uppercase | productName }}</th>
-      <th>{{ toy.toyBrand | uppercase | productName }}</th>
-      <th>{{ toy.toyGender | uppercase | productName }}</th>
-      <th>{{ toy.toyAge | uppercase | productName }}</th>
-      <th>{{ toy.toyPrice | number: "1.2" }}</th> <!-- 2 decimal point -->
-      <th *ngIf="toy.toyAvailable">Yes</th> <!-- product available -->
-      <th *ngIf="!toy.toyAvailable">No</th> <!-- product unavailable -->
-      <th>
-        <app-rating [rating]="product.rating" (ratingClicked)="onRatingClicked($event)">
-        </app-rating>
-      </th>
-    </tr>
-  </tbody>
-
-  <router-outlet></router-outlet>
-
-  ublic toyID: string,
-  public toyName: string,
-  public toyGender: string,
-  public toyAge: string,
-  public toyPrice: number,
-  public toyAvailable: boolean,
-  public toyBrand: string
+</div>

@@ -9,7 +9,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShippingAddressComponent } from './shipping-address/shipping-address.component';
 import { PagePaymentComponent } from './page-payment/page-payment.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
-
+import { ProductPipe } from './product.pipe';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +19,11 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     ShoppingCartComponent,
     ShippingAddressComponent,
     PagePaymentComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    ProductPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
