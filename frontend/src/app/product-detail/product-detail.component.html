@@ -34,8 +34,8 @@
 
           <div class="row">
             <div class="col-md-4">Status:</div>
-            <div class="col-md-8" *ngIf="product.toyAvailable">In stock</div>
-            <div class="col-md-8" *ngIf="product.toyAvailable == false">Out stock</div>
+            <div class="col-md-8" *ngIf="product.toyAvailable" ><font color="red">In stock</font></div>
+            <div class="col-md-8" *ngIf="product.toyAvailable == false"><font color="red">Out stock</font></div>
           </div>
 
           <div class="row">
