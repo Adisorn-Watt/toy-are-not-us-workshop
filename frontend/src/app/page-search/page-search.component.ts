@@ -9,6 +9,8 @@ type Toys = Product[];
   styleUrls: ['./page-search.component.css'],
 })
 export class PageSearchComponent implements OnInit {
+  gender: string = '';
+  age: string = '';
   inputSearch: String = '';
   toyList: Toys = [];
 
@@ -25,5 +27,13 @@ export class PageSearchComponent implements OnInit {
     this.service.getAllProduct().subscribe((toys) => {
       return (this.toyList = toys);
     });
+  }
+  getGender(event) {
+    this.gender = event.value;
+    console.log(event);
+  }
+  getAge(event) {
+    this.age = event.value;
+    console.log(event.value);
   }
 }

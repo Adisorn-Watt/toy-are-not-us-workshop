@@ -5,24 +5,24 @@
   <div class="card-body">
     <div>
       Gender:
-      <select name="gender">
+      <select [(ngModel)]="gender" name="gender">
         <option value="">Select gender..</option>
-        <option value="Jan">Male</option>
-        <option value="Feb">Female</option>
-        <option value="Mar">Neutral</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Neutral">Neutral</option>
       </select>
     </div>
     <br />
     <br />
     <div>
       Age :
-      <select name="age">
+      <select [(ngModel)]="age" name="age">
         <option value="">Select age..</option>
-        <option value="01">Baby</option>
-        <option value="02">Toddler</option>
-        <option value="03">3 to 5</option>
-        <option value="03">6 to 8</option>
-        <option value="03">Over 8</option>
+        <option value="Baby">Baby</option>
+        <option value="Toddler">Toddler</option>
+        <option value="3 to 5">3 to 5</option>
+        <option value="6 to 8">6 to 8</option>
+        <option value="Over 8">Over 8</option>
       </select>
     </div>
     <div class="table-responsive">
@@ -43,7 +43,10 @@
           </tr>
         </thead>
         <tbody *ngIf="toyList.length > 0">
-          <tr *ngFor="let toy of toyList" [routerLink]="['/search', toy.toyID]">
+          <tr
+            *ngFor="let toy of toyList | product: age:gender"
+            [routerLink]="['/search', toy.toyID]"
+          >
             <th>image</th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
