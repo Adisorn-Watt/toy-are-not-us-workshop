@@ -3,27 +3,29 @@
     List of Product Page
   </div>
   <div class="card-body">
-    <div>
-      Gender:
-      <select [(ngModel)]="gender" name="gender">
-        <option value="">Select gender..</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Neutral">Neutral</option>
-      </select>
-    </div>
-    <br />
-    <br />
-    <div>
-      Age :
-      <select [(ngModel)]="age" name="age">
-        <option value="">Select age..</option>
-        <option value="Baby">Baby</option>
-        <option value="Toddler">Toddler</option>
-        <option value="3 to 5">3 to 5</option>
-        <option value="6 to 8">6 to 8</option>
-        <option value="Over 8">Over 8</option>
-      </select>
+    <div class="row">
+      <div class="col-md-4">
+        <label>Age :</label>
+        <br />
+        <select [(ngModel)]="age" name="age" class="form-control">
+          <option value="">Select age..</option>
+          <option value="Baby">Baby</option>
+          <option value="Toddler">Toddler</option>
+          <option value="3 to 5">3 to 5</option>
+          <option value="6 to 8">6 to 8</option>
+          <option value="Over 8">Over 8</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label>Gender:</label>
+        <br />
+        <select [(ngModel)]="gender" name="gender" class="form-control">
+          <option value="">Select gender..</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Neutral">Neutral</option>
+        </select>
+      </div>
     </div>
     <div class="table-responsive">
       <table class="table">
@@ -43,7 +45,7 @@
             *ngFor="let toy of toyList | product: age:gender"
             [routerLink]="['/search', toy.toyID]"
           >
-          <th> <img src="{{ toy.toyImage }}" width="50px" /></th>
+            <th><img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
             <th>{{ toy.toyGender | uppercase }}</th>
