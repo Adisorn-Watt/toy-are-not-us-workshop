@@ -1,15 +1,166 @@
 import { Injectable } from '@angular/core';
+import { Product } from './models/product';
 import { combineLatest, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from './models/product';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataServiceService {
-  constructor(private http: HttpClient) {}
+  // constructor(private http: HttpClient) {}
+
+  constructor() {}
 
   getAllProduct(): Observable<Product[]> {
+    const p1 = new Product(
+      '2',
+      '43 Piece dinner Set',
+      'Female',
+      '3 to 5',
+      12.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p2 = new Product(
+      '1',
+      'Balance Training Bicycle',
+      'Neutral',
+      '3 to 5',
+      119.95,
+      true,
+      'SportsFun'
+    );
+
+    const p3 = new Product(
+      '7',
+      'Best Friends Forever Magnetic Dress Up',
+      'Female',
+      '3 to 5',
+      24.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p4 = new Product(
+      '8',
+      'City Gargage Truck Lego',
+      'Neutral',
+      '3 to 5',
+      19.95,
+      false,
+      'Lego'
+    );
+
+    const p5 = new Product(
+      '20',
+      'Creator Beach House Lego',
+      'Neutral',
+      '6 to 8',
+      39.95,
+      false,
+      'Lego'
+    );
+
+    const p6 = new Product(
+      '23',
+      'Dancing Alligator',
+      'Neutral',
+      'Baby',
+      19.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p7 = new Product(
+      '11',
+      'Earth DVD Game',
+      'Neutral',
+      'over8',
+      34.99,
+      true,
+      'VideoVroom'
+    );
+
+    const p8 = new Product(
+      '30',
+      'Fisher-Price stoller',
+      'Female',
+      'Toddler',
+      25.99,
+      true,
+      'CoolKidz'
+    );
+
+    const p9 = new Product(
+      '19',
+      'Gourmet Cupcake Maker',
+      'Female',
+      '6 to 8',
+      39.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p10 = new Product(
+      '4',
+      'Hoppity Ball 26 inch',
+      'Neutral',
+      '3 to 5',
+      29.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p11 = new Product(
+      '3',
+      'Horses and Unicorns Set',
+      'Neutral',
+      '3 to 5',
+      24.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p12 = new Product(
+      '21',
+      'Jacques the peacock Play and Grow',
+      'Neutral',
+      'Toddler',
+      24.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p13 = new Product(
+      '9',
+      'Kettrick Tricycle',
+      'Neutral',
+      '3 to 5',
+      249.95,
+      false,
+      'SportsFun'
+    );
+
+    const p14 = new Product(
+      '26',
+      'Les Dollie Toffee Apple',
+      'Female',
+      'Toddler',
+      24.95,
+      true,
+      'CoolKidz'
+    );
+
+    const p15 = new Product(
+      '24',
+      'Mashaka the Monkey',
+      'Neutral',
+      'Baby',
+      36.95,
+      true,
+      'BarnyardBlast'
+    );
     const p16 = new Product(
       '28',
       'Melody Express Musical Train',
@@ -154,6 +305,38 @@ export class DataServiceService {
       true,
       'GreekToys'
     );
-    return of([p16]);
+    return of([
+      p1,
+      p2,
+      p3,
+      p4,
+      p5,
+      p6,
+      p7,
+      p8,
+      p9,
+      p10,
+      p11,
+      p12,
+      p13,
+      p14,
+      p15,
+      p16,
+      p17,
+      p18,
+      p19,
+      p20,
+      p21,
+      p22,
+      p23,
+      p24,
+      p25,
+      p26,
+      p27,
+      p28,
+      p29,
+      p30,
+      p31,
+    ]);
   }
 }
