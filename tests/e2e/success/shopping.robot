@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 *** Settings ***
 Resource    ../keywords/keywords.robot
 Library    SeleniumLibrary
 Test Template    ซื้อของในร้านค้า
 
-*** Test Cases ***                                      Age				Gender     Product_ID       Product_name     
-นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay    over8    neutral      11             Earth DVD Game
+*** Test Cases ***                                       Product_ID       Product_name         NAME         AGE      GENDER       ADDESS1             ADDESS2             CITY       PROVINCE      POSTCODE
+นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay     11               Earth DVD Game      ไทจิ ยามาโตะ   22       ชาย         ถนนเลียบชายกว๊าน      อำเภอเมืองพะเยา       พะเยา       พะเยา          56000
 
 
->>>>>>> 30355fea7e09582012a8dfd828b3ef75ded50627
