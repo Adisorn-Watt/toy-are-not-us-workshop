@@ -45,7 +45,8 @@ Search สินค้าที่ต้องการ
     Click Element    list_${PRODUCT_ID}
 
 # Grace's code
-เช็คข้อมูลสินค้า         
+เช็คข้อมูลสินค้า   
+    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}
     เช็คชื่อสินค้า
     เช็ครูปสินค้า
     เช็คแบรนด์สินค้า
@@ -58,19 +59,19 @@ Search สินค้าที่ต้องการ
     กด add to cart
 
 เช็คชื่อสินค้า
-    Wait Until Page Contains    Earth DVD Game
+    Wait Until Page Contains    ${PRODUCT_NAME}
 เช็ครูปสินค้า
     Wait Until Element Contains    id:toy_image
 เช็คแบรนด์สินค้า
-    Wait Until Page Contains    VideoVroom
+    Wait Until Page Contains    ${PRODUCT_BRAND}
 เช็คเพศที่เหมาะสมของสินค้า
-    Wait Until Page Contains    Neutral
+    Wait Until Page Contains    ${PRODUCT_GENDER}
 เช็คอายุที่เหมาะสมของสินค้า
-    Wait Until Page Contains    over 8
+    Wait Until Page Contains    ${PRODUCT_AGE}
 เช็คราคาสินค้า
-    Wait Until Page Contains    34.99
+    Wait Until Page Contains    ${PRODUCT_PRICE}
 เช็คสถานะสินค้า
-    Wait Until Element Contains    id:toy_avb
+    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
 เลือกจำนวนสินค้า
     Select From List By value    id:quantity    1   
 กด add to cart
