@@ -5,10 +5,22 @@ import { Product } from './models/product';
 })
 export class ProductPipe implements PipeTransform {
   transform(products: Product[], age: string, gender: string): Product[] {
-    return products.filter(
-      (p) =>
-        p.toyAge.toUpperCase().indexOf(age.toUpperCase()) !== -1 &&
-        p.toyGender.toUpperCase().indexOf(age.toUpperCase()) !== -1
-    );
+    if (age.length > 0 && gender.length > 0) {
+      return products.filter(
+        (p) =>
+          p.toyAge.toUpperCase() === age.toUpperCase() &&
+          p.toyGender.toUpperCase() === gender.toUpperCase()
+      );
+    } else if (age.length === 0 && gender.length > 0) {
+      return products.filter(
+        (p) => p.toyGender.toUpperCase() === gender.toUpperCase()
+      );
+    } else if (age.length > 0 && gender.length === 0) {
+      return products.filter(
+        (p) => p.toyAge.toUpperCase() === age.toUpperCase()
+      );
+    } else {
+      return products;
+    }
   }
 }
