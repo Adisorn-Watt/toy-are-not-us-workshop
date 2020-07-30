@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { Product } from '../models/product';
 
 type Toys = Product[];
 @Component({
@@ -9,7 +10,7 @@ type Toys = Product[];
 })
 export class PageSearchComponent implements OnInit {
   inputSearch: string = "";
-  toyList: lorem = [];
+  toyList: Toys = [];
 
   //productList: Products = [];
   //productSelected: Product;

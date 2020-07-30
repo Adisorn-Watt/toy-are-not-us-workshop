@@ -1,31 +1,30 @@
-<form name="myform" method="POST">
-  <div>
-    Gender:
-    <select name="gender">
-      <option value="">Select gender..</option>
-      <option value="Jan">Male</option>
-      <option value="Feb">Female</option>
-      <option value="Mar">Neutral</option>
-    </select>
-  </div>
-  <br />
-  <br />
-  <div>
-    Age :
-    <select name="age">
-      <option value="">Select age..</option>
-      <option value="01">Baby</option>
-      <option value="02">Toddler</option>
-      <option value="03">3 to 5</option>
-      <option value="03">6 to 8</option>
-      <option value="03">Over 8</option>
+<div>
+  Gender:
+  <select name="gender">
+    <option value="">Select gender..</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="neutral">Neutral</option>
+  </select>
+</div>
+<br />
+<br />
+<div>
+  Age :
+  <select name="age">
+    <option value="">Select age..</option>
+    <option value="baby">Baby</option>
+    <option value="toddler">Toddler</option>
+    <option value="3_to_5">3 to 5</option>
+    <option value="6_to_8">6 to 8</option>
+    <option value="over_8">Over 8</option>
 
-    </select>
-  </div>
+  </select>
+</div>
 
-  <input type="text" [(ngModel)]="inputSearch">
+<input type="text" [(ngModel)]="inputSearch">
 
-
+<table>
   <tbody *ngIf="toyList.length > 0">
     <tr *ngFor="let toy of toyList | filterbyName: inputSearch" [routerLink]="['/product',product.code]">
       <th>{{ toy.toyName | uppercase | productName }}</th>
@@ -41,13 +40,14 @@
       </th>
     </tr>
   </tbody>
+</table>
 
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
-  ublic toyID: string,
-  public toyName: string,
-  public toyGender: string,
-  public toyAge: string,
-  public toyPrice: number,
-  public toyAvailable: boolean,
-  public toyBrand: string
+ublic toyID: string,
+public toyName: string,
+public toyGender: string,
+public toyAge: string,
+public toyPrice: number,
+public toyAvailable: boolean,
+public toyBrand: string
