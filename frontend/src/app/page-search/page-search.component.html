@@ -4,20 +4,10 @@
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3 centerDropdown">
-        Gender:
-        <select [(ngModel)]="gender" name="gender" style="width:100%;">
-          <option value="">Select gender..</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Neutral">Neutral</option>
-        </select>
-      </div>
-
-      <div class="col-md-3 centerDropdown">
-        Age :
-        <select [(ngModel)]="age" name="age" style="width:100%;">
+      <div class="col-md-4">
+        <label>Age :</label>
+        <br />
+        <select [(ngModel)]="age" name="age" class="form-control">
           <option value="">Select age..</option>
           <option value="Baby">Baby</option>
           <option value="Toddler">Toddler</option>
@@ -26,7 +16,16 @@
           <option value="Over 8">Over 8</option>
         </select>
       </div>
-      <div class="col-md-3"></div>
+      <div class="col-md-4">
+        <label>Gender:</label>
+        <br />
+        <select [(ngModel)]="gender" name="gender" class="form-control">
+          <option value="">Select gender..</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Neutral">Neutral</option>
+        </select>
+      </div>
     </div>
 
     <br>
@@ -35,11 +34,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th>
-              <button type="button" class="btn btn-primary">
-                Product Image
-              </button>
-            </th>
+            <th>Product Image</th>
             <th>Product Name</th>
             <th>Brand</th>
             <th>Gender</th>
@@ -50,7 +45,7 @@
         </thead>
         <tbody *ngIf="toyList.length > 0">
           <tr *ngFor="let toy of toyList | product: age:gender" [routerLink]="['/search', toy.toyID]">
-            <th>image</th>
+            <th><img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
             <th>{{ toy.toyGender | uppercase }}</th>
