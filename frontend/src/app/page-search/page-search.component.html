@@ -28,12 +28,13 @@
 
   <tbody *ngIf="toyList.length > 0">
     <tr *ngFor="let toy of toyList | filterbyName: inputSearch" [routerLink]="['/product',product.code]">
-      <th><a href="">{{ toy.imageUrl }}</a></th>
-      <th>{{ toy.code }}</th>
-      <th>{{ toy.name | uppercase | productName }}</th>
-      <th>{{ toy.price | number: "1.2" }}</th> <!-- 2 decimal point -->
-      <th *ngIf="toy.available">Yes</th> <!-- product available -->
-      <th *ngIf="!toy.available">No</th> <!-- product unavailable -->
+      <th>{{ toy.toyName | uppercase | productName }}</th>
+      <th>{{ toy.toyBrand | uppercase | productName }}</th>
+      <th>{{ toy.toyGender | uppercase | productName }}</th>
+      <th>{{ toy.toyAge | uppercase | productName }}</th>
+      <th>{{ toy.toyPrice | number: "1.2" }}</th> <!-- 2 decimal point -->
+      <th *ngIf="toy.toyAvailable">Yes</th> <!-- product available -->
+      <th *ngIf="!toy.toyAvailable">No</th> <!-- product unavailable -->
       <th>
         <app-rating [rating]="product.rating" (ratingClicked)="onRatingClicked($event)">
         </app-rating>
@@ -42,3 +43,11 @@
   </tbody>
 
   <router-outlet></router-outlet>
+
+  ublic toyID: string,
+  public toyName: string,
+  public toyGender: string,
+  public toyAge: string,
+  public toyPrice: number,
+  public toyAvailable: boolean,
+  public toyBrand: string
