@@ -6,10 +6,10 @@ type Toys = Product[];
 @Component({
   selector: 'app-page-search',
   templateUrl: './page-search.component.html',
-  styleUrls: ['./page-search.component.css']
+  styleUrls: ['./page-search.component.css'],
 })
 export class PageSearchComponent implements OnInit {
-  inputSearch: string = "";
+  inputSearch: String = '';
   toyList: Toys = [];
 
   //productList: Products = [];
@@ -26,5 +26,4 @@ export class PageSearchComponent implements OnInit {
       return (this.toyList = toys);
     });
   }
-
 }
