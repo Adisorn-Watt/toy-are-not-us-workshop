@@ -129,27 +129,28 @@ Checkout
 
 #Shipping
 กรอกที่อยู่จัดส่ง
-   กรอกชื่อ    
-   กรอกที่อยู่แถว 1   
-   กรอกที่อยู่แถว 2    
-   กรอกเมือง    
-   กรอกจังหวัด    
-   กรอกรหัสไปรษณีย์   
+    [Arguments]    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}
+   กรอกชื่อ    ${NAME}
+   กรอกที่อยู่แถว 1   ${ADDESS1}
+   กรอกที่อยู่แถว 2    ${ADDESS2}
+   กรอกเมือง     ${CITY}
+   กรอกจังหวัด    ${PROVINCE}
+   กรอกรหัสไปรษณีย์   ${POSTCODE}
 ยืนยันที่อยู่
    กด deliver to this address  
 
 กรอกชื่อ    
-   Input Text    full_name    ไทจิ ยามาโตะ
+   Input Text    full_name    ${NAME}
 กรอกที่อยู่แถว 1    
-   Input Text    addess1    ถนนเลียบชายกว๊าน ตำบลเวียง
+   Input Text    addess1    ${ADDESS1}
 กรอกที่อยู่แถว 2    
-   Input Text    addess2    อำเภอเมืองพะเยา
+   Input Text    addess2     ${ADDESS2}
 กรอกเมือง    
-   Input Text    city    พะเยา
+   Input Text    city    ${CITY}
 กรอกจังหวัด    
-   Input Text    province    พะเยา
+   Input Text    province    ${PROVINCE}
 กรอกรหัสไปรษณีย์    
-   Input Text    post_code    56000
+   Input Text    post_code    ${POSTCODE}
 กด deliver to this address    
    Click Button    btn_deliver
 
