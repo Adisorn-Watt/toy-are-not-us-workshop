@@ -10,7 +10,9 @@ type Products = Product[];
 })
 export class ProductDetailComponent implements OnInit {
   product: Product;
-
+  public getCurrency(): string {
+    return 'USD ';
+  }
   constructor(private route: ActivatedRoute, public service: DataServiceService) {}
 
   ngOnInit(): void {
