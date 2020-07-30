@@ -1,30 +1,36 @@
 <div class="card">
-  <div class="card-header">
-    List of Product Page
+  <div class="card-header centerTopic">
+    <h4>List of Product Page</h4>
   </div>
   <div class="card-body">
-    <div>
-      Gender:
-      <select [(ngModel)]="gender" name="gender">
-        <option value="">Select gender..</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Neutral">Neutral</option>
-      </select>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 centerDropdown">
+        Gender:
+        <select [(ngModel)]="gender" name="gender" style="width:100%;">
+          <option value="">Select gender..</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Neutral">Neutral</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 centerDropdown">
+        Age :
+        <select [(ngModel)]="age" name="age" style="width:100%;">
+          <option value="">Select age..</option>
+          <option value="Baby">Baby</option>
+          <option value="Toddler">Toddler</option>
+          <option value="3 to 5">3 to 5</option>
+          <option value="6 to 8">6 to 8</option>
+          <option value="Over 8">Over 8</option>
+        </select>
+      </div>
+      <div class="col-md-3"></div>
     </div>
-    <br />
-    <br />
-    <div>
-      Age :
-      <select [(ngModel)]="age" name="age">
-        <option value="">Select age..</option>
-        <option value="Baby">Baby</option>
-        <option value="Toddler">Toddler</option>
-        <option value="3 to 5">3 to 5</option>
-        <option value="6 to 8">6 to 8</option>
-        <option value="Over 8">Over 8</option>
-      </select>
-    </div>
+
+    <br>
+
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -43,10 +49,7 @@
           </tr>
         </thead>
         <tbody *ngIf="toyList.length > 0">
-          <tr
-            *ngFor="let toy of toyList | product: age:gender"
-            [routerLink]="['/search', toy.toyID]"
-          >
+          <tr *ngFor="let toy of toyList | product: age:gender" [routerLink]="['/search', toy.toyID]">
             <th>image</th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
