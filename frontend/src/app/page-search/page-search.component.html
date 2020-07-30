@@ -1,1 +1,53 @@
-<p>page-search works!</p>
+<form name="myform" method="POST">
+  <div>
+    Gender:
+    <select name="gender">
+      <option value="">Select gender..</option>
+      <option value="Jan">Male</option>
+      <option value="Feb">Female</option>
+      <option value="Mar">Neutral</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <div>
+    Age :
+    <select name="age">
+      <option value="">Select age..</option>
+      <option value="01">Baby</option>
+      <option value="02">Toddler</option>
+      <option value="03">3 to 5</option>
+      <option value="03">6 to 8</option>
+      <option value="03">Over 8</option>
+
+    </select>
+  </div>
+
+  <input type="text" [(ngModel)]="inputSearch">
+
+
+  <tbody *ngIf="toyList.length > 0">
+    <tr *ngFor="let toy of toyList | filterbyName: inputSearch" [routerLink]="['/product',product.code]">
+      <th>{{ toy.toyName | uppercase | productName }}</th>
+      <th>{{ toy.toyBrand | uppercase | productName }}</th>
+      <th>{{ toy.toyGender | uppercase | productName }}</th>
+      <th>{{ toy.toyAge | uppercase | productName }}</th>
+      <th>{{ toy.toyPrice | number: "1.2" }}</th> <!-- 2 decimal point -->
+      <th *ngIf="toy.toyAvailable">Yes</th> <!-- product available -->
+      <th *ngIf="!toy.toyAvailable">No</th> <!-- product unavailable -->
+      <th>
+        <app-rating [rating]="product.rating" (ratingClicked)="onRatingClicked($event)">
+        </app-rating>
+      </th>
+    </tr>
+  </tbody>
+
+  <router-outlet></router-outlet>
+
+  ublic toyID: string,
+  public toyName: string,
+  public toyGender: string,
+  public toyAge: string,
+  public toyPrice: number,
+  public toyAvailable: boolean,
+  public toyBrand: string
