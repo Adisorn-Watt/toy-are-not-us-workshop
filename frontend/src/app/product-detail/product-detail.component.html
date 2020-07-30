@@ -34,7 +34,8 @@
 
           <div class="row">
             <div class="col-md-4">Status:</div>
-            <div class="col-md-8">{{product.toyAvailable}}</div>
+            <div class="col-md-8" *ngIf="product.toyAvailable">In stock</div>
+            <div class="col-md-8" *ngIf="product.toyAvailable == false">Out stock</div>
           </div>
 
           <div class="row">
