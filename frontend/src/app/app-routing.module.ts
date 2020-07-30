@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'shipping-address', component: ShippingAddressComponent },
   { path: 'payment', component: PagePaymentComponent },
   { path: 'order-success', component: OrderSuccessComponent },
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
 ];
 
 @NgModule({
