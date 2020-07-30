@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-search.component.css']
 })
 export class PageSearchComponent implements OnInit {
+  inputSearch: string = "";
+  toyList: lorem = [];
 
   constructor() { }
 
