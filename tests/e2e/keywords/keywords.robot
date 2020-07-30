@@ -4,17 +4,17 @@ ${URL}    http://www.localhost.com
 *** Keywords ***
 
 ซื้อของในร้านค้า
-    [Arguments]    ${AGE}    ${GENDER}    ${PRODUCT_ID}    ${PRODUCT_NAME}    ${PAY_METHOD}    ${SHIPPING_METHOD}    ${ITEMS_COST}    ${SHIPPING_FEE}    ${TOTAL_COST}
+    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${AGE}    ${GENDER}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}
     เปิดเว็ป
     Search สินค้าที่ต้องการ    ${AGE}    ${GENDER}    ${PRODUCT_ID}
-    เช็คข้อมูลสินค้า         
+    เช็คข้อมูลสินค้า     ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}    
     กดสินค้าใส่ตะกร้า
     เช็คข้อมูลสินค้าและราคารวม
     เลือกวิธีจัดส่งสินค้า
     Checkout
     กรอกที่อยู่จัดส่ง
     ยืนยันที่อยู่
-    เลือกวิธีการชำระเงิน    linepay
+    เลือกวิธีการชำระเงิน    ${SHIPPING_METHOD}
     เช็ครายละเอียดของสินค้าที่สั่ง
     กดยืนยันการสั่งซื้อ
     เช็คหมายเลขคำสั่งซื้อ
@@ -62,16 +62,16 @@ Search สินค้าที่ต้องการ
     Wait Until Page Contains    ${PRODUCT_NAME}
 เช็ครูปสินค้า
     Wait Until Element Contains    id:toy_image
-เช็คแบรนด์สินค้า
-    Wait Until Page Contains    ${PRODUCT_BRAND}
+#เช็คแบรนด์สินค้า
+#    Wait Until Page Contains    ${PRODUCT_BRAND}
 เช็คเพศที่เหมาะสมของสินค้า
     Wait Until Page Contains    ${PRODUCT_GENDER}
 เช็คอายุที่เหมาะสมของสินค้า
     Wait Until Page Contains    ${PRODUCT_AGE}
-เช็คราคาสินค้า
-    Wait Until Page Contains    ${PRODUCT_PRICE}
-เช็คสถานะสินค้า
-    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
+#เช็คราคาสินค้า
+#    Wait Until Page Contains    ${PRODUCT_PRICE}
+#เช็คสถานะสินค้า
+#    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
 เลือกจำนวนสินค้า
     Select From List By value    id:quantity    1   
 กด add to cart
