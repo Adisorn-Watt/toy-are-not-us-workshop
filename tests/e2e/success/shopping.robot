@@ -3,9 +3,8 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay
-<<<<<<< HEAD
     Search สินค้าที่ต้องการ
-    เช็คข้อมูลสินค้า
+    เช็คข้อมูลสินค้า         
     กดสินค้าใส่ตะกร้า
     เช็คข้อมูลสินค้าและราคารวม
     เลือกวิธีจัดส่งสินค้า
@@ -19,50 +18,15 @@ Library    SeleniumLibrary
     ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
 
 
-
 *** Keywords ***
-#ขวัญ
-เลือกวิธีการชำระเงิน
-    กดเลือกวิธีการจ่ายเงิน
-เช็ครายละเอียดของสินค้าที่สั่ง
-    เช็คหัวชื่อ table 
-    เช็คหัวข้อ table
-    เช็คข้อมูลสินค้าที่สั่ง
-    เช็ควิธีการจัดส่ง
-    เช็คราคาค่าของทั้งหมด
-    เช็คราคาค่าส่ง
-    เช็คราคารวม
-กดยืนยันการสั่งซื้อ
-    กดคอนเฟิร์มออร์เดอร์
-กดเลือกวิธีการจ่ายเงิน
-    Select Radio Button    pay_option    linepay
-เช็คหัวชื่อ table
-    Wait Until Element Contains    tb_name    Payment Methods
-เช็คหัวข้อ table
-    Wait Until Element Contains    tb_head    Items
-    Wait Until Element Contains    tb_head    Quantity
-    Wait Until Element Contains    tb_head    Price (THB)
-เช็คข้อมูลสินค้าที่สั่ง
-    Wait Until Element Contains    tb_tr_11    Earth DVD Game by VideoVroom
-    Wait Until Element Contains    tb_tr_11    Neutral
-    Wait Until Element Contains    tb_tr_11    over8
-    Wait Until Element Contains    tb_tr_11    InStock
-เช็ควิธีการจัดส่ง
-    Wait Until Element Contains    shipping_method    EMS
-เช็คราคาค่าของทั้งหมด
-    Wait Until Element Contains    item_cost    1,049.70
-เช็คราคาค่าส่ง
-    Wait Until Element Contains    shipping_fee    30.00
-เช็คราคารวม
-    Wait Until Element Contains    total    1,079.70
-กดคอนเฟิร์มออร์เดอร์
-    Click Button    btn_order
+#earth
+Search สินค้าที่ต้องการ
+    เลือกอายุ    Select From List by Value    age    over8
+    เลือกเพศ    Select From List by Value    gender    neutral
+    กด search    Click Button    btn_search
+    เช็คผลลัพธ์การค้นหา    Wait Until Element Contains    result    results for Neutral and over 8
+    คลิกเลือกของเล่น    Click Element    list_11
 
-
-
-
-<<<<<<< HEAD
-*** Keywords ***
 # Grace's code
 เช็คข้อมูลสินค้า         
     เช็คชื่อสินค้า
@@ -94,7 +58,8 @@ Library    SeleniumLibrary
     Select From List By value    id:quantity    1   
 กด add to cart
     Click Button    id:btn_addcart 
-<<<<<<< HEAD
+
+##fah
 เช็คข้อมูลสินค้าและราคารวม
    เช็คชื่อสินค้า
    เช็คแบรนด์สินค้า
@@ -142,15 +107,85 @@ Library    SeleniumLibrary
 
 Checkout
    Click Button    btn_checkout
-=======
->>>>>>> 62580ac0a1eb8109723fb7a208921aa0a0e5d945
-=======
-Search สินค้าที่ต้องการ
-    เลือกอายุ    Select From List by Value    age    over8
-    เลือกเพศ    Select From List by Value    gender    neutral
-    กด search    Click Button    btn_search
-    เช็คผลลัพธ์การค้นหา    Wait Until Element Contains    result    results for Neutral and over 8
-    คลิกเลือกของเล่น    Click Element    list_11
->>>>>>> c3e0994d1c10d0f162d9dc3e0ba202121bc3b914
->>>>>>> 6171f922b51932d89abe02f33fff1f5418798bf9
->>>>>>> 3615f905fc80e4b0d2cd39317db534142e031b2e
+
+#Shipping
+กรอกที่อยู่จัดส่ง
+   กรอกชื่อ    
+   กรอกที่อยู่แถว 1   
+   กรอกที่อยู่แถว 2    
+   กรอกเมือง    
+   กรอกจังหวัด    
+   กรอกรหัสไปรษณีย์   
+ยืนยันที่อยู่
+   กด deliver to this address  
+
+กรอกชื่อ    
+   Input Text    full_name    ไทจิ ยามาโตะ
+กรอกที่อยู่แถว 1    
+   Input Text    addess1    ถนนเลียบชายกว๊าน ตำบลเวียง
+กรอกที่อยู่แถว 2    
+   Input Text    addess2    อำเภอเมืองพะเยา
+กรอกเมือง    
+   Input Text    city    พะเยา
+กรอกจังหวัด    
+   Input Text    province    พะเยา
+กรอกรหัสไปรษณีย์    
+   Input Text    post_code    56000
+กด deliver to this address    
+   Click Button    btn_deliver
+
+#ขวัญ
+เลือกวิธีการชำระเงิน
+    กดเลือกวิธีการจ่ายเงิน
+เช็ครายละเอียดของสินค้าที่สั่ง
+    เช็คหัวชื่อ table 
+    เช็คหัวข้อ table
+    เช็คข้อมูลสินค้าที่สั่ง
+    เช็ควิธีการจัดส่ง
+    เช็คราคาค่าของทั้งหมด
+    เช็คราคาค่าส่ง
+    เช็คราคารวม
+กดยืนยันการสั่งซื้อ
+    กดคอนเฟิร์มออร์เดอร์
+กดเลือกวิธีการจ่ายเงิน
+    Select Radio Button    pay_option    linepay
+เช็คหัวชื่อ table
+    Wait Until Element Contains    tb_name    Payment Methods
+เช็คหัวข้อ table
+    Wait Until Element Contains    tb_head    Items
+    Wait Until Element Contains    tb_head    Quantity
+    Wait Until Element Contains    tb_head    Price (THB)
+เช็คข้อมูลสินค้าที่สั่ง
+    Wait Until Element Contains    tb_tr_11    Earth DVD Game by VideoVroom
+    Wait Until Element Contains    tb_tr_11    Neutral
+    Wait Until Element Contains    tb_tr_11    over8
+    Wait Until Element Contains    tb_tr_11    InStock
+เช็ควิธีการจัดส่ง
+    Wait Until Element Contains    shipping_method    EMS
+เช็คราคาค่าของทั้งหมด
+    Wait Until Element Contains    item_cost    1,049.70
+เช็คราคาค่าส่ง
+    Wait Until Element Contains    shipping_fee    30.00
+เช็คราคารวม
+    Wait Until Element Contains    total    1,079.70
+กดคอนเฟิร์มออร์เดอร์
+    Click Button    btn_order
+
+#thankyou page
+เช็คหมายเลขคำสั่งซื้อ
+    เช็ค Order Number
+ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+    เช็คข้อมูลสินค้าที่สั่ง
+    เช็คราคาค่าของทั้งหมด
+    เช็คราคาค่าส่ง
+    เช็คราคารวม
+    เช็ควิธีการชำระเงิน
+    เช็ควิธีการจัดส่ง
+เช็ควิธีการชำระเงิน
+    pay_method
+
+
+
+
+
+
