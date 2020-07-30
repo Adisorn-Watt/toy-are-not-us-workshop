@@ -26,11 +26,22 @@ ${URL}    http://www.localhost.com
     Close Browser
 #earth
 Search สินค้าที่ต้องการ
-    เลือกอายุ    Select From List by Value    age    over8
-    เลือกเพศ    Select From List by Value    gender    neutral
-    กด search    Click Button    btn_search
-    เช็คผลลัพธ์การค้นหา    Wait Until Element Contains    result    results for Neutral and over 8
-    คลิกเลือกของเล่น    Click Element    list_11
+    เลือกอายุ
+    เลือกเพศ
+    กด search
+    เช็คผลลัพธ์การค้นหา
+    คลิกเลือกของเล่น
+
+เลือกอายุ    
+    Select From List by Value    age    over8
+เลือกเพศ    
+    Select From List by Value    gender    neutral
+กด search    
+    Click Button    btn_search
+เช็คผลลัพธ์การค้นหา    
+    Wait Until Element Contains    result    results for Neutral and over 8
+คลิกเลือกของเล่น    
+    Click Element    list_11
 
 # Grace's code
 เช็คข้อมูลสินค้า         
