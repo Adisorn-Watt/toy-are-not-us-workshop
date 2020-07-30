@@ -29,11 +29,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th>
-              <button type="button" class="btn btn-primary">
-                Product Image
-              </button>
-            </th>
+            <th>Product Image</th>
             <th>Product Name</th>
             <th>Brand</th>
             <th>Gender</th>
@@ -47,7 +43,7 @@
             *ngFor="let toy of toyList | product: age:gender"
             [routerLink]="['/search', toy.toyID]"
           >
-            <th>image</th>
+          <th> <img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
             <th>{{ toy.toyGender | uppercase }}</th>
