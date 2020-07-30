@@ -1,1 +1,66 @@
-<p>product-detail works!</p>
+<div class="card">
+    <div class="card-header">
+      Earth DVD Game 
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4">Brand:</div>
+            <div class="col-md-8">VideoVroom</div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-4">Gender:</div>
+            <div class="col-md-8">
+              Neutral
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">Age:</div>
+            <div class="col-md-8">
+              over8
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-4">Price:</div>
+            <div class="col-md-8">34.99</div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-4">Shipping Method:</div>
+            <div class="col-md-8">
+              Cash on Delivery
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">InStock</div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <img
+            class="center-block img-responsive"
+            [style.width.px]="100"
+            [style.margin.px]="2"
+          />
+        </div>
+      </div>
+    </div>
+  
+    <div class="card-footer">
+      <button
+        class="btn btn-outline-secondary"
+        [routerLink]="['/shopping-cart']"
+        style="width: 80px;"
+      >
+        <i class="fa fa-chevron-left"></i> Add to cart
+      </button>
+    </div>
+  </div>
+  
