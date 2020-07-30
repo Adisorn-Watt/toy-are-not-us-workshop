@@ -78,76 +78,79 @@ Search สินค้าที่ต้องการ
 
 ##fah
 เช็คข้อมูลสินค้าและราคารวม
-   เช็คชื่อสินค้า
-   เช็คแบรนด์สินค้า
-   เช็คเพศที่เหมาะสม
-   เช็คอายุที่เหมาะสม
-   เช็คสถานะสินค้า
-   เช็คราคาสินค้า
-   เช็คจำนวนสินค้า
-   เช็คจำนวนสินค้า
-   เช็คราคาสินค้าทั้งหมด
+    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}
+    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}   
+   เช็คชื่อสินค้า    ${PRODUCT_NAME} 
+   เช็คแบรนด์สินค้า     ${PRODUCT_BRAND}
+   เช็คเพศที่เหมาะสม      ${PRODUCT_GENDER}
+   เช็คอายุที่เหมาะสม   ${PRODUCT_AGE}
+   เช็คสถานะสินค้า     ${PRODUCT_AVAILABLE}
+   เช็คราคาสินค้า      ${PRODUCT_PRICE}
+   เช็คจำนวนสินค้า      ${PRODUCT_QUANTITY}
+   เช็คราคาสินค้าทั้งหมด     ${TOTAL_PRICE}
 
 เช็คชื่อสินค้า
-   Wait Until Element Contains    td_toy_name    Earth DVD Game
+   Wait Until Element Contains    td_toy_name    ${PRODUCT_NAME} 
 
 เช็คแบรนด์สินค้า
-   Wait Until Element Contains    toy_brand    VideoVroom
+   Wait Until Element Contains    toy_brand    ${PRODUCT_BRAND}
 
 เช็คเพศที่เหมาะสม
-   Wait Until Element Contains    toy_gender   Neutral
+   Wait Until Element Contains    toy_gender   ${PRODUCT_GENDER}
 
 เช็คอายุที่เหมาะสม
-   Wait Until Element Contains    toy_age    over8
+   Wait Until Element Contains    toy_age    ${PRODUCT_AGE}
 
 เช็คสถานะสินค้า
-   Wait Until Element Contains    toy_available    InStock
+   Wait Until Element Contains    toy_available    ${PRODUCT_AVAILABLE}
 
 เช็คราคาสินค้า
-   Wait Until Element Contains    toy_price    1,049.71
+   Wait Until Element Contains    toy_price    ${PRODUCT_PRICE}
 
 เช็คจำนวนสินค้า
-   Wait Until Element Contains    toy_quatity    1
+   Wait Until Element Contains    toy_quantity    ${PRODUCT_QUANTITY}
 
 เช็คราคาสินค้าทั้งหมด
-   Wait Until Element Contains    subtotal    1,049.71
+   Wait Until Element Contains    subtotal    ${TOTAL_PRICE}
 
 เลือกวิธีจัดส่งสินค้า
-   เลือกวิธีจัดส่ง-EMS
-   เช็คราคาค่าจัดส่ง
+    [Arguments]    ${SHIPPING_METHOD}    ${SHIPPING_FEE}
+   เลือกวิธีจัดส่ง-EMS   ${SHIPPING_METHOD}
+   เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
 
 เลือกวิธีจัดส่ง-EMS 
-   Select radio button    shipping_method    EMS
+   Select radio button    shipping_method    ${SHIPPING_METHOD}
 
 เช็คราคาค่าจัดส่ง
-   Wait Until Element Contains    shipping_fee    30.00
+   Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
 
 Checkout
    Click Button    btn_checkout
 
 #Shipping
 กรอกที่อยู่จัดส่ง
-   กรอกชื่อ    
-   กรอกที่อยู่แถว 1   
-   กรอกที่อยู่แถว 2    
-   กรอกเมือง    
-   กรอกจังหวัด    
-   กรอกรหัสไปรษณีย์   
+    [Arguments]    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}
+   กรอกชื่อ    ${NAME}
+   กรอกที่อยู่แถว 1   ${ADDESS1}
+   กรอกที่อยู่แถว 2    ${ADDESS2}
+   กรอกเมือง     ${CITY}
+   กรอกจังหวัด    ${PROVINCE}
+   กรอกรหัสไปรษณีย์   ${POSTCODE}
 ยืนยันที่อยู่
    กด deliver to this address  
 
 กรอกชื่อ    
-   Input Text    full_name    ไทจิ ยามาโตะ
+   Input Text    full_name    ${NAME}
 กรอกที่อยู่แถว 1    
-   Input Text    addess1    ถนนเลียบชายกว๊าน ตำบลเวียง
+   Input Text    addess1    ${ADDESS1}
 กรอกที่อยู่แถว 2    
-   Input Text    addess2    อำเภอเมืองพะเยา
+   Input Text    addess2     ${ADDESS2}
 กรอกเมือง    
-   Input Text    city    พะเยา
+   Input Text    city    ${CITY}
 กรอกจังหวัด    
-   Input Text    province    พะเยา
+   Input Text    province    ${PROVINCE}
 กรอกรหัสไปรษณีย์    
-   Input Text    post_code    56000
+   Input Text    post_code    ${POSTCODE}
 กด deliver to this address    
    Click Button    btn_deliver
 
