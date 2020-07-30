@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card" *ngIf="product">
     <div class="card-header">
-      Earth DVD Game 
+      {{product.toyName}}
     </div>
   
     <div class="card-body">
@@ -8,48 +8,36 @@
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-4">Brand:</div>
-            <div class="col-md-8">VideoVroom</div>
+            <div class="col-md-8">{{product.toyBrand}}</div>
           </div>
   
           <div class="row">
             <div class="col-md-4">Gender:</div>
-            <div class="col-md-8">
-              Neutral
-            </div>
+            <div class="col-md-8">{{product.toyGender}}</div>
           </div>
 
           <div class="row">
             <div class="col-md-4">Age:</div>
-            <div class="col-md-8">
-              over8
-            </div>
+            <div class="col-md-8">{{product.toyAge}}</div>
           </div>
   
           <div class="row">
             <div class="col-md-4">Price:</div>
-            <div class="col-md-8">34.99</div>
+            <div class="col-md-8">{{product.toyPrice}}</div>
           </div>
 
           
           <div class="row">
             <div class="col-md-4">Shipping Method:</div>
-            <div class="col-md-8">
-              Cash on Delivery
-            </div>
+            <div class="col-md-8">Cash on Delivery</div>
           </div>
 
           <div class="row">
-            <div class="col-md-4">InStock</div>
+            <div class="col-md-4">Status:</div>
+            <div class="col-md-8">{{product.toyAvailable}}</div>
           </div>
         </div>
   
-        <div class="col-md-4">
-          <img
-            class="center-block img-responsive"
-            [style.width.px]="100"
-            [style.margin.px]="2"
-          />
-        </div>
       </div>
     </div>
   
