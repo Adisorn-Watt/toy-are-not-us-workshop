@@ -4,7 +4,7 @@ ${URL}    http://www.localhost.com
 *** Keywords ***
 
 ซื้อของในร้านค้า
-    [Arguments]    ${product_name}
+    [Arguments]    ${PRODUCT_NAME}
     เปิดเว็ป
     Search สินค้าที่ต้องการ
     เช็คข้อมูลสินค้า         
@@ -14,7 +14,7 @@ ${URL}    http://www.localhost.com
     Checkout
     กรอกที่อยู่จัดส่ง
     ยืนยันที่อยู่
-    เลือกวิธีการชำระเงิน
+    เลือกวิธีการชำระเงิน    linepay
     เช็ครายละเอียดของสินค้าที่สั่ง
     กดยืนยันการสั่งซื้อ
     เช็คหมายเลขคำสั่งซื้อ
@@ -152,19 +152,22 @@ Checkout
 
 #ขวัญ
 เลือกวิธีการชำระเงิน
-    กดเลือกวิธีการจ่ายเงิน
+    [Arguments]    ${PAY_METHOD}
+    กดเลือกวิธีการจ่ายเงิน    ${PAY_METHOD}
 เช็ครายละเอียดของสินค้าที่สั่ง
+    [Arguments]    ${PRODUCT_NAME}    ${AGE}    ${GENDER}    ${SHIPPING_METHOD}    ${ITEMS_COST}    ${SHIPPING_FEE}    ${TOTAL_COST}
     เช็คหัวชื่อ table
     เช็คหัวข้อ table
-    เช็คข้อมูลสินค้าที่สั่ง
-    เช็ควิธีการจัดส่ง
-    เช็คราคาค่าของทั้งหมด
-    เช็คราคาค่าส่ง
-    เช็คราคารวม
+    เช็คข้อมูลสินค้าที่สั่ง    ${PRODUCT_NAME}    ${AGE}    ${GENDER}
+    เช็ควิธีการจัดส่ง    ${SHIPPING_METHOD}
+    เช็คราคาค่าของทั้งหมด    ${ITEMS_COST}
+    เช็คราคาค่าส่ง    ${SHIPPING_FEE}
+    เช็คราคารวม    ${TOTAL_COST}
 กดยืนยันการสั่งซื้อ
     กดคอนเฟิร์มออร์เดอร์
 กดเลือกวิธีการจ่ายเงิน
-    Select Radio Button    pay_option    linepay
+    [Arguments]    ${PAY_METHOD}
+    Select Radio Button    pay_option    ${PAY_METHOD}
 เช็คหัวชื่อ table
     Wait Until Element Contains    tb_name    Payment Methods
 เช็คหัวข้อ table
@@ -172,18 +175,23 @@ Checkout
     Wait Until Element Contains    tb_head    Quantity
     Wait Until Element Contains    tb_head    Price (THB)
 เช็คข้อมูลสินค้าที่สั่ง
+    [Arguments]    ${PRODUCT_NAME}    ${AGE}    ${GENDER}
     Wait Until Element Contains    tb_tr_11    Earth DVD Game by VideoVroom
-    Wait Until Element Contains    tb_tr_11    Neutral
-    Wait Until Element Contains    tb_tr_11    over8
+    Wait Until Element Contains    tb_tr_11    ${GENDER}
+    Wait Until Element Contains    tb_tr_11    ${AGE}
     Wait Until Element Contains    tb_tr_11    InStock
 เช็ควิธีการจัดส่ง
-    Wait Until Element Contains    shipping_method    EMS
+    [Arguments]    ${SHIPPING_METHOD}
+    Wait Until Element Contains    shipping_method    ${SHIPPING_METHOD}
 เช็คราคาค่าของทั้งหมด
-    Wait Until Element Contains    item_cost    1,049.70
+    [Arguments]    ${ITEMS_COST}
+    Wait Until Element Contains    item_cost    ${ITEMS_COST}
 เช็คราคาค่าส่ง
-    Wait Until Element Contains    shipping_fee    30.00
+    [Arguments]    ${SHIPPING_FEE}
+    Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
 เช็คราคารวม
-    Wait Until Element Contains    total    1,079.70
+    [Arguments]    ${TOTAL_COST}
+    Wait Until Element Contains    total    ${TOTAL_COST}
 กดคอนเฟิร์มออร์เดอร์
     Click Button    btn_order
 
