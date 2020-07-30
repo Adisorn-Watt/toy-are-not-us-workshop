@@ -4,9 +4,9 @@ ${URL}    http://www.localhost.com
 *** Keywords ***
 
 ซื้อของในร้านค้า
-    [Arguments]    ${product_name}
+    [Arguments]    ${AGE}    ${GENDER}    ${PRODUCT_ID}    ${PRODUCT_NAME}
     เปิดเว็ป
-    Search สินค้าที่ต้องการ
+    Search สินค้าที่ต้องการ    ${AGE}    ${GENDER}    ${PRODUCT_ID}
     เช็คข้อมูลสินค้า         
     กดสินค้าใส่ตะกร้า
     เช็คข้อมูลสินค้าและราคารวม
@@ -26,22 +26,23 @@ ${URL}    http://www.localhost.com
     Close Browser
 #earth
 Search สินค้าที่ต้องการ
-    เลือกอายุ
-    เลือกเพศ
+    [Arguments]    ${AGE}    ${GENDER}    ${PRODUCT_ID}
+    เลือกอายุ    ${AGE}
+    เลือกเพศ    ${GENDER}
     กด search
     เช็คผลลัพธ์การค้นหา
-    คลิกเลือกของเล่น
+    คลิกเลือกของเล่น    ${PRODUCT_ID}
 
 เลือกอายุ    
-    Select From List by Value    age    over8
+    Select From List by Value    age    ${AGE}   #over8
 เลือกเพศ    
-    Select From List by Value    gender    neutral
+    Select From List by Value    gender    ${GENDER}   #neutral
 กด search    
     Click Button    btn_search
 เช็คผลลัพธ์การค้นหา    
-    Wait Until Element Contains    result    results for Neutral and over 8
+    Wait Until Element Contains    result    results for ${GENDER} and ${AGE}
 คลิกเลือกของเล่น    
-    Click Element    list_11
+    Click Element    list_${PRODUCT_ID}
 
 # Grace's code
 เช็คข้อมูลสินค้า         
