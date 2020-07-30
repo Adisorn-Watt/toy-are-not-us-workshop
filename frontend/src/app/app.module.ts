@@ -9,6 +9,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShippingAddressComponent } from './shipping-address/shipping-address.component';
 import { PagePaymentComponent } from './page-payment/page-payment.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
+import { ProductPipe } from './product.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     ShoppingCartComponent,
     ShippingAddressComponent,
     PagePaymentComponent,
-    OrderSuccessComponent
+    OrderSuccessComponent,
+    ProductPipe
   ],
   imports: [
     BrowserModule,
