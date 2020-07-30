@@ -4,8 +4,13 @@ Library    SeleniumLibrary
 *** Test Cases ***
 นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay
 <<<<<<< HEAD
+<<<<<<< HEAD
     Search สินค้าที่ต้องการ
     เช็คข้อมูลสินค้า         
+=======
+    Search สินค้าที่ต้องการ
+    เช็คข้อมูลสินค้า
+>>>>>>> c3e0994d1c10d0f162d9dc3e0ba202121bc3b914
     กดสินค้าใส่ตะกร้า
     เช็คข้อมูลสินค้าและราคารวม
     เลือกวิธีจัดส่งสินค้า
@@ -18,6 +23,7 @@ Library    SeleniumLibrary
     เช็คหมายเลขคำสั่งซื้อ
     ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
 
+<<<<<<< HEAD
 *** Keywords ***
 # Grace's code
 เช็คข้อมูลสินค้า         
@@ -65,3 +71,13 @@ Library    SeleniumLibrary
    เช็คหมายเลขคำสั่งซื้อ
    ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
 >>>>>>> 62580ac0a1eb8109723fb7a208921aa0a0e5d945
+=======
+
+*** Keywords ***
+Search สินค้าที่ต้องการ
+    เลือกอายุ    Select From List by Value    age    over8
+    เลือกเพศ    Select From List by Value    gender    neutral
+    กด search    Click Button    btn_search
+    เช็คผลลัพธ์การค้นหา    Wait Until Element Contains    result    results for Neutral and over 8
+    คลิกเลือกของเล่น    Click Element    list_11
+>>>>>>> c3e0994d1c10d0f162d9dc3e0ba202121bc3b914
