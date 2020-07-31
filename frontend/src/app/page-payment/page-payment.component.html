@@ -1,9 +1,82 @@
-<p>page-payment works!</p>
+<!-- <div class="card" *ngIf="toy"> -->
+<div class="card">
+  <div class="card-header centerTopic">
+    <h4>Payment Methods</h4>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <td width="70%" align="left">
+        <thead>
+          <tr>
+            <th>Product Picture</th>
+            <th>Items</th>
+            <th>Quantity</th>
+            <th>Price (THB)</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <tr>
+            <th>
+              <img src="{{ toy.toyImage }}" width="50px" />
+            </th>
+            <th>
+              {{ toy.toyName }} by {{ toy.toyBrand }}
+              <br />
+              {{ toy.toyGender }} {{ toy.toyAge }}
 
+              <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4>
 
-<div style="text-align: right;">
-  <button type="submit" class="btn btn-primary" [routerLink]="['/order-success']" style="width: 200px;">
-    <i class="fa fa-chevron-right"></i> Place your order
-  </button>
+              <h4 *ngIf="!toy.toyAvailable" style="color: red;">
+                Out of Stock
+              </h4>
+              <button style="color: red;">Delete</button>
+            </th>
+            <th>1</th>
+            <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
+          </tr>
+        </tbody>
+      </td>
+      <td width="40%" align="left">
+        <h5>Order Summary</h5>
+        <p>Items(1):</p>
+        <p>Shipping Fee:</p>
+        <p>Order total:</p>
+      </td>
+      <tr>
+        <td align="left" colspan="3">
+          <br />
+          Shipping Method: EMS
+          <br />
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5>Select payment methods</h5>
+    <div class="radio">
+      <label><input type="radio" name="optradio" checked /> Credit Cards</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio" /> Debit Cards</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio" /> Line Pay</label>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body" style="text-align: right;">
+    <button
+      class="btn btn-outline-secondary"
+      [routerLink]="['/order-success']"
+      style="width: 200px;"
+    >
+      <i class="fa fa-chevron-right"></i> Place your order
+    </button>
+  </div>
 </div>

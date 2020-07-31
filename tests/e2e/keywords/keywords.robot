@@ -1,6 +1,7 @@
 *** Variables ***
 ${URL}    http://localhost:4200/search
 
+
 *** Keywords ***
 
 ซื้อของในร้านค้า
@@ -44,61 +45,63 @@ Search สินค้าที่ต้องการ
 # กด search    
 #     Click Button    btn_search
 # เช็คผลลัพธ์การค้นหา    
-    Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
+    # Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
 # คลิกเลือกของเล่น    
-    Click Element    //*[@id="main"]/html/body/app-root/div/app-page-search/div/div[2]/div[2]/table/tbody/tr[1]
+    Mouse over    //*[@id="product_11"]
+    Click Element    //*[@id="product_11"]/th[2]
 
 # Grace's code
 เช็คข้อมูลสินค้า   
     [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}
-    เช็คชื่อสินค้า    ${PRODUCT_NAME}
-    เช็ครูปสินค้า    
-    เช็คแบรนด์สินค้า    ${PRODUCT_BRAND}
-    เช็คเพศที่เหมาะสมของสินค้า    ${PRODUCT_GENDER}
-    เช็คอายุที่เหมาะสมของสินค้า    ${PRODUCT_AGE}
-    เช็คราคาสินค้า    ${PRODUCT_PRICE}
-    เช็คสถานะสินค้า    ${PRODUCT_AVAILABLE}
-กดสินค้าใส่ตะกร้า
-    เลือกจำนวนสินค้า
-    กด add to cart
+#     เช็คชื่อสินค้า    ${PRODUCT_NAME}
+#     เช็ครูปสินค้า    
+#     เช็คแบรนด์สินค้า    ${PRODUCT_BRAND}
+#     เช็คเพศที่เหมาะสมของสินค้า    ${PRODUCT_GENDER}
+#     เช็คอายุที่เหมาะสมของสินค้า    ${PRODUCT_AGE}
+#     เช็คราคาสินค้า    ${PRODUCT_PRICE}
+#     เช็คสถานะสินค้า    ${PRODUCT_AVAILABLE}
+# กดสินค้าใส่ตะกร้า
+#     เลือกจำนวนสินค้า
+#     กด add to cart
 
-เช็คชื่อสินค้า
+# เช็คชื่อสินค้า
     Wait Until Page Contains    ${PRODUCT_NAME}
-เช็ครูปสินค้า
-    Wait Until Element Contains    id:toy_image
+# เช็ครูปสินค้า
+    # Wait Until Element Contains    id:toy_image
 #เช็คแบรนด์สินค้า
-#    Wait Until Page Contains    ${PRODUCT_BRAND}
-เช็คเพศที่เหมาะสมของสินค้า
+   Wait Until Page Contains    ${PRODUCT_BRAND}
+# เช็คเพศที่เหมาะสมของสินค้า
     Wait Until Page Contains    ${PRODUCT_GENDER}
-เช็คอายุที่เหมาะสมของสินค้า
+# เช็คอายุที่เหมาะสมของสินค้า
     Wait Until Page Contains    ${PRODUCT_AGE}
 #เช็คราคาสินค้า
-#    Wait Until Page Contains    ${PRODUCT_PRICE}
+   Wait Until Page Contains    ${PRODUCT_PRICE}
 #เช็คสถานะสินค้า
-#    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
-เลือกจำนวนสินค้า
-    Select From List By value    id:quantity    1   
-กด add to cart
-    Click Button    id:btn_addcart 
+   Wait Until Page Contains    ${PRODUCT_AVAILABLE}
+# เลือกจำนวนสินค้า
+    Mouse over    //*[@id="quantity"]
+    Click Element    //*[@id="quantity"]/option[2]
+กดสินค้าใส่ตะกร้า
+    Click Button    //*[@id="btn_addcart"]
 
 ##fah
 เช็คข้อมูลสินค้าและราคารวม
     [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}
     ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}   
-   เช็คชื่อสินค้า2    ${PRODUCT_NAME} 
-   เช็คแบรนด์สินค้า     ${PRODUCT_BRAND}
-   เช็คเพศที่เหมาะสม      ${PRODUCT_GENDER}
-   เช็คอายุที่เหมาะสม   ${PRODUCT_AGE}
-   เช็คสถานะสินค้า     ${PRODUCT_AVAILABLE}
-   เช็คราคาสินค้า      ${PRODUCT_PRICE}
-   เช็คจำนวนสินค้า      ${PRODUCT_QUANTITY}
-   เช็คราคาสินค้าทั้งหมด     ${TOTAL_PRICE}
+#    เช็คชื่อสินค้า2    ${PRODUCT_NAME} 
+#    เช็คแบรนด์สินค้า     ${PRODUCT_BRAND}
+#    เช็คเพศที่เหมาะสม      ${PRODUCT_GENDER}
+#    เช็คอายุที่เหมาะสม   ${PRODUCT_AGE}
+#    เช็คสถานะสินค้า     ${PRODUCT_AVAILABLE}
+#    เช็คราคาสินค้า      ${PRODUCT_PRICE}
+#    เช็คจำนวนสินค้า      ${PRODUCT_QUANTITY}
+#    เช็คราคาสินค้าทั้งหมด     ${TOTAL_PRICE}
 
-เช็คชื่อสินค้า2
-   Wait Until Element Contains    td_toy_name    ${PRODUCT_NAME} 
+# เช็คชื่อสินค้า2
+   Wait Until Page Contains    ${PRODUCT_NAME}
 
 เช็คแบรนด์สินค้า
-   Wait Until Element Contains    toy_brand    ${PRODUCT_BRAND}
+   Wait Until Page Contains    ${PRODUCT_GENDER}
 
 เช็คเพศที่เหมาะสม
    Wait Until Element Contains    toy_gender   ${PRODUCT_GENDER}
