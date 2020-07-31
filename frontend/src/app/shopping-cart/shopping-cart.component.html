@@ -18,16 +18,16 @@
       <tbody>
         <tr>
           <th>
-            <img src="{{ toy[0].toyImage }}" width="50px" />
+            <img src="{{ toy.toyImage }}" width="50px" />
           </th>
           <th>
-            {{ toy[0].toyName }} by {{ toy[0].toyBrand }}
+            {{ toy.toyName }} by {{ toy.toyBrand }}
             <br />
-            {{ toy[0].toyGender }} {{ toy[0].toyAge }}
+            {{ toy.toyGender }} {{ toy.toyAge }}
             product available
-            <h4 *ngIf="toy[0].toyAvailable" style="color: green;">In Stock</h4>
+            <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4>
             product unavailable
-            <h4 *ngIf="toy[0].toyAvailable" style="color: red;">
+            <h4 *ngIf="toy.toyAvailable" style="color: red;">
               Out of Stock
             </h4>
             <button style="color: red;">Delete</button>
@@ -38,7 +38,7 @@
               <option value="01">1</option>
             </select>
           </th>
-          <th>{{ toy[0].toyPrice }}</th>
+          <th>{{ toy.toyPrice }}</th>
         </tr>
       </tbody>
     </table>

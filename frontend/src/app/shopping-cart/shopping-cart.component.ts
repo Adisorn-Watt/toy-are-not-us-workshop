@@ -12,14 +12,17 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   constructor(private service: DataServiceService) {}
 
   toyID = '';
-  toy: Product[] = [];
+  toys: Product[] = [];
+  toy: Product;
   subscription: Subscription;
   ngOnInit(): void {
-    this.subscription = this.service.getSelectedID().subscribe((id) => {
+    this.service.getSelectedID().subscribe((id) => {
       this.toyID = id;
-      console.log(`toyId = ${this.toyID}`);
+      console.log(`toyId = ${id}`);
       this.service.getAllProduct().subscribe((toys) => {
-        this.toy = toys.filter((p) => p.toyID === this.toyID);
+        console.log(toys);
+        this.toys = toys.filter((p) => p.toyID === this.toyID);
+        this.toy = this.toys[0];
       });
     });
   }

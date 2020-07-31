@@ -15,7 +15,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
   constructor(
     private route: ActivatedRoute,
-    public service: DataServiceService
+    private service: DataServiceService
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +30,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
   updateID(): void {
     this.service.updateSelectedID(this.toy.toyID);
+    console.log('update');
   }
 }
