@@ -15,11 +15,11 @@ ${URL}    http://localhost:4200/search
     Checkout
     กรอกที่อยู่จัดส่ง    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}
     ยืนยันที่อยู่
-    เลือกวิธีการชำระเงิน    ${SHIPPING_METHOD}
-    เช็ครายละเอียดของสินค้าที่สั่ง
+    เลือกวิธีการชำระเงิน    
+    เช็ครายละเอียดของสินค้าที่สั่ง    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
     กดยืนยันการสั่งซื้อ
-    เช็คหมายเลขคำสั่งซื้อ
-    ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+    # เช็คหมายเลขคำสั่งซื้อ
+    # ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
     ปิดเว็ป
 เปิดเว็ป
     Open Browser    ${URL}    chrome
@@ -35,10 +35,10 @@ Search สินค้าที่ต้องการ
     # คลิกเลือกของเล่น    
 
 # เลือกอายุ    
-    Mouse over    //*[@id="age"]
-    Click Element    //*[@id="over8"]
-    Mouse over    //*[@id="gender"]
-    Click Element    //*[@id="neutral"]
+    Mouse over    id:age
+    Click Element    id:over8
+    Mouse over    gender
+    Click Element    id:neutral
     # Select From List by Value    age    ${PRODUCT_AGE}   #over8
 # เลือกเพศ    
     # Select From List by Value    gender    ${PRODUCT_GENDER}   #neutral
@@ -47,7 +47,7 @@ Search สินค้าที่ต้องการ
 # เช็คผลลัพธ์การค้นหา    
     # Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
 # คลิกเลือกของเล่น    
-    Mouse over    //*[@id="product_11"]
+    Mouse over    id:product_11
     Click Element    //*[@id="product_11"]/th[2]
 
 # Grace's code
@@ -79,10 +79,10 @@ Search สินค้าที่ต้องการ
 #เช็คสถานะสินค้า
    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
 # เลือกจำนวนสินค้า
-    Mouse over    //*[@id="quantity"]
+    Mouse over    id:quantity
     Click Element    //*[@id="quantity"]/option[2]
 กดสินค้าใส่ตะกร้า
-    Click Button    //*[@id="btn_addcart"]
+    Click Button    id:btn_addcart
 
 ##fah
 เช็คข้อมูลสินค้าและราคารวม
@@ -126,7 +126,7 @@ Search สินค้าที่ต้องการ
 #    เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
 
 # เลือกวิธีจัดส่ง-EMS 
-    Click Element    //*[@id="EMS"]
+    Click Element    id:EMS
 
 # เช็คราคาค่าจัดส่ง
 #    Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
@@ -155,7 +155,7 @@ Checkout
 # กรอกเมือง    
    Input Text    id:inputCity    ${CITY}
 # กรอกจังหวัด    
-    Mouse over    //*[@id="province"]
+    Mouse over    id:province
     Click Element    //*[@id="province"]/option[34]
 # กรอกรหัสไปรษณีย์    
    Input Text    id:post_code    ${POSTCODE}
@@ -165,61 +165,69 @@ Checkout
 
 #ขวัญ
 เลือกวิธีการชำระเงิน
-    [Arguments]    ${PAY_METHOD}
-    กดเลือกวิธีการจ่ายเงิน    ${PAY_METHOD}
+    Click Element    id:Line_pay
 เช็ครายละเอียดของสินค้าที่สั่ง
-    [Arguments]    ${PRODUCT_NAME}    ${AGE}    ${GENDER}    ${SHIPPING_METHOD}    ${ITEMS_COST}    ${SHIPPING_FEE}    ${TOTAL_COST}
-    เช็คหัวชื่อ table
-    เช็คหัวข้อ table
-    เช็คข้อมูลสินค้าที่สั่ง    ${PRODUCT_NAME}    ${AGE}    ${GENDER}
-    เช็ควิธีการจัดส่ง    ${SHIPPING_METHOD}
-    เช็คราคาค่าของทั้งหมด    ${ITEMS_COST}
-    เช็คราคาค่าส่ง    ${SHIPPING_FEE}
-    เช็คราคารวม    ${TOTAL_COST}
+    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
+    # 
+    # เช็คชื่อสินค้า2
+   Wait Until Page Contains    ${PRODUCT_NAME}
+
+# เช็คแบรนด์สินค้า
+   Wait Until Page Contains    ${PRODUCT_GENDER}
+
+# เช็คเพศที่เหมาะสม
+   Wait Until Page Contains   ${PRODUCT_GENDER}
+
+# เช็คอายุที่เหมาะสม
+   Wait Until Page Contains    ${PRODUCT_AGE}
+
+# เช็คสถานะสินค้า
+   Wait Until Page Contains    ${PRODUCT_AVAILABLE}
+
 กดยืนยันการสั่งซื้อ
-    กดคอนเฟิร์มออร์เดอร์
-กดเลือกวิธีการจ่ายเงิน
-    [Arguments]    ${PAY_METHOD}
-    Select Radio Button    pay_option    ${PAY_METHOD}
-เช็คหัวชื่อ table
-    Wait Until Element Contains    tb_name    Payment Methods
-เช็คหัวข้อ table
-    Wait Until Element Contains    tb_head    Items
-    Wait Until Element Contains    tb_head    Quantity
-    Wait Until Element Contains    tb_head    Price (THB)
-เช็คข้อมูลสินค้าที่สั่ง
-    [Arguments]    ${PRODUCT_NAME}    ${AGE}    ${GENDER}
-    Wait Until Element Contains    tb_tr_11    Earth DVD Game by VideoVroom
-    Wait Until Element Contains    tb_tr_11    ${GENDER}
-    Wait Until Element Contains    tb_tr_11    ${AGE}
-    Wait Until Element Contains    tb_tr_11    InStock
-เช็ควิธีการจัดส่ง
-    [Arguments]    ${SHIPPING_METHOD}
-    Wait Until Element Contains    shipping_method    ${SHIPPING_METHOD}
-เช็คราคาค่าของทั้งหมด
-    [Arguments]    ${ITEMS_COST}
-    Wait Until Element Contains    item_cost    ${ITEMS_COST}
-เช็คราคาค่าส่ง
-    [Arguments]    ${SHIPPING_FEE}
-    Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
-เช็คราคารวม
-    [Arguments]    ${TOTAL_COST}
-    Wait Until Element Contains    total    ${TOTAL_COST}
-กดคอนเฟิร์มออร์เดอร์
-    Click Button    btn_order
+    # กดคอนเฟิร์มออร์เดอร์
+# กดเลือกวิธีการจ่ายเงิน
+#     [Arguments]    ${PAY_METHOD}
+#     Select Radio Button    pay_option    ${PAY_METHOD}
+# เช็คหัวชื่อ table
+#     Wait Until Element Contains    tb_name    Payment Methods
+# เช็คหัวข้อ table
+#     Wait Until Element Contains    tb_head    Items
+#     Wait Until Element Contains    tb_head    Quantity
+#     Wait Until Element Contains    tb_head    Price (THB)
+# เช็คข้อมูลสินค้าที่สั่ง
+#     [Arguments]    ${PRODUCT_NAME}    ${AGE}    ${GENDER}
+#     Wait Until Element Contains    tb_tr_11    Earth DVD Game by VideoVroom
+#     Wait Until Element Contains    tb_tr_11    ${GENDER}
+#     Wait Until Element Contains    tb_tr_11    ${AGE}
+#     Wait Until Element Contains    tb_tr_11    InStock
+# เช็ควิธีการจัดส่ง
+#     [Arguments]    ${SHIPPING_METHOD}
+#     Wait Until Element Contains    shipping_method    ${SHIPPING_METHOD}
+# เช็คราคาค่าของทั้งหมด
+#     [Arguments]    ${ITEMS_COST}
+#     Wait Until Element Contains    item_cost    ${ITEMS_COST}
+# เช็คราคาค่าส่ง
+#     [Arguments]    ${SHIPPING_FEE}
+#     Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
+# เช็คราคารวม
+#     [Arguments]    ${TOTAL_COST}
+#     Wait Until Element Contains    total    ${TOTAL_COST}
+# กดคอนเฟิร์มออร์เดอร์
+    Click Button    id:btn_order
 
 #thankyou page
-เช็คหมายเลขคำสั่งซื้อ
-    เช็ค Order Number    20200731001
-ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
-    เช็คข้อมูลสินค้าที่สั่ง
-    เช็คราคาค่าของทั้งหมด
-    เช็คราคาค่าส่ง
-    เช็คราคารวม
-    เช็ควิธีการชำระเงิน
-    เช็ควิธีการจัดส่ง
-เช็ค Order Number
-    [Arguments]    ${number}
-    Wait Until Element Contains    order_no    ${number}
-เช็ควิธีการชำระเงิน
-    Wait Until Element Contains    pay_method    linepay
+# เช็คหมายเลขคำสั่งซื้อ
+#     เช็ค Order Number    20200731001
+# ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+#     เช็คข้อมูลสินค้าที่สั่ง
+#     เช็คราคาค่าของทั้งหมด
+#     เช็คราคาค่าส่ง
+#     เช็คราคารวม
+#     เช็ควิธีการชำระเงิน
+#     เช็ควิธีการจัดส่ง
+# เช็ค Order Number
+#     [Arguments]    ${number}
+#     Wait Until Element Contains    order_no    ${number}
+# เช็ควิธีการชำระเงิน
+#     Wait Until Element Contains    pay_method    linepay
