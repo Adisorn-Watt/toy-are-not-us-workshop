@@ -2,48 +2,69 @@
   <h1>Thank you</h1>
 </div>
 <br />
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <h5>
+        Order Number: {{ time | date: "yyyyMMdd" }}{{ randomNumber || 0 }}
+      </h5>
+    </div>
+  </div>
+</div>
+<br />
 <!-- <div class="card" *ngIf="toy"> -->
 <div class="card">
-
   <div class="table-responsive">
     <table class="table">
-      <thead>
-        <tr>
-          <th>Product Picture</th>
-          <th>Items</th>
-          <th>Quantity</th>
-          <th>Price (THB)</th>
-        </tr>
-      </thead>
+      <td width="70%" align="left">
+        <thead>
+          <tr>
+            <th>Product Picture</th>
+            <th>Items</th>
+            <th>Quantity</th>
+            <th>Price (THB)</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr>
-          <th>
-            <img src="https://i3.sndcdn.com/avatars-qgCqB1ryryQ5LUBz-2jFd8g-t500x500.jpg" width="100px" />
-          </th>
-          <th>
-            <!-- {{ toy.toyName }} by {{ toy.toyBrand }}
-              <br>
-              {{ toy.toyGender }} {{ toy.toyAge }}  -->
-            Name by Brand
-            <br>
-            Gender Age
-            <h5 style="color: green;">In Stock</h5>
-            <button style="color: red;">Delete</button>
-            <!-- product available -->
-            <!-- <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4> -->
-            <!-- product unavailable -->
-            <!-- <h4 *ngIf="toy.toyAvailable" style="color: red;">Out of Stock</h4> -->
-          </th>
-          <th>
-            <select>
-              <option value="">choose</option>
-              <option value="01">1</option>
-            </select>
-          </th>
-          <th>1699</th>
-        </tr>
-      </tbody>
+        <tbody>
+          <tr>
+            <th>
+              <img src="{{ toy.toyImage }}" width="50px" />
+            </th>
+            <th>
+              {{ toy.toyName }} by {{ toy.toyBrand }}
+              <br />
+              {{ toy.toyGender }} {{ toy.toyAge }}
+
+              <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4>
+
+              <h4 *ngIf="!toy.toyAvailable" style="color: red;">
+                Out of Stock
+              </h4>
+              <button style="color: red;">Delete</button>
+            </th>
+            <th>1</th>
+            <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
+          </tr>
+        </tbody>
+      </td>
+      <td width="40%" align="left">
+        <h5>Order Summary</h5>
+        <p style="text-indent: 30px;">
+          Items(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB
+        </p>
+        <p style="text-indent: 30px;">Shipping Fee: 30.00 THB</p>
+        <p style="text-indent: 30px;">
+          Order total: {{ (toy.toyPrice * 31.5 + 30).toFixed(2) }} THB
+        </p>
+      </td>
+      <!-- <tr>
+        <td align="left" colspan="3">
+          <br />
+          Shipping Method: EMS
+          <br />
+        </td>
+      </tr> -->
     </table>
   </div>
 </div>
@@ -51,11 +72,11 @@
 <div class="card">
   <div class="card-body">
     <div class="row">
-      <h5>Shipping Method: </h5>
+      <h5>Shipping Method:</h5>
       EMS
     </div>
     <div class="row">
-      <h5>Payment Method: </h5>
+      <h5>Payment Method:</h5>
       LinePay
     </div>
   </div>

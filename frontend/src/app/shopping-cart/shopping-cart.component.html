@@ -54,7 +54,7 @@
   <div class="card-body">
     <h5>Select Shipping Method</h5>
     <div class="form-group">
-      <div class="radio" id="shipping_method">
+      <div class="radio" id="shipping_method" style="text-indent: 10px;">
         <label
           ><input
             type="radio"
@@ -63,7 +63,7 @@
             value="kerry"
             ngModel
           />Kerry</label
-        >
+        ><br />
 
         <label
           ><input
@@ -73,7 +73,7 @@
             value="lineman"
             ngModel
           />Lineman</label
-        >
+        ><br />
 
         <label
           ><input
@@ -84,7 +84,13 @@
             ngModel
             checked
           />EMS</label
-        >
+        ><br />
+      </div>
+      <div class="card-body col-md-6">
+        <h5>Subtotal(1 items): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB</h5>
+        <h5>
+          Shipping Fee: 30.00 THB
+        </h5>
       </div>
     </div>
   </div>
