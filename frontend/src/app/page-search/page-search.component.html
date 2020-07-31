@@ -33,6 +33,7 @@
         <!-- <button id="btn_search" type="button" class="btn btn-dark"> -->
         <!-- Search -->
         <!-- </button> -->
+        </div>
       </div>
 
       <br />
@@ -55,7 +56,6 @@
               *ngFor="let toy of toyList | product: age:gender"
               [routerLink]="['/search', toy.toyID]"
               id="product_{{ toy.toyID }}"
-              }}
             >
               <th><img src="{{ toy.toyImage }}" width="50px" /></th>
               <th>{{ toy.toyName | uppercase }}</th>
