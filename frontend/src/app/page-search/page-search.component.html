@@ -30,10 +30,9 @@
           <option id="female" value="Female">Female</option>
           <option id="neutral" value="Neutral">Neutral</option>
         </select>
-        &nbsp;
-        <button id="btn_search" type="button" class="btn btn-dark">
-          Search
-        </button>
+        <!-- <button id="btn_search" type="button" class="btn btn-dark"> -->
+        <!-- Search -->
+        <!-- </button> -->
       </div>
     </div>
 
@@ -56,6 +55,7 @@
           <tr
             *ngFor="let toy of toyList | product: age:gender"
             [routerLink]="['/search', toy.toyID]"
+            id="`list_${toy.toyID}`"
           >
             <th><img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
