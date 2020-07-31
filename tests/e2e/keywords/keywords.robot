@@ -18,8 +18,8 @@ ${URL}    http://localhost:4200/search
     เลือกวิธีการชำระเงิน    
     เช็ครายละเอียดของสินค้าที่สั่ง    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
     กดยืนยันการสั่งซื้อ
-    เช็คหมายเลขคำสั่งซื้อ
-    ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+    # เช็คหมายเลขคำสั่งซื้อ
+    # ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
     ปิดเว็ป
 เปิดเว็ป
     Open Browser    ${URL}    chrome
@@ -217,17 +217,17 @@ Checkout
     Click Button    id:btn_order
 
 #thankyou page
-เช็คหมายเลขคำสั่งซื้อ
-    เช็ค Order Number    20200731001
-ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
-    เช็คข้อมูลสินค้าที่สั่ง
-    เช็คราคาค่าของทั้งหมด
-    เช็คราคาค่าส่ง
-    เช็คราคารวม
-    เช็ควิธีการชำระเงิน
-    เช็ควิธีการจัดส่ง
-เช็ค Order Number
-    [Arguments]    ${number}
-    Wait Until Element Contains    order_no    ${number}
-เช็ควิธีการชำระเงิน
-    Wait Until Element Contains    pay_method    linepay
+# เช็คหมายเลขคำสั่งซื้อ
+#     เช็ค Order Number    20200731001
+# ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+#     เช็คข้อมูลสินค้าที่สั่ง
+#     เช็คราคาค่าของทั้งหมด
+#     เช็คราคาค่าส่ง
+#     เช็คราคารวม
+#     เช็ควิธีการชำระเงิน
+#     เช็ควิธีการจัดส่ง
+# เช็ค Order Number
+#     [Arguments]    ${number}
+#     Wait Until Element Contains    order_no    ${number}
+# เช็ควิธีการชำระเงิน
+#     Wait Until Element Contains    pay_method    linepay
