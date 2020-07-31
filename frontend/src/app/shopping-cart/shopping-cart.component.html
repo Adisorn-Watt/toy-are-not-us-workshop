@@ -62,6 +62,7 @@
             name="optradio"
             value="kerry"
             ngModel
+            (click)="setShippingMethod('kerry')"
           />Kerry</label
         ><br />
 
@@ -72,6 +73,7 @@
             name="optradio"
             value="lineman"
             ngModel
+            (click)="setShippingMethod('lineman')"
           />Lineman</label
         ><br />
 
@@ -83,13 +85,23 @@
             value="EMS"
             ngModel
             checked
+            (click)="setShippingMethod('EMS')"
           />EMS</label
         ><br />
       </div>
       <div class="card-body col-md-6">
         <h5>Subtotal(1 items): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB</h5>
-        <h5>
-          Shipping Fee: 30.00 THB
+        <h5 *ngIf="cart.shippingMethod === ''">
+          Shipping Fee: please select shipping method
+        </h5>
+        <h5 *ngIf="cart.shippingMethod === 'kerry'">
+          Shipping Fee: {{ shipping[cart.shippingMethod].toFixed(2) }} THB
+        </h5>
+        <h5 *ngIf="cart.shippingMethod === 'lineman'">
+          Shipping Fee: {{ shipping[cart.shippingMethod].toFixed(2) }} THB
+        </h5>
+        <h5 *ngIf="cart.shippingMethod === 'EMS'">
+          Shipping Fee: {{ shipping[cart.shippingMethod].toFixed(2) }} THB
         </h5>
       </div>
     </div>

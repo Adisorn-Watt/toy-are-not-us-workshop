@@ -41,15 +41,19 @@
         <p style="text-indent: 30px;">
           Items(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB
         </p>
-        <p style="text-indent: 30px;">Shipping Fee: 30.00 THB</p>
         <p style="text-indent: 30px;">
-          Order total: {{ (toy.toyPrice * 31.5 + 30).toFixed(2) }} THB
+          Shipping Fee: {{ shipping[cart.shippingMethod].toFixed(2) }} THB
+        </p>
+        <p style="text-indent: 30px;">
+          Order total:
+          {{ (toy.toyPrice * 31.5 + shipping[cart.shippingMethod]).toFixed(2) }}
+          THB
         </p>
       </td>
       <tr>
         <td align="left" colspan="3">
           <br />
-          Shipping Method: EMS
+          Shipping Method: {{ cart.shippingMethod }}
           <br />
         </td>
       </tr>
@@ -74,7 +78,13 @@
     </div>
     <div class="radio">
       <label
-        ><input type="radio" id="Line_pay" name="optradio" /> Line Pay</label
+        ><input
+          type="radio"
+          id="Line_pay"
+          name="optradio"
+          (click)="clickPayment('linepay')"
+        />
+        Line Pay</label
       >
     </div>
   </div>

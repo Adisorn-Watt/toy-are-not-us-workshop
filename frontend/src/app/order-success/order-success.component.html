@@ -53,10 +53,12 @@
           Items(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB
         </p>
         <p id="shipping_fee" style="text-indent: 30px;">
-          Shipping Fee: 30.00 THB
+          Shipping Fee: {{ shipping[cart.shippingMethod].toFixed(2) }} THB
         </p>
         <p id="total" style="text-indent: 30px;">
-          Order total: {{ (toy.toyPrice * 31.5 + 30).toFixed(2) }} THB
+          Order total:
+          {{ (toy.toyPrice * 31.5 + shipping[cart.shippingMethod]).toFixed(2) }}
+          THB
         </p>
       </td>
       <!-- <tr>
@@ -73,12 +75,12 @@
 <div class="card">
   <div class="card-body">
     <div id="shipping_method" class="row">
-      <h5>Shipping Method: </h5>
-      EMS
+      <h5>Shipping Method:</h5>
+      {{ cart.shippingMethod }}
     </div>
     <div id="pay_mrthod" class="row">
-      <h5>Payment Method: </h5>
-      LinePay
+      <h5>Payment Method:</h5>
+      {{ cart.paymentMethod }}
     </div>
   </div>
 </div>

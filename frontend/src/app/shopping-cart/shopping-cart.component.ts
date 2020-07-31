@@ -12,12 +12,14 @@ import { Cartdetail } from '../models/cartdetail';
 export class ShoppingCartComponent implements OnInit, OnDestroy {
   constructor(private service: DataServiceService) {}
 
+  shipping;
   cart: Cartdetail;
   toyID = '';
   toys: Product[] = [];
   toy: Product;
   subscription: Subscription;
   ngOnInit(): void {
+    this.shipping = this.service.shipping;
     this.service.currentSelectedID.subscribe((id) => {
       this.toyID = id;
       console.log(`toyId = ${id}`);
@@ -30,7 +32,10 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     this.service.currentCartDetail.subscribe((cart) => {
       this.cart = JSON.parse(cart);
     });
-    this.cart.shippingMethod = 'EMS';
+    // this.cart.shippingMethod = 'EMS';
+  }
+  setShippingMethod(shipMethod: string): void {
+    this.cart.shippingMethod = shipMethod;
   }
   ngOnDestroy(): void {
     this.service.updateCartDetail(JSON.stringify(this.cart));
