@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DataServiceService {
   // constructor(private http: HttpClient) {}
 
-  constructor() { }
+  constructor() {}
 
   getAllProduct(): Observable<Product[]> {
     const p1 = new Product(
