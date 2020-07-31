@@ -9,9 +9,10 @@
     <table class="table">
       <thead>
         <tr>
+          <th>Product Picture</th>
           <th>Items</th>
           <th>Quantity</th>
-          <th>Price</th>
+          <th>Price (THB)</th>
         </tr>
       </thead>
 
@@ -21,10 +22,12 @@
             <img src="https://i3.sndcdn.com/avatars-qgCqB1ryryQ5LUBz-2jFd8g-t500x500.jpg" width="50px" />
           </th>
           <th>
-            Name <br>
-            Brand <br>
-            Gender <br>
-            Age <br>
+            <!-- {{ toy.toyName }} by {{ toy.toyBrand }}
+            <br>
+            {{ toy.toyGender }} {{ toy.toyAge }}  -->
+            Name by Brand
+            <br>
+            Gender Age
             <h5 style="color: green;">In Stock</h5>
             <button style="color: red;">Delete</button>
             <!-- product available -->
@@ -43,8 +46,21 @@
       </tbody>
     </table>
   </div>
-
-  <button class="btn btn-outline-secondary" [routerLink]="['/shipping-address']" style="width: 200px;">
-    <i class="fa fa-chevron-right"></i> Process to checkout
-  </button>
 </div>
+
+<h4>Select Shipping Method </h4>
+<div class="radio">
+  <label><input type="radio" name="optradio" checked>Kerry</label>
+</div>
+<div class="radio">
+  <label><input type="radio" name="optradio">Lineman</label>
+</div>
+<div class="radio">
+  <label><input type="radio" name="optradio">EMS</label>
+</div>
+
+
+
+<button class="btn btn-outline-secondary" [routerLink]="['/shipping-address']" style="width: 200px;">
+  <i class="fa fa-chevron-right"></i> Process to checkout
+</button>
