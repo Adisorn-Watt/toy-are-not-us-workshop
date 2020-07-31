@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 11:33:36.446" rpa="false">
 <suite id="s1" name="Shopping" source="C:\Users\chatchanokwon\Documents\toy-are-not-us-workshop-master\tests\e2e\success\shopping.robot">
+=======
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 10:33:31.545" rpa="false">
+<suite id="s1" name="Shopping" source="C:\Users\anchisatea\Documents\Toy r not us\toy-are-not-us-workshop\tests\e2e\success\shopping.robot">
+>>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 <test id="s1-t1" name="นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay">
 <kw name="ซื้อของในร้านค้า" library="keywords">
 <arguments>
@@ -18,6 +23,7 @@
 <arg>56000</arg>
 <arg>linepay</arg>
 </arguments>
+<<<<<<< HEAD
 <kw name="เปิดเว็ป" library="keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -62,6 +68,14 @@
 <status status="FAIL" starttime="20200731 11:33:36.957" endtime="20200731 11:33:47.397" critical="yes">ValueError: No values given.</status>
 </test>
 <status status="FAIL" starttime="20200731 11:33:36.451" endtime="20200731 11:33:47.442"></status>
+=======
+<msg timestamp="20200731 10:33:32.019" level="FAIL">Keyword 'keywords.ซื้อของในร้านค้า' expected 15 arguments, got 16.</msg>
+<status status="FAIL" starttime="20200731 10:33:32.019" endtime="20200731 10:33:32.019"></status>
+</kw>
+<status status="FAIL" starttime="20200731 10:33:32.017" endtime="20200731 10:33:32.020" critical="yes">Keyword 'keywords.ซื้อของในร้านค้า' expected 15 arguments, got 16.</status>
+</test>
+<status status="FAIL" starttime="20200731 10:33:31.554" endtime="20200731 10:33:32.035"></status>
+>>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 </suite>
 <statistics>
 <total>
@@ -75,5 +89,9 @@
 </suite>
 </statistics>
 <errors>
+<<<<<<< HEAD
+=======
+<msg timestamp="20200731 10:33:31.604" level="ERROR">Error in resource file 'C:\Users\anchisatea\Documents\Toy r not us\toy-are-not-us-workshop\tests\e2e\keywords\keywords.robot': Creating keyword 'เช็คชื่อสินค้า' failed: Keyword with same name defined multiple times.</msg>
+>>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 </errors>
 </robot>

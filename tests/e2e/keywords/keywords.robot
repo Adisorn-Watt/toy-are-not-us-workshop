@@ -1,5 +1,9 @@
 *** Variables ***
+<<<<<<< HEAD
 ${URL}    http://localhost:4200/search
+=======
+${URL}    http://localhost/4200
+>>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 
 *** Keywords ***
 
