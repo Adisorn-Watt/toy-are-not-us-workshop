@@ -3,9 +3,9 @@
   <div class="card-header centerTopic">
     <h4>Payment Methods</h4>
   </div>
-  <div class="column">
-    <div class="table-responsive">
-      <table class="table">
+  <div class="table-responsive">
+    <table class="table">
+      <td width="70%" align="left">
         <thead>
           <tr>
             <th>Product Picture</th>
@@ -36,21 +36,35 @@
             <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
           </tr>
         </tbody>
-      </table>
-    </div>
+      </td>
+      <td width="40%" align="left">
+        <h5>Order Summary</h5>
+        <p>Items(1):</p>
+        <p>Shipping Fee:</p>
+        <p>Order total:</p>
+      </td>
+      <tr>
+        <td align="left" colspan="3">
+          <br />
+          Shipping Method: EMS
+          <br />
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
+
 <div class="card">
   <div class="card-body">
     <h5>Select payment methods</h5>
     <div class="radio">
-      <label><input type="radio" name="optradio" checked />Credit Cards</label>
+      <label><input type="radio" name="optradio" checked /> Credit Cards</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio" />Debit Cards</label>
+      <label><input type="radio" name="optradio" /> Debit Cards</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio" />Line Pay</label>
+      <label><input type="radio" name="optradio" /> Line Pay</label>
     </div>
   </div>
 </div>
