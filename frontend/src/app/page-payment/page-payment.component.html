@@ -39,9 +39,13 @@
       </td>
       <td width="40%" align="left">
         <h5>Order Summary</h5>
-        <p style="text-indent: 30px;">Items(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB</p>
+        <p style="text-indent: 30px;">
+          Items(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB
+        </p>
         <p style="text-indent: 30px;">Shipping Fee: 30.00 THB</p>
-        <p style="text-indent: 30px;">Order total: {{ (toy.toyPrice * 31.5 + 30).toFixed(2) }} THB</p>
+        <p style="text-indent: 30px;">
+          Order total: {{ (toy.toyPrice * 31.5 + 30).toFixed(2) }} THB
+        </p>
       </td>
       <tr>
         <td align="left" colspan="3">
@@ -79,16 +83,12 @@
 
 <div class="card">
   <div class="card-body" style="text-align: right;">
-<<<<<<< HEAD
     <button
-      class="btn btn-outline-secondary"
-      id="btn_order"
+      class="btn btn-primary"
       [routerLink]="['/order-success']"
+      id="btn_order"
       style="width: 200px;"
     >
-=======
-    <button class="btn btn-primary" [routerLink]="['/order-success']" style="width: 200px;">
->>>>>>> 93efd2e9d699a44c34cbba0fbacf6e5d9d2a5aae
       <i class="fa fa-chevron-right"></i> Place your order
     </button>
   </div>
