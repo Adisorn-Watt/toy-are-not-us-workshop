@@ -16,7 +16,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   toy: Product;
   subscription: Subscription;
   ngOnInit(): void {
-    this.service.getSelectedID().subscribe((id) => {
+    this.service.currentSelectedID.subscribe((id) => {
       this.toyID = id;
       console.log(`toyId = ${id}`);
       this.service.getAllProduct().subscribe((toys) => {
@@ -26,7 +26,5 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
       });
     });
   }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 }

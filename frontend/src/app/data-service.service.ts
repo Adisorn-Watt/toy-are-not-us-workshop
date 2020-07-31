@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from './models/product';
-import { combineLatest, Observable, of, Subject } from 'rxjs';
+import { combineLatest, Observable, of, Subject, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -9,24 +9,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DataServiceService {
   // constructor(private http: HttpClient) {}
 
-  private cartDetail = new Subject<string>();
-  private selectedID = new Subject<string>();
+  private cartDetail = new BehaviorSubject('');
+  currentCartDetail = this.cartDetail.asObservable();
+  private selectedID = new BehaviorSubject('');
+  currentSelectedID = this.selectedID.asObservable();
 
   constructor() {}
 
-  getCartDetail(): Observable<string> {
-    return this.cartDetail.asObservable();
-  }
-
-  updateCartDetail(message: string): void {
+  updateCartDetail(message: string) {
     this.cartDetail.next(message);
   }
 
-  getSelectedID(): Observable<string> {
-    return this.selectedID.asObservable();
-  }
-
-  updateSelectedID(message: string): void {
+  updateSelectedID(message: string) {
     this.selectedID.next(message);
   }
 

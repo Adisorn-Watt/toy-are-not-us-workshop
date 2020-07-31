@@ -27,7 +27,7 @@
             product available
             <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4>
             product unavailable
-            <h4 *ngIf="toy.toyAvailable" style="color: red;">
+            <h4 *ngIf="!toy.toyAvailable" style="color: red;">
               Out of Stock
             </h4>
             <button style="color: red;">Delete</button>
@@ -63,7 +63,7 @@
 <div class="card">
   <div class="card-body" style="text-align: right;">
     <button
-      class="btn btn-outline-secondary"
+      class="btn btn-primary"
       [routerLink]="['/shipping-address']"
       style="width: 200px;"
     >

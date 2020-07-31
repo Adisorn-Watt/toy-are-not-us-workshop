@@ -27,9 +27,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.service.updateSelectedID(this.toy.toyID);
-  }
-  updateID(): void {
-    this.service.updateSelectedID(this.toy.toyID);
-    console.log('update');
+    alert(`update_${this.toy.toyID}`);
   }
 }
