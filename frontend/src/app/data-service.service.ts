@@ -18,6 +18,12 @@ export class DataServiceService {
   public dataSubject = new Subject<number>();
   public dataState = this.dataSubject.asObservable();
 
+  public shipping = {
+    kerry: 35.0,
+    lineman: 20.0,
+    EMS: 30.0,
+  } as object;
+
   private cartDetail = new BehaviorSubject('');
   currentCartDetail = this.cartDetail.asObservable();
   private selectedID = new BehaviorSubject('');
