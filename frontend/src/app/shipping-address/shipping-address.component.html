@@ -1,15 +1,43 @@
-Full name
-<input type="text" [(ngModel)]="inputFullName"> <br>
-Address 1
-<input type="text" [(ngModel)]="inputAddress01"> <br>
-Address 2
-<input type="text" [(ngModel)]="inputAddress02"> <br>
-City
-<input type="text" [(ngModel)]="inputCity"> <br>
-Province
-<input type="text" [(ngModel)]="inputProvince"> <br>
-Post code
-<input type="text" [(ngModel)]="inputPostCode"> <br>
+<div class="card">
+  <div class="card-header">
+    Shipping address
+  </div>
+
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col-md-4" style="text-align: right;">Full name:</div>
+      <div class="col-md-8"><input type="text" [(ngModel)]="inputFullName"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" style="text-align: right;">Address 1:</div>
+      <div class="col-md-8"><input type="text" [(ngModel)]="inputAddress01"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" style="text-align: right;">Address 2:</div>
+      <div class="col-md-8"><input type="text" [(ngModel)]="inputAddress02"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" style="text-align: right;">City:</div>
+      <div class="col-md-8"><input type="text" [(ngModel)]="inputCity"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" style="text-align: right;">Province:</div>
+      <div class="col-md-8"><input type="text" [(ngModel)]="inputProvince"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" style="text-align: right;">Post code:</div>
+      <div class="col-md-8"><input type="text" [(ngModel)]="inputPostCode"></div>
+    </div>
+
+  </div>
+</div>
+
 
 <button class="btn btn-outline-secondary" [routerLink]="['/payment']" style="width: 200px;">
   <i class="fa fa-chevron-right"></i> Deliver to this address
