@@ -18,24 +18,19 @@
       <tbody>
         <tr>
           <th>
-            <img
-              src="https://i3.sndcdn.com/avatars-qgCqB1ryryQ5LUBz-2jFd8g-t500x500.jpg"
-              width="100px"
-            />
+            <img src="{{ toy.toyImage }}" width="50px" />
           </th>
           <th>
-            <!-- {{ toy.toyName }} by {{ toy.toyBrand }}
-            <br>
-            {{ toy.toyGender }} {{ toy.toyAge }}  -->
-            Name by Brand
+            {{ toy.toyName }} by {{ toy.toyBrand }}
             <br />
-            Gender Age
-            <h5 style="color: green;">In Stock</h5>
+            {{ toy.toyGender }} {{ toy.toyAge }}
+            product available
+            <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4>
+            product unavailable
+            <h4 *ngIf="!toy.toyAvailable" style="color: red;">
+              Out of Stock
+            </h4>
             <button style="color: red;">Delete</button>
-            <!-- product available -->
-            <!-- <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4> -->
-            <!-- product unavailable -->
-            <!-- <h4 *ngIf="toy.toyAvailable" style="color: red;">Out of Stock</h4> -->
           </th>
           <th>
             <select>
@@ -43,7 +38,7 @@
               <option value="01">1</option>
             </select>
           </th>
-          <th>1699</th>
+          <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
         </tr>
       </tbody>
     </table>
