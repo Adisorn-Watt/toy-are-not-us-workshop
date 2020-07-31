@@ -13,7 +13,7 @@ ${URL}    http://localhost:4200/search
     เช็คข้อมูลสินค้าและราคารวม    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
     เลือกวิธีจัดส่งสินค้า
     Checkout
-    กรอกที่อยู่จัดส่ง
+    กรอกที่อยู่จัดส่ง    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}
     ยืนยันที่อยู่
     เลือกวิธีการชำระเงิน    ${SHIPPING_METHOD}
     เช็ครายละเอียดของสินค้าที่สั่ง
@@ -137,29 +137,31 @@ Checkout
 #Shipping
 กรอกที่อยู่จัดส่ง
     [Arguments]    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}
-   กรอกชื่อ    ${NAME}
-   กรอกที่อยู่แถว 1   ${ADDESS1}
-   กรอกที่อยู่แถว 2    ${ADDESS2}
-   กรอกเมือง     ${CITY}
-   กรอกจังหวัด    ${PROVINCE}
-   กรอกรหัสไปรษณีย์   ${POSTCODE}
-ยืนยันที่อยู่
-   กด deliver to this address  
+#    กรอกชื่อ    ${NAME}
+#    กรอกที่อยู่แถว 1   ${ADDESS1}
+#    กรอกที่อยู่แถว 2    ${ADDESS2}
+#    กรอกเมือง     ${CITY}
+#    กรอกจังหวัด    ${PROVINCE}
+#    กรอกรหัสไปรษณีย์   ${POSTCODE}
+# ยืนยันที่อยู่
+#    กด deliver to this address  
 
-กรอกชื่อ    
-   Input Text    full_name    ${NAME}
-กรอกที่อยู่แถว 1    
-   Input Text    addess1    ${ADDESS1}
-กรอกที่อยู่แถว 2    
-   Input Text    addess2     ${ADDESS2}
-กรอกเมือง    
-   Input Text    city    ${CITY}
-กรอกจังหวัด    
-   Input Text    province    ${PROVINCE}
-กรอกรหัสไปรษณีย์    
-   Input Text    post_code    ${POSTCODE}
-กด deliver to this address    
-   Click Button    btn_deliver
+# กรอกชื่อ    
+   Input Text    id:inputFullname    ${NAME}
+# กรอกที่อยู่แถว 1    
+   Input Text    id:inputAddress    ${ADDESS1}
+# กรอกที่อยู่แถว 2    
+   Input Text    id:inputAddress2     ${ADDESS2}
+# กรอกเมือง    
+   Input Text    id:inputCity    ${CITY}
+# กรอกจังหวัด    
+    Mouse over    //*[@id="province"]
+    Click Element    //*[@id="province"]/option[34]
+# กรอกรหัสไปรษณีย์    
+   Input Text    id:post_code    ${POSTCODE}
+# กด deliver to this address    
+ยืนยันที่อยู่
+   Click Button    id:btn_deliver
 
 #ขวัญ
 เลือกวิธีการชำระเงิน
