@@ -327,11 +327,7 @@ export class DataServiceService {
       'GreekToys'
     );
     const p31 = new Product(
-<<<<<<< HEAD
-      'https://lh3.googleusercontent.com/proxy/5QrFbd0mkhTxb8Uq6E7UE6DB1bZ3u8MUzJirsKJz7EQ90vl74kmcZ6qXXy8_d7HVCOderrxFome_a4XwiUwg6AkQcRPiQx6_FCRUQmO0AmqQ3QH-kgxhon1jyx5uhEx',
-=======
       'https://lh3.googleusercontent.com/proxy/wkGlNXCWT9cQ-OurcEW3OKH66xFoX9Ti1tw7OSoeNdnbM0V-Hvxk26uqL0QtdeYyOZC86HMKyTnCjC1pvb57oBsRzzeSMQCFChoQcpS94EBvpA8NbJpsK3lIa3nvGcfU',
->>>>>>> a2f0b7c9cd426828643b3f96a896f6385e26ed4d
       '12',
       'Twilight Board Game',
       'Neutral',
