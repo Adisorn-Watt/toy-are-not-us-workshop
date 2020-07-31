@@ -114,14 +114,3 @@ Checkout
     Wait Until Page Contains    ${PRODUCT_AVAILABLE}
     Wait Until Page Contains    ${TOTAL_PRICE}
     Wait Until Page Contains    ${PRICEnSHIPPING}
-#     เช็คข้อมูลสินค้าที่สั่ง
-#     เช็คราคาค่าของทั้งหมด
-#     เช็คราคาค่าส่ง
-#     เช็คราคารวม
-#     เช็ควิธีการชำระเงิน
-#     เช็ควิธีการจัดส่ง
-# เช็ค Order Number
-#     [Arguments]    ${number}
-#     Wait Until Element Contains    order_no    ${number}
-# เช็ควิธีการชำระเงิน
-#     Wait Until Element Contains    pay_method    linepay
