@@ -5,7 +5,7 @@ ${URL}    http://localhost:4200/search
 *** Keywords ***
 
 ซื้อของในร้านค้า
-    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
+    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}    ${PRICEnSHIPPING}    ${ORDER_NO}
     เปิดเว็ป
     Search สินค้าที่ต้องการ    ${PRODUCT_AGE}    ${PRODUCT_GENDER}    
     เช็คข้อมูลสินค้า     ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}    
@@ -16,10 +16,10 @@ ${URL}    http://localhost:4200/search
     กรอกที่อยู่จัดส่ง    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}
     ยืนยันที่อยู่
     เลือกวิธีการชำระเงิน    
-    เช็ครายละเอียดของสินค้าที่สั่ง    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
+    เช็ครายละเอียดของสินค้าที่สั่ง    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}    ${PRICEnSHIPPING}
     กดยืนยันการสั่งซื้อ
-    # เช็คหมายเลขคำสั่งซื้อ
-    # ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+    เช็คหมายเลขคำสั่งซื้อ   ${ORDER_NO}
+    ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}    ${PRICEnSHIPPING}
     ปิดเว็ป
 
 เปิดเว็ป
@@ -57,7 +57,7 @@ Search สินค้าที่ต้องการ
     [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}   
     Wait Until Page Contains    ${PRODUCT_NAME}
     Wait Until Page Contains    ${PRODUCT_GENDER}
-    Wait Until Page Contains   ${PRODUCT_GENDER}
+    Wait Until Page Contains    ${PRODUCT_BRAND}
     Wait Until Page Contains    ${PRODUCT_AGE}
     Wait Until Page Contains    ${PRODUCT_AVAILABLE}
     Wait Until Page Contains    ${PRODUCT_QUANTITY}
@@ -87,28 +87,30 @@ Checkout
 เลือกวิธีการชำระเงิน
     Click Element    id:Line_pay
 เช็ครายละเอียดของสินค้าที่สั่ง
-    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
+    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}    ${PRICEnSHIPPING}
    Wait Until Page Contains    ${PRODUCT_NAME}
    Wait Until Page Contains    ${PRODUCT_GENDER}
-   Wait Until Page Contains   ${PRODUCT_GENDER}
+   Wait Until Page Contains    ${PRODUCT_BRAND}
    Wait Until Page Contains    ${PRODUCT_AGE}
    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
+   Wait Until Page Contains    ${TOTAL_PRICE}
+   Wait Until Page Contains    ${PRICEnSHIPPING}
 
 กดยืนยันการสั่งซื้อ
     Click Button    id:btn_order
 
 #thankyou page
-# เช็คหมายเลขคำสั่งซื้อ
+เช็คหมายเลขคำสั่งซื้อ
+    [Arguments]    ${ORDER_NO}
+    Wait Until Page Contains    Thank you
+    Wait Until Page Contains    ${ORDER_NO}
 #     เช็ค Order Number    20200731001
-# ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
-#     เช็คข้อมูลสินค้าที่สั่ง
-#     เช็คราคาค่าของทั้งหมด
-#     เช็คราคาค่าส่ง
-#     เช็คราคารวม
-#     เช็ควิธีการชำระเงิน
-#     เช็ควิธีการจัดส่ง
-# เช็ค Order Number
-#     [Arguments]    ${number}
-#     Wait Until Element Contains    order_no    ${number}
-# เช็ควิธีการชำระเงิน
-#     Wait Until Element Contains    pay_method    linepay
+ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ
+    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}    ${PRICEnSHIPPING}
+    Wait Until Page Contains    ${PRODUCT_NAME}
+    Wait Until Page Contains    ${PRODUCT_GENDER}
+    Wait Until Page Contains    ${PRODUCT_BRAND}
+    Wait Until Page Contains    ${PRODUCT_AGE}
+    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
+    Wait Until Page Contains    ${TOTAL_PRICE}
+    Wait Until Page Contains    ${PRICEnSHIPPING}
