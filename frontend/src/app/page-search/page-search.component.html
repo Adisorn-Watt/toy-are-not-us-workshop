@@ -55,7 +55,8 @@
           <tr
             *ngFor="let toy of toyList | product: age:gender"
             [routerLink]="['/search', toy.toyID]"
-            id="`list_${toy.toyID}`"
+            id="product_{{ toy.toyID }}"
+            }}
           >
             <th><img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
