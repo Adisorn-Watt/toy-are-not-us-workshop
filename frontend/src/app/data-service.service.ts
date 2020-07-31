@@ -287,7 +287,7 @@ export class DataServiceService {
       'GreekToys'
     );
     const p27 = new Product(
-      'https://lh3.googleusercontent.com/proxy/x3UKpuMTmAXUQQlc-j3a0xN6o7waN3ORwkZJgF20OiVGDzHmpc8sr7daSEP-DVHfgsQr1US2J4U58M_5u1aoh7VJVMdgM9Ylt6X5CGEgqE99k4KiO0Uwu8rifRIspU2ITRqxRrnbAq606vREomMPhfDLVW5EB091amPKH5traBaAIRgynMSPoQzEO82XTZhM8wZmmxWaDdXXxUUhrDfqCMlQqhsrpw0I8pqPMql7UMFs8Gf8OVyt9lDPYi9z9rec4Gadc9BoQOfdkGgHkxsSvfVizZa3bIetnOiA5i32HOJBnLicAZ7q4oodoUlzjJm1AaBkoGLlStXDeUZIJEroPt4',
+      'https://lh3.googleusercontent.com/proxy/yXHy7GeUTsAKQUSHF-lNTZf4l7o8mwuzTt1q9p1WgHcnS-S_WeO8iwpuVMXLvhDGQ5prqP8fP7lgyjZPMQZiGYYg-Sm9Byv-bovwNUwtdSFCMrHgyep5Nje7kOEhVTYW',
       '25',
       'Sleep Sheep',
       'Neutral',
@@ -327,7 +327,7 @@ export class DataServiceService {
       'GreekToys'
     );
     const p31 = new Product(
-      'https://lh3.googleusercontent.com/proxy/wkGlNXCWT9cQ-OurcEW3OKH66xFoX9Ti1tw7OSoeNdnbM0V-Hvxk26uqL0QtdeYyOZC86HMKyTnCjC1pvb57oBsRzzeSMQCFChoQcpS94EBvpA8NbJpsK3lIa3nvGcfU',
+      'https://cf.geekdo-images.com/opengraph/img/mVbEV5n7Ip5BhhL975QuxT35Ykc=/fit-in/1200x630/pic761615.jpg',
       '12',
       'Twilight Board Game',
       'Neutral',
