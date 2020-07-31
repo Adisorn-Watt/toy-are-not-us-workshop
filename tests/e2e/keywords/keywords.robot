@@ -214,7 +214,7 @@ Checkout
 #     [Arguments]    ${TOTAL_COST}
 #     Wait Until Element Contains    total    ${TOTAL_COST}
 # กดคอนเฟิร์มออร์เดอร์
-    Click Button    btn_order
+    Click Button    id:btn_order
 
 #thankyou page
 เช็คหมายเลขคำสั่งซื้อ
