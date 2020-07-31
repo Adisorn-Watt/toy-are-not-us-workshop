@@ -1,5 +1,5 @@
 *** Variables ***
-${URL}    http://www.localhost.com
+${URL}    http://localhost/4200
 
 *** Keywords ***
 

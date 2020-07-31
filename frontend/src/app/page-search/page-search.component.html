@@ -7,24 +7,32 @@
       <div class="col-md-4">
         <label>Age :</label>
         <br />
-        <select [(ngModel)]="age" name="age" class="form-control">
-          <option value="">Select age..</option>
-          <option value="Baby">Baby</option>
-          <option value="Toddler">Toddler</option>
-          <option value="3 to 5">3 to 5</option>
-          <option value="6 to 8">6 to 8</option>
-          <option value="Over 8">Over 8</option>
+        <select [(ngModel)]="age" id="age" name="age" class="form-control">
+          <option id="age" value="">Select age..</option>
+          <option id="baby" value="Baby">Baby</option>
+          <option id="toddler" value="Toddler">Toddler</option>
+          <option id="3to5" value="3 to 5">3 to 5</option>
+          <option id="6to8" value="6 to 8">6 to 8</option>
+          <option id="over8" value="Over 8">Over 8</option>
         </select>
       </div>
       <div class="col-md-4">
         <label>Gender:</label>
         <br />
-        <select [(ngModel)]="gender" name="gender" class="form-control">
-          <option value="">Select gender..</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Neutral">Neutral</option>
+        <select
+          [(ngModel)]="gender"
+          id="gender"
+          name="gender"
+          class="form-control"
+        >
+          <option id="gender" value="">Select gender..</option>
+          <option id="male" value="Male">Male</option>
+          <option id="female" value="Female">Female</option>
+          <option id="neutral" value="Neutral">Neutral</option>
         </select>
+        <!-- <button id="btn_search" type="button" class="btn btn-dark"> -->
+        <!-- Search -->
+        <!-- </button> -->
       </div>
     </div>
 
