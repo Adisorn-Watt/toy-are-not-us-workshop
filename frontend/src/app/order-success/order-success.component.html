@@ -2,6 +2,16 @@
   <h1>Thank you</h1>
 </div>
 <br />
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <h5>
+        Order Number: {{ time | date: "yyyyMMdd" }}{{ randomNumber || 0 }}
+      </h5>
+    </div>
+  </div>
+</div>
+<br />
 <!-- <div class="card" *ngIf="toy"> -->
 <div class="card">
   <div class="table-responsive">

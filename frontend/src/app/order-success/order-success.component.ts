@@ -6,11 +6,12 @@ import { Product } from '../models/product';
 @Component({
   selector: 'app-order-success',
   templateUrl: './order-success.component.html',
-  styleUrls: ['./order-success.component.css']
+  styleUrls: ['./order-success.component.css'],
 })
 export class OrderSuccessComponent implements OnInit {
-  constructor(private service: DataServiceService) { }
-
+  constructor(private service: DataServiceService) {}
+  time = new Date();
+  randomNumber: number;
   toyID = '';
   toys: Product[] = [];
   toy: Product;
@@ -25,7 +26,6 @@ export class OrderSuccessComponent implements OnInit {
         this.toy = this.toys[0];
       });
     });
+    this.randomNumber = Math.floor(Math.random() * 800) + 100;
   }
-  ngOnDestroy(): void { }
-
 }

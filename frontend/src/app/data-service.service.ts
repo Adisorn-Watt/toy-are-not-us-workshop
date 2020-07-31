@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Product } from './models/product';
-import { combineLatest, Observable, of, Subject, BehaviorSubject } from 'rxjs';
+import {
+  combineLatest,
+  Observable,
+  of,
+  Subject,
+  BehaviorSubject,
+  interval,
+} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -8,6 +15,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DataServiceService {
   // constructor(private http: HttpClient) {}
+  public dataSubject = new Subject<number>();
+  public dataState = this.dataSubject.asObservable();
+
+  public subjectdata(): void {
+    interval(1000).subscribe((x) =>
+      this.dataSubject.next(Math.floor(Math.random() * 800) + 100)
+    );
+  }
 
   private cartDetail = new BehaviorSubject('');
   currentCartDetail = this.cartDetail.asObservable();
