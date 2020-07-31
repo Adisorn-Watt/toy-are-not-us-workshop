@@ -57,14 +57,22 @@
 <div class="card">
   <div class="card-body">
     <h5>Select payment methods</h5>
-    <div class="radio">
-      <label><input type="radio" name="optradio" checked /> Credit Cards</label>
+    <div class="radio" id="pay_option">
+      <label
+        ><input type="radio" id="Credit_card" name="optradio" checked /> Credit
+        Cards</label
+      >
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio" /> Debit Cards</label>
+      <label
+        ><input type="radio" id="Debit_card" name="optradio" /> Debit
+        Cards</label
+      >
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio" /> Line Pay</label>
+      <label
+        ><input type="radio" id="Line_pay" name="optradio" /> Line Pay</label
+      >
     </div>
   </div>
 </div>
@@ -73,6 +81,7 @@
   <div class="card-body" style="text-align: right;">
     <button
       class="btn btn-outline-secondary"
+      id="btn_order"
       [routerLink]="['/order-success']"
       style="width: 200px;"
     >
