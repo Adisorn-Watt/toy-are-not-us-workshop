@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DataServiceService {
   // constructor(private http: HttpClient) {}
 
-  constructor() {}
+  constructor() { }
 
   getAllProduct(): Observable<Product[]> {
     const p1 = new Product(
@@ -287,7 +287,7 @@ export class DataServiceService {
       'GreekToys'
     );
     const p27 = new Product(
-      'https://lh3.googleusercontent.com/proxy/2nw1UAnAuwwtp5o22EO6f0RYlmIqWOhN7BHV9n_QkEh71PgfOod9IFNzyDjuxEcPdB7uqKSz0LAPsmIl-Lf0Z1iDs6Ye0DKGa6-Y1nLyh9R42_Xb5yAfJ_2vUnqhp9zBBPfeiTlRpqir6jDdzD681pIB7lC3Qz8qXYnEmqEKRAAf_Cf4mf4G-IVJBi65DUJWLIHUdmzN49sSjNupBttEj_MLQla41WQW_atr6MKC6LaVn0fAkUKa8CJqQtsQ7em2uXyYw_nGClAL46lmILHTMZCkA36FrniH212YLaN0SyxXaTZU19H2L_Z3n2Oc2gsBcu2xXRTOJcXslkR1rNBdhxA',
+      'https://lh3.googleusercontent.com/proxy/x3UKpuMTmAXUQQlc-j3a0xN6o7waN3ORwkZJgF20OiVGDzHmpc8sr7daSEP-DVHfgsQr1US2J4U58M_5u1aoh7VJVMdgM9Ylt6X5CGEgqE99k4KiO0Uwu8rifRIspU2ITRqxRrnbAq606vREomMPhfDLVW5EB091amPKH5traBaAIRgynMSPoQzEO82XTZhM8wZmmxWaDdXXxUUhrDfqCMlQqhsrpw0I8pqPMql7UMFs8Gf8OVyt9lDPYi9z9rec4Gadc9BoQOfdkGgHkxsSvfVizZa3bIetnOiA5i32HOJBnLicAZ7q4oodoUlzjJm1AaBkoGLlStXDeUZIJEroPt4',
       '25',
       'Sleep Sheep',
       'Neutral',
@@ -327,7 +327,11 @@ export class DataServiceService {
       'GreekToys'
     );
     const p31 = new Product(
+<<<<<<< HEAD
       'https://lh3.googleusercontent.com/proxy/5QrFbd0mkhTxb8Uq6E7UE6DB1bZ3u8MUzJirsKJz7EQ90vl74kmcZ6qXXy8_d7HVCOderrxFome_a4XwiUwg6AkQcRPiQx6_FCRUQmO0AmqQ3QH-kgxhon1jyx5uhEx',
+=======
+      'https://lh3.googleusercontent.com/proxy/wkGlNXCWT9cQ-OurcEW3OKH66xFoX9Ti1tw7OSoeNdnbM0V-Hvxk26uqL0QtdeYyOZC86HMKyTnCjC1pvb57oBsRzzeSMQCFChoQcpS94EBvpA8NbJpsK3lIa3nvGcfU',
+>>>>>>> a2f0b7c9cd426828643b3f96a896f6385e26ed4d
       '12',
       'Twilight Board Game',
       'Neutral',
