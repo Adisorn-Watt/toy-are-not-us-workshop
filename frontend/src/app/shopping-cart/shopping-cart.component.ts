@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Observable, Subscription } from 'rxjs';
 import { Product } from '../models/product';
+import { Cartdetail } from '../models/cartdetail';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,6 +12,7 @@ import { Product } from '../models/product';
 export class ShoppingCartComponent implements OnInit, OnDestroy {
   constructor(private service: DataServiceService) {}
 
+  cart: Cartdetail;
   toyID = '';
   toys: Product[] = [];
   toy: Product;
@@ -24,6 +26,9 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
         this.toys = toys.filter((p) => p.toyID === this.toyID);
         this.toy = this.toys[0];
       });
+    });
+    this.service.currentCartDetail.subscribe((cart) => {
+      this.cart = JSON.parse(cart);
     });
   }
   ngOnDestroy(): void {}
