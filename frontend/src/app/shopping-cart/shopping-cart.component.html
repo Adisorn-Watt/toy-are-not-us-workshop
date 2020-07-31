@@ -24,9 +24,9 @@
             {{ toy.toyName }} by {{ toy.toyBrand }}
             <br />
             {{ toy.toyGender }} {{ toy.toyAge }}
-            product available
+
             <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4>
-            product unavailable
+
             <h4 *ngIf="!toy.toyAvailable" style="color: red;">
               Out of Stock
             </h4>
