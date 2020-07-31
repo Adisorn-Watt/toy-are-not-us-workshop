@@ -38,7 +38,7 @@
               <option value="01">1</option>
             </select>
           </th>
-          <th>{{ toy.toyPrice }}</th>
+          <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
         </tr>
       </tbody>
     </table>
@@ -49,13 +49,15 @@
   <div class="card-body">
     <h5>Select Shipping Method</h5>
     <div class="radio">
-      <label><input type="radio" name="optradio" checked />Kerry</label>
+      <label
+        ><input type="radio" id="kerry" name="optradio" checked />Kerry</label
+      >
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio" />Lineman</label>
+      <label><input type="radio" id="lineman" name="optradio" />Lineman</label>
     </div>
     <div class="radio">
-      <label><input type="radio" name="optradio" />EMS</label>
+      <label><input type="radio" id="EMS" name="optradio" />EMS</label>
     </div>
   </div>
 </div>
@@ -63,7 +65,9 @@
 <div class="card">
   <div class="card-body" style="text-align: right;">
     <button
+      type="submit"
       class="btn btn-primary"
+      id="btn_checkout"
       [routerLink]="['/shipping-address']"
       style="width: 200px;"
     >
