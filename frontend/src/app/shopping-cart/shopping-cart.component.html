@@ -53,31 +53,39 @@
 <div class="card">
   <div class="card-body">
     <h5>Select Shipping Method</h5>
-    <div class="radio" [(ngModel)]="cart.shippingMethod">
-      <label
-        ><input
-          type="radio"
-          id="kerry"
-          name="optradio"
-          value="kerry"
-          checked
-        />Kerry</label
-      >
-    </div>
-    <div class="radio">
-      <label
-        ><input
-          type="radio"
-          id="lineman"
-          name="optradio"
-          value="lineman"
-        />Lineman</label
-      >
-    </div>
-    <div class="radio">
-      <label
-        ><input type="radio" id="EMS" name="optradio" value="EMS" />EMS</label
-      >
+    <div class="form-group">
+      <div class="radio">
+        <label
+          ><input
+            type="radio"
+            id="kerry"
+            name="optradio"
+            value="kerry"
+            ngModel
+          />Kerry</label
+        >
+
+        <label
+          ><input
+            type="radio"
+            id="lineman"
+            name="optradio"
+            value="lineman"
+            ngModel
+          />Lineman</label
+        >
+
+        <label
+          ><input
+            type="radio"
+            id="EMS"
+            name="optradio"
+            value="EMS"
+            ngModel
+            checked
+          />EMS</label
+        >
+      </div>
     </div>
   </div>
 </div>
