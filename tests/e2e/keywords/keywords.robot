@@ -1,6 +1,7 @@
 *** Variables ***
 ${URL}    http://localhost:4200/search
 
+
 *** Keywords ***
 
 ซื้อของในร้านค้า
