@@ -1,1 +1,50 @@
-<p>shopping-cart works!</p>
+<!-- <div class="card" *ngIf="toy"> -->
+<div class="card">
+
+  <div class="card-header centerTopic">
+    <h4>Shopping Cart</h4>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Items</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th>
+            <img src="https://i3.sndcdn.com/avatars-qgCqB1ryryQ5LUBz-2jFd8g-t500x500.jpg" width="50px" />
+          </th>
+          <th>
+            Name <br>
+            Brand <br>
+            Gender <br>
+            Age <br>
+            <h5 style="color: green;">In Stock</h5>
+            <button style="color: red;">Delete</button>
+            <!-- product available -->
+            <!-- <h4 *ngIf="toy.toyAvailable" style="color: green;">In Stock</h4> -->
+            <!-- product unavailable -->
+            <!-- <h4 *ngIf="toy.toyAvailable" style="color: red;">Out of Stock</h4> -->
+          </th>
+          <th>
+            <select>
+              <option value="">choose</option>
+              <option value="01">1</option>
+            </select>
+          </th>
+          <th>1699</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn btn-outline-secondary" [routerLink]="['/shipping-address']" style="width: 200px;">
+    <i class="fa fa-chevron-right"></i> Process to checkout
+  </button>
+</div>
