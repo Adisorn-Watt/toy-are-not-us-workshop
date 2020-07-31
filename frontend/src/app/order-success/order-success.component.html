@@ -50,11 +50,13 @@
       </td>
       <td width="40%" align="left">
         <h5>Order Summary</h5>
-        <p style="text-indent: 30px;">
+        <p id="item_cost" style="text-indent: 30px;">
           Items(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB
         </p>
-        <p style="text-indent: 30px;">Shipping Fee: 30.00 THB</p>
-        <p style="text-indent: 30px;">
+        <p id="shipping_fee" style="text-indent: 30px;">
+          Shipping Fee: 30.00 THB
+        </p>
+        <p id="total" style="text-indent: 30px;">
           Order total: {{ (toy.toyPrice * 31.5 + 30).toFixed(2) }} THB
         </p>
       </td>
@@ -71,11 +73,11 @@
 
 <div class="card">
   <div class="card-body">
-    <div class="row">
+    <div id="shipping_method" class="row">
       <h5>Shipping Method:</h5>
       EMS
     </div>
-    <div class="row">
+    <div id="pay_mrthod" class="row">
       <h5>Payment Method:</h5>
       LinePay
     </div>
