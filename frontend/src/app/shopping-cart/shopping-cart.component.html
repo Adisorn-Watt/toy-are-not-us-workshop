@@ -19,7 +19,7 @@
       <tbody>
         <tr>
           <th>
-            <img src="https://i3.sndcdn.com/avatars-qgCqB1ryryQ5LUBz-2jFd8g-t500x500.jpg" width="50px" />
+            <img src="https://i3.sndcdn.com/avatars-qgCqB1ryryQ5LUBz-2jFd8g-t500x500.jpg" width="100px" />
           </th>
           <th>
             <!-- {{ toy.toyName }} by {{ toy.toyBrand }}
@@ -48,19 +48,27 @@
   </div>
 </div>
 
-<h4>Select Shipping Method </h4>
-<div class="radio">
-  <label><input type="radio" name="optradio" checked>Kerry</label>
-</div>
-<div class="radio">
-  <label><input type="radio" name="optradio">Lineman</label>
-</div>
-<div class="radio">
-  <label><input type="radio" name="optradio">EMS</label>
+<div class="card">
+  <div class="card-body">
+    <h5>Select Shipping Method</h5>
+    <div class="radio">
+      <label><input type="radio" name="optradio" checked>Kerry</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">Lineman</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">EMS</label>
+    </div>
+  </div>
 </div>
 
 
 
-<button class="btn btn-outline-secondary" [routerLink]="['/shipping-address']" style="width: 200px;">
-  <i class="fa fa-chevron-right"></i> Process to checkout
-</button>
+<div class="card">
+  <div class="card-body" style="text-align: right;">
+    <button class="btn btn-outline-secondary" [routerLink]="['/shipping-address']" style="width: 200px;">
+      <i class="fa fa-chevron-right"></i> Process to checkout
+    </button>
+  </div>
+</div>
