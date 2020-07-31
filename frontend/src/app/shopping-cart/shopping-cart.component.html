@@ -30,7 +30,7 @@
             <h4 *ngIf="!toy.toyAvailable" style="color: red;">
               Out of Stock
             </h4>
-            <button style="color: red;">Delete</button>
+            <button id="delete_item" style="color: red;">Delete</button>
           </th>
           <th>
             <select
@@ -89,7 +89,7 @@
           />EMS</label
         ><br />
       </div>
-      <div class="card-body col-md-6">
+      <div id="shipping_fee" class="card-body col-md-6">
         <h5>Subtotal(1 items): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB</h5>
         <h5 *ngIf="cart.shippingMethod === ''">
           Shipping Fee: please select shipping method
