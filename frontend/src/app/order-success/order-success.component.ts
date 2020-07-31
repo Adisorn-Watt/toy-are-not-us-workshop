@@ -26,9 +26,6 @@ export class OrderSuccessComponent implements OnInit {
         this.toy = this.toys[0];
       });
     });
-    this.service.subjectdata();
-    this.subscription = this.service.dataState.subscribe((value: number) => {
-      this.randomNumber = value;
-    });
+    this.randomNumber = Math.floor(Math.random() * 800) + 100;
   }
 }
