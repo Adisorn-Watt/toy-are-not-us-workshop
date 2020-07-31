@@ -35,7 +35,7 @@ Search สินค้าที่ต้องการ
     Mouse over    gender
     Click Element    id:neutral   
     Mouse over    id:product_11
-    Click Element    //*[@id="product_11"]/th[2]
+    Click Element    id:product_11
 
 # Grace's code
 เช็คข้อมูลสินค้า   
@@ -48,6 +48,7 @@ Search สินค้าที่ต้องการ
     Wait Until Page Contains    ${PRODUCT_AVAILABLE}
     Mouse over    id:quantity
     Click Element    //*[@id="quantity"]/option[2]
+    # Click Button    id:quantity    option[2]
 
 กดสินค้าใส่ตะกร้า
     Click Button    id:btn_addcart
