@@ -35,10 +35,10 @@ Search สินค้าที่ต้องการ
     # คลิกเลือกของเล่น    
 
 # เลือกอายุ    
-    Mouse over    //*[@id="age"]
-    Click Element    //*[@id="over8"]
-    Mouse over    //*[@id="gender"]
-    Click Element    //*[@id="neutral"]
+    Mouse over    id:age
+    Click Element    id:over8
+    Mouse over    gender
+    Click Element    id:neutral
     # Select From List by Value    age    ${PRODUCT_AGE}   #over8
 # เลือกเพศ    
     # Select From List by Value    gender    ${PRODUCT_GENDER}   #neutral
@@ -47,7 +47,7 @@ Search สินค้าที่ต้องการ
 # เช็คผลลัพธ์การค้นหา    
     # Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
 # คลิกเลือกของเล่น    
-    Mouse over    //*[@id="product_11"]
+    Mouse over    id:product_11
     Click Element    //*[@id="product_11"]/th[2]
 
 # Grace's code
@@ -79,10 +79,10 @@ Search สินค้าที่ต้องการ
 #เช็คสถานะสินค้า
    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
 # เลือกจำนวนสินค้า
-    Mouse over    //*[@id="quantity"]
+    Mouse over    id:quantity
     Click Element    //*[@id="quantity"]/option[2]
 กดสินค้าใส่ตะกร้า
-    Click Button    //*[@id="btn_addcart"]
+    Click Button    id:btn_addcart
 
 ##fah
 เช็คข้อมูลสินค้าและราคารวม
@@ -126,7 +126,7 @@ Search สินค้าที่ต้องการ
 #    เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
 
 # เลือกวิธีจัดส่ง-EMS 
-    Click Element    //*[@id="EMS"]
+    Click Element    id:EMS
 
 # เช็คราคาค่าจัดส่ง
 #    Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
@@ -155,7 +155,7 @@ Checkout
 # กรอกเมือง    
    Input Text    id:inputCity    ${CITY}
 # กรอกจังหวัด    
-    Mouse over    //*[@id="province"]
+    Mouse over    id:province
     Click Element    //*[@id="province"]/option[34]
 # กรอกรหัสไปรษณีย์    
    Input Text    id:post_code    ${POSTCODE}
@@ -165,7 +165,7 @@ Checkout
 
 #ขวัญ
 เลือกวิธีการชำระเงิน
-    Click Element    //*[@id="Line_pay"]
+    Click Element    id:Line_pay
 เช็ครายละเอียดของสินค้าที่สั่ง
     [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
     # 
