@@ -30,6 +30,9 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     this.service.currentCartDetail.subscribe((cart) => {
       this.cart = JSON.parse(cart);
     });
+    this.cart.shippingMethod = 'EMS';
   }
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.service.updateCartDetail(JSON.stringify(this.cart));
+  }
 }
