@@ -112,7 +112,7 @@ Search สินค้าที่ต้องการ
    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
 
 # เช็คราคาสินค้า
-   Wait Until Page Contains    ${PRODUCT_PRICE}
+#    Wait Until Page Contains    ${PRODUCT_PRICE}
 
 # เช็คจำนวนสินค้า
    Wait Until Page Contains    ${PRODUCT_QUANTITY}
@@ -121,9 +121,9 @@ Search สินค้าที่ต้องการ
    Wait Until Page Contains    ${TOTAL_PRICE}
 
 เลือกวิธีจัดส่งสินค้า
-    [Arguments]    ${SHIPPING_METHOD}    ${SHIPPING_FEE}
-   เลือกวิธีจัดส่ง-EMS   ${SHIPPING_METHOD}
-   เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
+#     [Arguments]    ${SHIPPING_METHOD}    ${SHIPPING_FEE}
+#    เลือกวิธีจัดส่ง-EMS   ${SHIPPING_METHOD}
+#    เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
 
 # เลือกวิธีจัดส่ง-EMS 
     Click Element    //*[@id="EMS"]
