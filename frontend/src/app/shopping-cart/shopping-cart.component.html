@@ -33,9 +33,14 @@
             <button style="color: red;">Delete</button>
           </th>
           <th>
-            <select>
-              <option value="">choose</option>
-              <option value="01">1</option>
+            <select
+              [(ngModel)]="cart.quantity"
+              id="quantity"
+              name="quantity"
+              class="form-control"
+            >
+              <option value="0">choose</option>
+              <option value="1">1</option>
             </select>
           </th>
           <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
@@ -48,16 +53,31 @@
 <div class="card">
   <div class="card-body">
     <h5>Select Shipping Method</h5>
-    <div class="radio">
+    <div class="radio" [(ngModel)]="cart.shippingMethod">
       <label
-        ><input type="radio" id="kerry" name="optradio" checked />Kerry</label
+        ><input
+          type="radio"
+          id="kerry"
+          name="optradio"
+          value="kerry"
+          checked
+        />Kerry</label
       >
     </div>
     <div class="radio">
-      <label><input type="radio" id="lineman" name="optradio" />Lineman</label>
+      <label
+        ><input
+          type="radio"
+          id="lineman"
+          name="optradio"
+          value="lineman"
+        />Lineman</label
+      >
     </div>
     <div class="radio">
-      <label><input type="radio" id="EMS" name="optradio" />EMS</label>
+      <label
+        ><input type="radio" id="EMS" name="optradio" value="EMS" />EMS</label
+      >
     </div>
   </div>
 </div>
