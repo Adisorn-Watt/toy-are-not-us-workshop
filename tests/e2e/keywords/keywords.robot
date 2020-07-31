@@ -5,12 +5,12 @@ ${URL}    http://localhost:4200/search
 *** Keywords ***
 
 ซื้อของในร้านค้า
-    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}
+    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
     เปิดเว็ป
     Search สินค้าที่ต้องการ    ${PRODUCT_AGE}    ${PRODUCT_GENDER}    
     เช็คข้อมูลสินค้า     ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}    
     กดสินค้าใส่ตะกร้า
-    เช็คข้อมูลสินค้าและราคารวม
+    เช็คข้อมูลสินค้าและราคารวม    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}
     เลือกวิธีจัดส่งสินค้า
     Checkout
     กรอกที่อยู่จัดส่ง
@@ -86,8 +86,7 @@ Search สินค้าที่ต้องการ
 
 ##fah
 เช็คข้อมูลสินค้าและราคารวม
-    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}
-    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}   
+    [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}   
 #    เช็คชื่อสินค้า2    ${PRODUCT_NAME} 
 #    เช็คแบรนด์สินค้า     ${PRODUCT_BRAND}
 #    เช็คเพศที่เหมาะสม      ${PRODUCT_GENDER}
@@ -100,40 +99,40 @@ Search สินค้าที่ต้องการ
 # เช็คชื่อสินค้า2
    Wait Until Page Contains    ${PRODUCT_NAME}
 
-เช็คแบรนด์สินค้า
+# เช็คแบรนด์สินค้า
    Wait Until Page Contains    ${PRODUCT_GENDER}
 
-เช็คเพศที่เหมาะสม
-   Wait Until Element Contains    toy_gender   ${PRODUCT_GENDER}
+# เช็คเพศที่เหมาะสม
+   Wait Until Page Contains   ${PRODUCT_GENDER}
 
-เช็คอายุที่เหมาะสม
-   Wait Until Element Contains    toy_age    ${PRODUCT_AGE}
+# เช็คอายุที่เหมาะสม
+   Wait Until Page Contains    ${PRODUCT_AGE}
 
-เช็คสถานะสินค้า
-   Wait Until Element Contains    toy_available    ${PRODUCT_AVAILABLE}
+# เช็คสถานะสินค้า
+   Wait Until Page Contains    ${PRODUCT_AVAILABLE}
 
-เช็คราคาสินค้า
-   Wait Until Element Contains    toy_price    ${PRODUCT_PRICE}
+# เช็คราคาสินค้า
+#    Wait Until Page Contains    ${PRODUCT_PRICE}
 
-เช็คจำนวนสินค้า
-   Wait Until Element Contains    toy_quantity    ${PRODUCT_QUANTITY}
+# เช็คจำนวนสินค้า
+   Wait Until Page Contains    ${PRODUCT_QUANTITY}
 
-เช็คราคาสินค้าทั้งหมด
-   Wait Until Element Contains    subtotal    ${TOTAL_PRICE}
+# เช็คราคาสินค้าทั้งหมด
+   Wait Until Page Contains    ${TOTAL_PRICE}
 
 เลือกวิธีจัดส่งสินค้า
-    [Arguments]    ${SHIPPING_METHOD}    ${SHIPPING_FEE}
-   เลือกวิธีจัดส่ง-EMS   ${SHIPPING_METHOD}
-   เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
+#     [Arguments]    ${SHIPPING_METHOD}    ${SHIPPING_FEE}
+#    เลือกวิธีจัดส่ง-EMS   ${SHIPPING_METHOD}
+#    เช็คราคาค่าจัดส่ง    ${SHIPPING_FEE}
 
-เลือกวิธีจัดส่ง-EMS 
-   Select radio button    shipping_method    ${SHIPPING_METHOD}
+# เลือกวิธีจัดส่ง-EMS 
+    Click Element    //*[@id="EMS"]
 
-เช็คราคาค่าจัดส่ง
-   Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
+# เช็คราคาค่าจัดส่ง
+#    Wait Until Element Contains    shipping_fee    ${SHIPPING_FEE}
 
 Checkout
-   Click Button    btn_checkout
+   Click Button    id:btn_checkout
 
 #Shipping
 กรอกที่อยู่จัดส่ง
