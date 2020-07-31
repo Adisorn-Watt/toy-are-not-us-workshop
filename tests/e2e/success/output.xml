@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 15:13:18.474" rpa="false">
-<suite id="s1" name="Shopping" source="C:\Users\phisonkha\Desktop\Allianz traning\Test workshop\toy-are-not-us-workshop\tests\e2e\success\shopping.robot">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 15:42:36.577" rpa="false">
+<suite id="s1" name="Shopping" source="C:\Users\chatchanokwon\Documents\toy-are-not-us-workshop-master\tests\e2e\success\shopping.robot">
 <test id="s1-t1" name="นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay">
 <kw name="ซื้อของในร้านค้า" library="keywords">
 <arguments>
@@ -19,6 +19,8 @@
 <arg>linepay</arg>
 <arg>1</arg>
 <arg>1102.19</arg>
+<arg>1132.19</arg>
+<arg>20200731</arg>
 </arguments>
 <kw name="เปิดเว็ป" library="keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -27,10 +29,10 @@
 <arg>${URL}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200731 15:13:19.847" level="INFO">Opening browser 'chrome' to base url 'http://localhost:4200/search'.</msg>
-<status status="PASS" starttime="20200731 15:13:19.844" endtime="20200731 15:13:38.313"></status>
+<msg timestamp="20200731 15:42:37.254" level="INFO">Opening browser 'chrome' to base url 'http://localhost:4200/search'.</msg>
+<status status="PASS" starttime="20200731 15:42:37.253" endtime="20200731 15:42:45.199"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:19.843" endtime="20200731 15:13:38.313"></status>
+<status status="PASS" starttime="20200731 15:42:37.252" endtime="20200731 15:42:45.200"></status>
 </kw>
 <kw name="Search สินค้าที่ต้องการ" library="keywords">
 <arguments>
@@ -42,50 +44,50 @@
 <arguments>
 <arg>id:age</arg>
 </arguments>
-<msg timestamp="20200731 15:13:38.317" level="INFO">Simulating Mouse Over on element 'id:age'.</msg>
-<status status="PASS" starttime="20200731 15:13:38.316" endtime="20200731 15:13:38.708"></status>
+<msg timestamp="20200731 15:42:45.201" level="INFO">Simulating Mouse Over on element 'id:age'.</msg>
+<status status="PASS" starttime="20200731 15:42:45.201" endtime="20200731 15:42:45.542"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>id:over8</arg>
 </arguments>
-<msg timestamp="20200731 15:13:38.709" level="INFO">Clicking element 'id:over8'.</msg>
-<status status="PASS" starttime="20200731 15:13:38.708" endtime="20200731 15:13:38.976"></status>
+<msg timestamp="20200731 15:42:45.543" level="INFO">Clicking element 'id:over8'.</msg>
+<status status="PASS" starttime="20200731 15:42:45.543" endtime="20200731 15:42:45.723"></status>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
 <arg>gender</arg>
 </arguments>
-<msg timestamp="20200731 15:13:38.977" level="INFO">Simulating Mouse Over on element 'gender'.</msg>
-<status status="PASS" starttime="20200731 15:13:38.976" endtime="20200731 15:13:39.457"></status>
+<msg timestamp="20200731 15:42:45.724" level="INFO">Simulating Mouse Over on element 'gender'.</msg>
+<status status="PASS" starttime="20200731 15:42:45.723" endtime="20200731 15:42:46.120"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>id:neutral</arg>
 </arguments>
-<msg timestamp="20200731 15:13:39.458" level="INFO">Clicking element 'id:neutral'.</msg>
-<status status="PASS" starttime="20200731 15:13:39.457" endtime="20200731 15:13:39.720"></status>
+<msg timestamp="20200731 15:42:46.122" level="INFO">Clicking element 'id:neutral'.</msg>
+<status status="PASS" starttime="20200731 15:42:46.121" endtime="20200731 15:42:46.267"></status>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
 <arg>id:product_11</arg>
 </arguments>
-<msg timestamp="20200731 15:13:39.721" level="INFO">Simulating Mouse Over on element 'id:product_11'.</msg>
-<status status="PASS" starttime="20200731 15:13:39.721" endtime="20200731 15:13:40.167"></status>
+<msg timestamp="20200731 15:42:46.267" level="INFO">Simulating Mouse Over on element 'id:product_11'.</msg>
+<status status="PASS" starttime="20200731 15:42:46.267" endtime="20200731 15:42:46.614"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>//*[@id="product_11"]/th[2]</arg>
 </arguments>
-<msg timestamp="20200731 15:13:40.168" level="INFO">Clicking element '//*[@id="product_11"]/th[2]'.</msg>
-<status status="PASS" starttime="20200731 15:13:40.168" endtime="20200731 15:13:40.997"></status>
+<msg timestamp="20200731 15:42:46.614" level="INFO">Clicking element '//*[@id="product_11"]/th[2]'.</msg>
+<status status="PASS" starttime="20200731 15:42:46.614" endtime="20200731 15:42:46.962"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:38.314" endtime="20200731 15:13:40.998"></status>
+<status status="PASS" starttime="20200731 15:42:45.200" endtime="20200731 15:42:46.962"></status>
 </kw>
 <kw name="เช็คข้อมูลสินค้า" library="keywords">
 <arguments>
@@ -101,60 +103,60 @@
 <arguments>
 <arg>${PRODUCT_NAME}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:41.001" endtime="20200731 15:13:41.286"></status>
+<status status="PASS" starttime="20200731 15:42:46.965" endtime="20200731 15:42:47.080"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_BRAND}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:41.286" endtime="20200731 15:13:41.405"></status>
+<status status="PASS" starttime="20200731 15:42:47.081" endtime="20200731 15:42:47.152"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_GENDER}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:41.405" endtime="20200731 15:13:41.558"></status>
+<status status="PASS" starttime="20200731 15:42:47.152" endtime="20200731 15:42:47.201"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_AGE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:41.558" endtime="20200731 15:13:41.640"></status>
+<status status="PASS" starttime="20200731 15:42:47.201" endtime="20200731 15:42:47.242"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_PRICE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:41.640" endtime="20200731 15:13:41.723"></status>
+<status status="PASS" starttime="20200731 15:42:47.243" endtime="20200731 15:42:47.284"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_AVAILABLE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:41.723" endtime="20200731 15:13:41.801"></status>
+<status status="PASS" starttime="20200731 15:42:47.284" endtime="20200731 15:42:47.328"></status>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
 <arg>id:quantity</arg>
 </arguments>
-<msg timestamp="20200731 15:13:41.801" level="INFO">Simulating Mouse Over on element 'id:quantity'.</msg>
-<status status="PASS" starttime="20200731 15:13:41.801" endtime="20200731 15:13:42.192"></status>
+<msg timestamp="20200731 15:42:47.328" level="INFO">Simulating Mouse Over on element 'id:quantity'.</msg>
+<status status="PASS" starttime="20200731 15:42:47.328" endtime="20200731 15:42:47.686"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>//*[@id="quantity"]/option[2]</arg>
 </arguments>
-<msg timestamp="20200731 15:13:42.193" level="INFO">Clicking element '//*[@id="quantity"]/option[2]'.</msg>
-<status status="PASS" starttime="20200731 15:13:42.192" endtime="20200731 15:13:42.476"></status>
+<msg timestamp="20200731 15:42:47.687" level="INFO">Clicking element '//*[@id="quantity"]/option[2]'.</msg>
+<status status="PASS" starttime="20200731 15:42:47.686" endtime="20200731 15:42:47.873"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:40.998" endtime="20200731 15:13:42.477"></status>
+<status status="PASS" starttime="20200731 15:42:46.963" endtime="20200731 15:42:47.874"></status>
 </kw>
 <kw name="กดสินค้าใส่ตะกร้า" library="keywords">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -162,10 +164,10 @@
 <arguments>
 <arg>id:btn_addcart</arg>
 </arguments>
-<msg timestamp="20200731 15:13:42.479" level="INFO">Clicking button 'id:btn_addcart'.</msg>
-<status status="PASS" starttime="20200731 15:13:42.478" endtime="20200731 15:13:43.165"></status>
+<msg timestamp="20200731 15:42:47.876" level="INFO">Clicking button 'id:btn_addcart'.</msg>
+<status status="PASS" starttime="20200731 15:42:47.875" endtime="20200731 15:42:48.246"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:42.477" endtime="20200731 15:13:43.166"></status>
+<status status="PASS" starttime="20200731 15:42:47.874" endtime="20200731 15:42:48.246"></status>
 </kw>
 <kw name="เช็คข้อมูลสินค้าและราคารวม" library="keywords">
 <arguments>
@@ -183,51 +185,51 @@
 <arguments>
 <arg>${PRODUCT_NAME}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.169" endtime="20200731 15:13:43.207"></status>
+<status status="PASS" starttime="20200731 15:42:48.249" endtime="20200731 15:42:48.274"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_GENDER}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.208" endtime="20200731 15:13:43.272"></status>
+<status status="PASS" starttime="20200731 15:42:48.275" endtime="20200731 15:42:48.299"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
-<arg>${PRODUCT_GENDER}</arg>
+<arg>${PRODUCT_BRAND}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.272" endtime="20200731 15:13:43.324"></status>
+<status status="PASS" starttime="20200731 15:42:48.299" endtime="20200731 15:42:48.324"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_AGE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.324" endtime="20200731 15:13:43.353"></status>
+<status status="PASS" starttime="20200731 15:42:48.325" endtime="20200731 15:42:48.363"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_AVAILABLE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.353" endtime="20200731 15:13:43.375"></status>
+<status status="PASS" starttime="20200731 15:42:48.364" endtime="20200731 15:42:48.385"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_QUANTITY}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.376" endtime="20200731 15:13:43.463"></status>
+<status status="PASS" starttime="20200731 15:42:48.385" endtime="20200731 15:42:48.483"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${TOTAL_PRICE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:43.464" endtime="20200731 15:13:43.567"></status>
+<status status="PASS" starttime="20200731 15:42:48.483" endtime="20200731 15:42:48.550"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:43.166" endtime="20200731 15:13:43.568"></status>
+<status status="PASS" starttime="20200731 15:42:48.247" endtime="20200731 15:42:48.550"></status>
 </kw>
 <kw name="เลือกวิธีจัดส่งสินค้า" library="keywords">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -235,10 +237,10 @@
 <arguments>
 <arg>id:EMS</arg>
 </arguments>
-<msg timestamp="20200731 15:13:43.569" level="INFO">Clicking element 'id:EMS'.</msg>
-<status status="PASS" starttime="20200731 15:13:43.569" endtime="20200731 15:13:43.999"></status>
+<msg timestamp="20200731 15:42:48.551" level="INFO">Clicking element 'id:EMS'.</msg>
+<status status="PASS" starttime="20200731 15:42:48.551" endtime="20200731 15:42:48.798"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:43.568" endtime="20200731 15:13:44.000"></status>
+<status status="PASS" starttime="20200731 15:42:48.550" endtime="20200731 15:42:48.798"></status>
 </kw>
 <kw name="Checkout" library="keywords">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -246,10 +248,10 @@
 <arguments>
 <arg>id:btn_checkout</arg>
 </arguments>
-<msg timestamp="20200731 15:13:44.003" level="INFO">Clicking button 'id:btn_checkout'.</msg>
-<status status="PASS" starttime="20200731 15:13:44.002" endtime="20200731 15:13:44.975"></status>
+<msg timestamp="20200731 15:42:48.800" level="INFO">Clicking button 'id:btn_checkout'.</msg>
+<status status="PASS" starttime="20200731 15:42:48.800" endtime="20200731 15:42:49.261"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:44.000" endtime="20200731 15:13:44.975"></status>
+<status status="PASS" starttime="20200731 15:42:48.799" endtime="20200731 15:42:49.262"></status>
 </kw>
 <kw name="กรอกที่อยู่จัดส่ง" library="keywords">
 <arguments>
@@ -266,8 +268,8 @@
 <arg>id:inputFullname</arg>
 <arg>${NAME}</arg>
 </arguments>
-<msg timestamp="20200731 15:13:44.982" level="INFO">Typing text 'ไทจิ ยามาโตะ' into text field 'id:inputFullname'.</msg>
-<status status="PASS" starttime="20200731 15:13:44.979" endtime="20200731 15:13:46.205"></status>
+<msg timestamp="20200731 15:42:49.265" level="INFO">Typing text 'ไทจิ ยามาโตะ' into text field 'id:inputFullname'.</msg>
+<status status="PASS" starttime="20200731 15:42:49.264" endtime="20200731 15:42:49.761"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -275,8 +277,8 @@
 <arg>id:inputAddress</arg>
 <arg>${ADDESS1}</arg>
 </arguments>
-<msg timestamp="20200731 15:13:46.206" level="INFO">Typing text 'ถนนเลียบชายกว๊าน' into text field 'id:inputAddress'.</msg>
-<status status="PASS" starttime="20200731 15:13:46.206" endtime="20200731 15:13:47.344"></status>
+<msg timestamp="20200731 15:42:49.762" level="INFO">Typing text 'ถนนเลียบชายกว๊าน' into text field 'id:inputAddress'.</msg>
+<status status="PASS" starttime="20200731 15:42:49.762" endtime="20200731 15:42:50.184"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -284,8 +286,8 @@
 <arg>id:inputAddress2</arg>
 <arg>${ADDESS2}</arg>
 </arguments>
-<msg timestamp="20200731 15:13:47.347" level="INFO">Typing text 'อำเภอเมืองพะเยา' into text field 'id:inputAddress2'.</msg>
-<status status="PASS" starttime="20200731 15:13:47.345" endtime="20200731 15:13:48.296"></status>
+<msg timestamp="20200731 15:42:50.185" level="INFO">Typing text 'อำเภอเมืองพะเยา' into text field 'id:inputAddress2'.</msg>
+<status status="PASS" starttime="20200731 15:42:50.185" endtime="20200731 15:42:50.601"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -293,24 +295,24 @@
 <arg>id:inputCity</arg>
 <arg>${CITY}</arg>
 </arguments>
-<msg timestamp="20200731 15:13:48.297" level="INFO">Typing text 'พะเยา' into text field 'id:inputCity'.</msg>
-<status status="PASS" starttime="20200731 15:13:48.296" endtime="20200731 15:13:48.954"></status>
+<msg timestamp="20200731 15:42:50.601" level="INFO">Typing text 'พะเยา' into text field 'id:inputCity'.</msg>
+<status status="PASS" starttime="20200731 15:42:50.601" endtime="20200731 15:42:51.017"></status>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
 <arg>id:province</arg>
 </arguments>
-<msg timestamp="20200731 15:13:48.955" level="INFO">Simulating Mouse Over on element 'id:province'.</msg>
-<status status="PASS" starttime="20200731 15:13:48.954" endtime="20200731 15:13:49.320"></status>
+<msg timestamp="20200731 15:42:51.017" level="INFO">Simulating Mouse Over on element 'id:province'.</msg>
+<status status="PASS" starttime="20200731 15:42:51.017" endtime="20200731 15:42:51.360"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>//*[@id="province"]/option[34]</arg>
 </arguments>
-<msg timestamp="20200731 15:13:49.321" level="INFO">Clicking element '//*[@id="province"]/option[34]'.</msg>
-<status status="PASS" starttime="20200731 15:13:49.320" endtime="20200731 15:13:49.560"></status>
+<msg timestamp="20200731 15:42:51.361" level="INFO">Clicking element '//*[@id="province"]/option[34]'.</msg>
+<status status="PASS" starttime="20200731 15:42:51.360" endtime="20200731 15:42:51.522"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -318,10 +320,10 @@
 <arg>id:post_code</arg>
 <arg>${POSTCODE}</arg>
 </arguments>
-<msg timestamp="20200731 15:13:49.561" level="INFO">Typing text '56000' into text field 'id:post_code'.</msg>
-<status status="PASS" starttime="20200731 15:13:49.560" endtime="20200731 15:13:50.389"></status>
+<msg timestamp="20200731 15:42:51.524" level="INFO">Typing text '56000' into text field 'id:post_code'.</msg>
+<status status="PASS" starttime="20200731 15:42:51.523" endtime="20200731 15:42:51.919"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:44.976" endtime="20200731 15:13:50.390"></status>
+<status status="PASS" starttime="20200731 15:42:49.262" endtime="20200731 15:42:51.919"></status>
 </kw>
 <kw name="ยืนยันที่อยู่" library="keywords">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -329,10 +331,10 @@
 <arguments>
 <arg>id:btn_deliver</arg>
 </arguments>
-<msg timestamp="20200731 15:13:50.392" level="INFO">Clicking button 'id:btn_deliver'.</msg>
-<status status="PASS" starttime="20200731 15:13:50.391" endtime="20200731 15:13:50.949"></status>
+<msg timestamp="20200731 15:42:51.924" level="INFO">Clicking button 'id:btn_deliver'.</msg>
+<status status="PASS" starttime="20200731 15:42:51.923" endtime="20200731 15:42:52.262"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:50.390" endtime="20200731 15:13:50.950"></status>
+<status status="PASS" starttime="20200731 15:42:51.920" endtime="20200731 15:42:52.262"></status>
 </kw>
 <kw name="เลือกวิธีการชำระเงิน" library="keywords">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -340,10 +342,10 @@
 <arguments>
 <arg>id:Line_pay</arg>
 </arguments>
-<msg timestamp="20200731 15:13:50.952" level="INFO">Clicking element 'id:Line_pay'.</msg>
-<status status="PASS" starttime="20200731 15:13:50.951" endtime="20200731 15:13:51.539"></status>
+<msg timestamp="20200731 15:42:52.264" level="INFO">Clicking element 'id:Line_pay'.</msg>
+<status status="PASS" starttime="20200731 15:42:52.263" endtime="20200731 15:42:52.483"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:50.950" endtime="20200731 15:13:51.539"></status>
+<status status="PASS" starttime="20200731 15:42:52.262" endtime="20200731 15:42:52.484"></status>
 </kw>
 <kw name="เช็ครายละเอียดของสินค้าที่สั่ง" library="keywords">
 <arguments>
@@ -355,43 +357,58 @@
 <arg>${PRODUCT_PRICE}</arg>
 <arg>${PRODUCT_QUANTITY}</arg>
 <arg>${TOTAL_PRICE}</arg>
+<arg>${PRICEnSHIPPING}</arg>
 </arguments>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_NAME}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:51.543" endtime="20200731 15:13:51.576"></status>
+<status status="PASS" starttime="20200731 15:42:52.487" endtime="20200731 15:42:52.506"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_GENDER}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:51.576" endtime="20200731 15:13:51.608"></status>
+<status status="PASS" starttime="20200731 15:42:52.506" endtime="20200731 15:42:52.522"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
-<arg>${PRODUCT_GENDER}</arg>
+<arg>${PRODUCT_BRAND}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:51.608" endtime="20200731 15:13:51.679"></status>
+<status status="PASS" starttime="20200731 15:42:52.522" endtime="20200731 15:42:52.535"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_AGE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:51.680" endtime="20200731 15:13:51.714"></status>
+<status status="PASS" starttime="20200731 15:42:52.535" endtime="20200731 15:42:52.554"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>${PRODUCT_AVAILABLE}</arg>
 </arguments>
-<status status="PASS" starttime="20200731 15:13:51.714" endtime="20200731 15:13:51.741"></status>
+<status status="PASS" starttime="20200731 15:42:52.554" endtime="20200731 15:42:52.572"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:51.540" endtime="20200731 15:13:51.741"></status>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${TOTAL_PRICE}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:52.572" endtime="20200731 15:42:52.588"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRICEnSHIPPING}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:52.589" endtime="20200731 15:42:52.639"></status>
+</kw>
+<status status="PASS" starttime="20200731 15:42:52.484" endtime="20200731 15:42:52.639"></status>
 </kw>
 <kw name="กดยืนยันการสั่งซื้อ" library="keywords">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -399,30 +416,113 @@
 <arguments>
 <arg>id:btn_order</arg>
 </arguments>
-<msg timestamp="20200731 15:13:51.743" level="INFO">Clicking button 'id:btn_order'.</msg>
-<status status="PASS" starttime="20200731 15:13:51.743" endtime="20200731 15:13:52.168"></status>
+<msg timestamp="20200731 15:42:52.641" level="INFO">Clicking button 'id:btn_order'.</msg>
+<status status="PASS" starttime="20200731 15:42:52.640" endtime="20200731 15:42:52.943"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:51.742" endtime="20200731 15:13:52.169"></status>
+<status status="PASS" starttime="20200731 15:42:52.640" endtime="20200731 15:42:52.943"></status>
+</kw>
+<kw name="เช็คหมายเลขคำสั่งซื้อ" library="keywords">
+<arguments>
+<arg>${ORDER_NO}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Thank you</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:52.944" endtime="20200731 15:42:53.003"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${ORDER_NO}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.003" endtime="20200731 15:42:53.054"></status>
+</kw>
+<status status="PASS" starttime="20200731 15:42:52.943" endtime="20200731 15:42:53.055"></status>
+</kw>
+<kw name="ทบทวนรายละเอียดของสินค้าที่สั่งซื้อ" library="keywords">
+<arguments>
+<arg>${PRODUCT_NAME}</arg>
+<arg>${PRODUCT_BRAND}</arg>
+<arg>${PRODUCT_GENDER}</arg>
+<arg>${PRODUCT_AGE}</arg>
+<arg>${PRODUCT_AVAILABLE}</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<arg>${PRODUCT_QUANTITY}</arg>
+<arg>${TOTAL_PRICE}</arg>
+<arg>${PRICEnSHIPPING}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.057" endtime="20200731 15:42:53.072"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_GENDER}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.072" endtime="20200731 15:42:53.085"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_BRAND}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.085" endtime="20200731 15:42:53.100"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_AGE}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.101" endtime="20200731 15:42:53.122"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_AVAILABLE}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.122" endtime="20200731 15:42:53.140"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${TOTAL_PRICE}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.140" endtime="20200731 15:42:53.153"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRICEnSHIPPING}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 15:42:53.154" endtime="20200731 15:42:53.167"></status>
+</kw>
+<status status="PASS" starttime="20200731 15:42:53.055" endtime="20200731 15:42:53.167"></status>
 </kw>
 <kw name="ปิดเว็ป" library="keywords">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200731 15:13:52.169" endtime="20200731 15:13:55.227"></status>
+<status status="PASS" starttime="20200731 15:42:53.168" endtime="20200731 15:42:56.223"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:52.169" endtime="20200731 15:13:55.228"></status>
+<status status="PASS" starttime="20200731 15:42:53.167" endtime="20200731 15:42:56.223"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:19.841" endtime="20200731 15:13:55.228"></status>
+<status status="PASS" starttime="20200731 15:42:37.250" endtime="20200731 15:42:56.224"></status>
 </kw>
 <kw name="ปิดเว็ป" library="keywords" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200731 15:13:55.231" endtime="20200731 15:13:55.231"></status>
+<status status="PASS" starttime="20200731 15:42:56.226" endtime="20200731 15:42:56.226"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:55.230" endtime="20200731 15:13:55.231"></status>
+<status status="PASS" starttime="20200731 15:42:56.225" endtime="20200731 15:42:56.226"></status>
 </kw>
-<status status="PASS" starttime="20200731 15:13:19.832" endtime="20200731 15:13:55.231" critical="yes"></status>
+<status status="PASS" starttime="20200731 15:42:37.243" endtime="20200731 15:42:56.227" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200731 15:13:18.484" endtime="20200731 15:13:55.236"></status>
+<status status="PASS" starttime="20200731 15:42:36.584" endtime="20200731 15:42:56.233"></status>
 </suite>
 <statistics>
 <total>
