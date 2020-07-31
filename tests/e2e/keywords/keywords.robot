@@ -1,12 +1,16 @@
 *** Variables ***
+<<<<<<< HEAD
+${URL}    http://localhost:4200/search
+=======
 ${URL}    http://localhost/4200
+>>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 
 *** Keywords ***
 
 ซื้อของในร้านค้า
-    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${AGE}    ${GENDER}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}
+    [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_BRAND}    ${PRODUCT_AVAILABLE}    ${NAME}    ${ADDESS1}    ${ADDESS2}    ${CITY}    ${PROVINCE}    ${POSTCODE}    ${SHIPPING_METHOD}
     เปิดเว็ป
-    Search สินค้าที่ต้องการ    ${AGE}    ${GENDER}    ${PRODUCT_ID}
+    Search สินค้าที่ต้องการ    ${PRODUCT_AGE}    ${PRODUCT_GENDER}    
     เช็คข้อมูลสินค้า     ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}    
     กดสินค้าใส่ตะกร้า
     เช็คข้อมูลสินค้าและราคารวม
@@ -26,34 +30,34 @@ ${URL}    http://localhost/4200
     Close Browser
 #earth
 Search สินค้าที่ต้องการ
-    [Arguments]    ${AGE}    ${GENDER}    ${PRODUCT_ID}
-    เลือกอายุ    ${AGE}
-    เลือกเพศ    ${GENDER}
-    กด search
-    เช็คผลลัพธ์การค้นหา
-    คลิกเลือกของเล่น    ${PRODUCT_ID}
+    [Arguments]    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    
+    # เลือกอายุ    ${PRODUCT_AGE}
+    # เลือกเพศ    ${PRODUCT_GENDER}
+    # # กด search
+    # เช็คผลลัพธ์การค้นหา
+    # คลิกเลือกของเล่น    
 
-เลือกอายุ    
-    Select From List by Value    age    ${AGE}   #over8
-เลือกเพศ    
-    Select From List by Value    gender    ${GENDER}   #neutral
-กด search    
-    Click Button    btn_search
-เช็คผลลัพธ์การค้นหา    
-    Wait Until Element Contains    result    results for ${GENDER} and ${AGE}
-คลิกเลือกของเล่น    
-    Click Element    list_${PRODUCT_ID}
+# เลือกอายุ    
+    Select From List by Value    Over 8   #over8
+# เลือกเพศ    
+    Select From List by Value    //*/html/body/app-root/div/app-page-search/div/div[2]/div[1]/div[2]/select    ${PRODUCT_GENDER}   #neutral
+# กด search    
+#     Click Button    btn_search
+# เช็คผลลัพธ์การค้นหา    
+    Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
+# คลิกเลือกของเล่น    
+    Click Element    //*[@id="main"]/html/body/app-root/div/app-page-search/div/div[2]/div[2]/table/tbody/tr[1]
 
 # Grace's code
 เช็คข้อมูลสินค้า   
     [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}
-    เช็คชื่อสินค้า
-    เช็ครูปสินค้า
-    เช็คแบรนด์สินค้า
-    เช็คเพศที่เหมาะสมของสินค้า
-    เช็คอายุที่เหมาะสมของสินค้า
-    เช็คราคาสินค้า    34.99
-    เช็คสถานะสินค้า
+    เช็คชื่อสินค้า    ${PRODUCT_NAME}
+    เช็ครูปสินค้า    
+    เช็คแบรนด์สินค้า    ${PRODUCT_BRAND}
+    เช็คเพศที่เหมาะสมของสินค้า    ${PRODUCT_GENDER}
+    เช็คอายุที่เหมาะสมของสินค้า    ${PRODUCT_AGE}
+    เช็คราคาสินค้า    ${PRODUCT_PRICE}
+    เช็คสถานะสินค้า    ${PRODUCT_AVAILABLE}
 กดสินค้าใส่ตะกร้า
     เลือกจำนวนสินค้า
     กด add to cart
@@ -81,7 +85,7 @@ Search สินค้าที่ต้องการ
 เช็คข้อมูลสินค้าและราคารวม
     [Arguments]   ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}
     ${PRODUCT_AVAILABLE}    ${PRODUCT_PRICE}    ${PRODUCT_QUANTITY}     ${TOTAL_PRICE}   
-   เช็คชื่อสินค้า    ${PRODUCT_NAME} 
+   เช็คชื่อสินค้า2    ${PRODUCT_NAME} 
    เช็คแบรนด์สินค้า     ${PRODUCT_BRAND}
    เช็คเพศที่เหมาะสม      ${PRODUCT_GENDER}
    เช็คอายุที่เหมาะสม   ${PRODUCT_AGE}
@@ -90,7 +94,7 @@ Search สินค้าที่ต้องการ
    เช็คจำนวนสินค้า      ${PRODUCT_QUANTITY}
    เช็คราคาสินค้าทั้งหมด     ${TOTAL_PRICE}
 
-เช็คชื่อสินค้า
+เช็คชื่อสินค้า2
    Wait Until Element Contains    td_toy_name    ${PRODUCT_NAME} 
 
 เช็คแบรนด์สินค้า

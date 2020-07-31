@@ -83,7 +83,7 @@ export class DataServiceService {
       '11',
       'Earth DVD Game',
       'Neutral',
-      'over8',
+      'over 8',
       34.99,
       true,
       'VideoVroom'
