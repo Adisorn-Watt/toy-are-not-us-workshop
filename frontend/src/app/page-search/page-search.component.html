@@ -33,47 +33,44 @@
         <!-- <button id="btn_search" type="button" class="btn btn-dark"> -->
         <!-- Search -->
         <!-- </button> -->
-        </div>
       </div>
+    </div>
 
-      <br />
+    <br />
 
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Product Image</th>
-              <th>Product Name</th>
-              <th>Brand</th>
-              <th>Gender</th>
-              <th>Age</th>
-              <th>Price</th>
-              <th>Available</th>
-            </tr>
-          </thead>
-          <tbody *ngIf="toyList.length > 0">
-            <tr
-              *ngFor="let toy of toyList | product: age:gender"
-              [routerLink]="['/search', toy.toyID]"
-              id="product_{{ toy.toyID }}"
-            >
-              <th><img src="{{ toy.toyImage }}" width="50px" /></th>
-              <th>{{ toy.toyName | uppercase }}</th>
-              <th>{{ toy.toyBrand | uppercase }}</th>
-              <th>{{ toy.toyGender | uppercase }}</th>
-              <th>{{ toy.toyAge | uppercase }}</th>
-              <th>{{ toy.toyPrice | number: "1.2" }}</th>
-              <!-- 2 decimal point -->
-              <th *ngIf="toy.toyAvailable" style="color: green;">In Stock</th>
-              <!-- product available -->
-              <th *ngIf="!toy.toyAvailable" style="color: red;">
-                Out of Stock
-              </th>
-              <!-- product unavailable -->
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Price</th>
+            <th>Available</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="toyList.length > 0">
+          <tr
+            *ngFor="let toy of toyList | product: age:gender"
+            [routerLink]="['/search', toy.toyID]"
+            id="product_{{ toy.toyID }}"
+          >
+            <th><img src="{{ toy.toyImage }}" width="50px" /></th>
+            <th>{{ toy.toyName | uppercase }}</th>
+            <th>{{ toy.toyBrand | uppercase }}</th>
+            <th>{{ toy.toyGender | uppercase }}</th>
+            <th>{{ toy.toyAge | uppercase }}</th>
+            <th>{{ toy.toyPrice | number: "1.2" }}</th>
+            <!-- 2 decimal point -->
+            <th *ngIf="toy.toyAvailable" style="color: green;">In Stock</th>
+            <!-- product available -->
+            <th *ngIf="!toy.toyAvailable" style="color: red;">Out of Stock</th>
+            <!-- product unavailable -->
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
