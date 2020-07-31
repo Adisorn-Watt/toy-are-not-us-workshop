@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 11:33:36.446" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 13:28:00.852" rpa="false">
 <suite id="s1" name="Shopping" source="C:\Users\chatchanokwon\Documents\toy-are-not-us-workshop-master\tests\e2e\success\shopping.robot">
-=======
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200731 10:33:31.545" rpa="false">
-<suite id="s1" name="Shopping" source="C:\Users\anchisatea\Documents\Toy r not us\toy-are-not-us-workshop\tests\e2e\success\shopping.robot">
->>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 <test id="s1-t1" name="นายไทจิ ยามาโตะ ซื้อ Earth DVD Game 1 อัน จ่ายด้วย LinePay">
 <kw name="ซื้อของในร้านค้า" library="keywords">
 <arguments>
@@ -23,7 +18,6 @@
 <arg>56000</arg>
 <arg>linepay</arg>
 </arguments>
-<<<<<<< HEAD
 <kw name="เปิดเว็ป" library="keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -31,51 +25,124 @@
 <arg>${URL}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200731 11:33:36.962" level="INFO">Opening browser 'chrome' to base url 'http://localhost:4200/search'.</msg>
-<status status="PASS" starttime="20200731 11:33:36.962" endtime="20200731 11:33:44.488"></status>
+<msg timestamp="20200731 13:28:01.435" level="INFO">Opening browser 'chrome' to base url 'http://localhost:4200/search'.</msg>
+<status status="PASS" starttime="20200731 13:28:01.434" endtime="20200731 13:28:08.974"></status>
 </kw>
-<status status="PASS" starttime="20200731 11:33:36.961" endtime="20200731 11:33:44.489"></status>
+<status status="PASS" starttime="20200731 13:28:01.434" endtime="20200731 13:28:08.975"></status>
 </kw>
 <kw name="Search สินค้าที่ต้องการ" library="keywords">
 <arguments>
 <arg>${PRODUCT_AGE}</arg>
 <arg>${PRODUCT_GENDER}</arg>
 </arguments>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
-<arg>Over 8</arg>
+<arg>//*[@id="age"]</arg>
 </arguments>
+<msg timestamp="20200731 13:28:08.977" level="INFO">Simulating Mouse Over on element '//*[@id="age"]'.</msg>
+<status status="PASS" starttime="20200731 13:28:08.977" endtime="20200731 13:28:09.323"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="over8"]</arg>
+</arguments>
+<msg timestamp="20200731 13:28:09.324" level="INFO">Clicking element '//*[@id="over8"]'.</msg>
+<status status="PASS" starttime="20200731 13:28:09.323" endtime="20200731 13:28:09.496"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>//*[@id="gender"]</arg>
+</arguments>
+<msg timestamp="20200731 13:28:09.497" level="INFO">Simulating Mouse Over on element '//*[@id="gender"]'.</msg>
+<status status="PASS" starttime="20200731 13:28:09.496" endtime="20200731 13:28:09.887"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="neutral"]</arg>
+</arguments>
+<msg timestamp="20200731 13:28:09.888" level="INFO">Clicking element '//*[@id="neutral"]'.</msg>
+<status status="PASS" starttime="20200731 13:28:09.887" endtime="20200731 13:28:10.103"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>//*[@id="product_11"]</arg>
+</arguments>
+<msg timestamp="20200731 13:28:10.104" level="INFO">Simulating Mouse Over on element '//*[@id="product_11"]'.</msg>
+<status status="PASS" starttime="20200731 13:28:10.103" endtime="20200731 13:28:10.463"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="product_11"]/th[2]</arg>
+</arguments>
+<msg timestamp="20200731 13:28:10.464" level="INFO">Clicking element '//*[@id="product_11"]/th[2]'.</msg>
+<status status="PASS" starttime="20200731 13:28:10.464" endtime="20200731 13:28:10.743"></status>
+</kw>
+<status status="PASS" starttime="20200731 13:28:08.975" endtime="20200731 13:28:10.744"></status>
+</kw>
+<kw name="เช็คข้อมูลสินค้า" library="keywords">
+<arguments>
+<arg>${PRODUCT_NAME}</arg>
+<arg>${PRODUCT_BRAND}</arg>
+<arg>${PRODUCT_GENDER}</arg>
+<arg>${PRODUCT_AGE}</arg>
+<arg>${PRODUCT_PRICE}</arg>
+<arg>${PRODUCT_AVAILABLE}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 13:28:10.746" endtime="20200731 13:28:10.805"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_GENDER}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 13:28:10.805" endtime="20200731 13:28:10.917"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${PRODUCT_AGE}</arg>
+</arguments>
+<status status="PASS" starttime="20200731 13:28:10.918" endtime="20200731 13:28:10.985"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>/html/body/app-root/div/app-product-detail/div/div[2]/div[1]/div[2]/div[7]/div[2]/select</arg>
+</arguments>
+<msg timestamp="20200731 13:28:10.986" level="INFO">Simulating Mouse Over on element '/html/body/app-root/div/app-product-detail/div/div[2]/div[1]/div[2]/div[7]/div[2]/select'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200731 11:33:44.943" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200731 11:33:44.491" endtime="20200731 11:33:44.943"></status>
+<msg timestamp="20200731 13:28:11.496" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200731 13:28:11.033" endtime="20200731 13:28:11.496"></status>
 </kw>
-<msg timestamp="20200731 11:33:44.953" level="FAIL">ValueError: No values given.</msg>
-<status status="FAIL" starttime="20200731 11:33:44.491" endtime="20200731 11:33:44.953"></status>
+<msg timestamp="20200731 13:28:11.515" level="FAIL">Element with locator '/html/body/app-root/div/app-product-detail/div/div[2]/div[1]/div[2]/div[7]/div[2]/select' not found.</msg>
+<status status="FAIL" starttime="20200731 13:28:10.986" endtime="20200731 13:28:11.515"></status>
 </kw>
-<status status="FAIL" starttime="20200731 11:33:44.489" endtime="20200731 11:33:44.954"></status>
+<status status="FAIL" starttime="20200731 13:28:10.744" endtime="20200731 13:28:11.516"></status>
 </kw>
-<status status="FAIL" starttime="20200731 11:33:36.959" endtime="20200731 11:33:44.954"></status>
+<status status="FAIL" starttime="20200731 13:28:01.433" endtime="20200731 13:28:11.516"></status>
 </kw>
 <kw name="ปิดเว็ป" library="keywords" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200731 11:33:44.956" endtime="20200731 11:33:47.394"></status>
+<status status="PASS" starttime="20200731 13:28:11.518" endtime="20200731 13:28:13.997"></status>
 </kw>
-<status status="PASS" starttime="20200731 11:33:44.956" endtime="20200731 11:33:47.395"></status>
+<status status="PASS" starttime="20200731 13:28:11.518" endtime="20200731 13:28:13.998"></status>
 </kw>
-<status status="FAIL" starttime="20200731 11:33:36.957" endtime="20200731 11:33:47.397" critical="yes">ValueError: No values given.</status>
+<status status="FAIL" starttime="20200731 13:28:01.428" endtime="20200731 13:28:13.999" critical="yes">Element with locator '/html/body/app-root/div/app-product-detail/div/div[2]/div[1]/div[2]/div[7]/div[2]/select' not found.</status>
 </test>
-<status status="FAIL" starttime="20200731 11:33:36.451" endtime="20200731 11:33:47.442"></status>
-=======
-<msg timestamp="20200731 10:33:32.019" level="FAIL">Keyword 'keywords.ซื้อของในร้านค้า' expected 15 arguments, got 16.</msg>
-<status status="FAIL" starttime="20200731 10:33:32.019" endtime="20200731 10:33:32.019"></status>
-</kw>
-<status status="FAIL" starttime="20200731 10:33:32.017" endtime="20200731 10:33:32.020" critical="yes">Keyword 'keywords.ซื้อของในร้านค้า' expected 15 arguments, got 16.</status>
-</test>
-<status status="FAIL" starttime="20200731 10:33:31.554" endtime="20200731 10:33:32.035"></status>
->>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
+<status status="FAIL" starttime="20200731 13:28:00.861" endtime="20200731 13:28:14.007"></status>
 </suite>
 <statistics>
 <total>
@@ -89,9 +156,5 @@
 </suite>
 </statistics>
 <errors>
-<<<<<<< HEAD
-=======
-<msg timestamp="20200731 10:33:31.604" level="ERROR">Error in resource file 'C:\Users\anchisatea\Documents\Toy r not us\toy-are-not-us-workshop\tests\e2e\keywords\keywords.robot': Creating keyword 'เช็คชื่อสินค้า' failed: Keyword with same name defined multiple times.</msg>
->>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 </errors>
 </robot>

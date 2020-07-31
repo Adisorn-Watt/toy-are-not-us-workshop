@@ -1,5 +1,5 @@
 <div class="card" *ngIf="toy">
-  <div class="card-header">
+  <div class="card-header" id="toy_name">
     {{ toy.toyName }}
   </div>
 
@@ -8,6 +8,7 @@
       <div class="col-md-4">
         <img
           class="center-block img-responsive"
+          id="toy_image"
           [style.width.%]="80"
           [style.marginBottom.px]="30"
           [src]="toy.toyImage"
@@ -20,22 +21,24 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col-md-4">Brand:</div>
-          <div class="col-md-8">{{ toy.toyBrand }}</div>
+          <div class="col-md-8" id="toy_brand">{{ toy.toyBrand }}</div>
         </div>
 
         <div class="row">
           <div class="col-md-4">Gender:</div>
-          <div class="col-md-8">{{ toy.toyGender }}</div>
+          <div class="col-md-8" id="toy_gender">{{ toy.toyGender }}</div>
         </div>
 
         <div class="row">
           <div class="col-md-4">Age:</div>
-          <div class="col-md-8">{{ toy.toyAge }}</div>
+          <div class="col-md-8" id="toy_age">{{ toy.toyAge }}</div>
         </div>
 
         <div class="row">
           <div class="col-md-4">Price:</div>
-          <div class="col-md-8">{{ getCurrency() }}{{ toy.toyPrice }}</div>
+          <div class="col-md-8" id="toy_price">
+            {{ getCurrency() }}{{ toy.toyPrice }}
+          </div>
         </div>
 
         <div class="row">
@@ -44,7 +47,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4">Status:</div>
+          <div class="col-md-4" id="toy_avb">Status:</div>
           <div class="col-md-8" *ngIf="toy.toyAvailable" style="color: green;">
             In stock
           </div>
@@ -58,11 +61,16 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4">Quantity</div>
+          <div class="col-md-4" id="quantity">Quantity</div>
           <div class="col-md-8">
-            <select>
-              <option value="">choose</option>
-              <option value="01">1</option>
+            <select
+              [(ngModel)]="selectedDetail.quantity"
+              id="quantity"
+              name="quantity"
+              class="form-control"
+            >
+              <option value="0">choose</option>
+              <option value="1">1</option>
             </select>
           </div>
         </div>
@@ -80,6 +88,7 @@
         class="btn btn-primary"
         [routerLink]="['/shopping-cart']"
         style="width: 200px;"
+        id="btn_addcart"
       >
         <i class="fa fa-chevron-right"></i> Add to cart
       </button>

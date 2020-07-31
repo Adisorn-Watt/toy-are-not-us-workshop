@@ -1,9 +1,6 @@
 *** Variables ***
-<<<<<<< HEAD
 ${URL}    http://localhost:4200/search
-=======
-${URL}    http://localhost/4200
->>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
+
 
 *** Keywords ***
 
@@ -30,7 +27,7 @@ ${URL}    http://localhost/4200
     Close Browser
 #earth
 Search สินค้าที่ต้องการ
-    [Arguments]    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    
+    [Arguments]    ${PRODUCT_AGE}    ${PRODUCT_GENDER}
     # เลือกอายุ    ${PRODUCT_AGE}
     # เลือกเพศ    ${PRODUCT_GENDER}
     # # กด search
@@ -38,48 +35,54 @@ Search สินค้าที่ต้องการ
     # คลิกเลือกของเล่น    
 
 # เลือกอายุ    
-    Select From List by Value    Over 8   #over8
+    Mouse over    //*[@id="age"]
+    Click Element    //*[@id="over8"]
+    Mouse over    //*[@id="gender"]
+    Click Element    //*[@id="neutral"]
+    # Select From List by Value    age    ${PRODUCT_AGE}   #over8
 # เลือกเพศ    
-    Select From List by Value    //*/html/body/app-root/div/app-page-search/div/div[2]/div[1]/div[2]/select    ${PRODUCT_GENDER}   #neutral
+    # Select From List by Value    gender    ${PRODUCT_GENDER}   #neutral
 # กด search    
 #     Click Button    btn_search
 # เช็คผลลัพธ์การค้นหา    
-    Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
+    # Wait Until Page Contains    results for ${PRODUCT_GENDER} and ${PRODUCT_AGE}
 # คลิกเลือกของเล่น    
-    Click Element    //*[@id="main"]/html/body/app-root/div/app-page-search/div/div[2]/div[2]/table/tbody/tr[1]
+    Mouse over    //*[@id="product_11"]
+    Click Element    //*[@id="product_11"]/th[2]
 
 # Grace's code
 เช็คข้อมูลสินค้า   
     [Arguments]    ${PRODUCT_NAME}    ${PRODUCT_BRAND}    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    ${PRODUCT_PRICE}    ${PRODUCT_AVAILABLE}
-    เช็คชื่อสินค้า    ${PRODUCT_NAME}
-    เช็ครูปสินค้า    
-    เช็คแบรนด์สินค้า    ${PRODUCT_BRAND}
-    เช็คเพศที่เหมาะสมของสินค้า    ${PRODUCT_GENDER}
-    เช็คอายุที่เหมาะสมของสินค้า    ${PRODUCT_AGE}
-    เช็คราคาสินค้า    ${PRODUCT_PRICE}
-    เช็คสถานะสินค้า    ${PRODUCT_AVAILABLE}
-กดสินค้าใส่ตะกร้า
-    เลือกจำนวนสินค้า
-    กด add to cart
+#     เช็คชื่อสินค้า    ${PRODUCT_NAME}
+#     เช็ครูปสินค้า    
+#     เช็คแบรนด์สินค้า    ${PRODUCT_BRAND}
+#     เช็คเพศที่เหมาะสมของสินค้า    ${PRODUCT_GENDER}
+#     เช็คอายุที่เหมาะสมของสินค้า    ${PRODUCT_AGE}
+#     เช็คราคาสินค้า    ${PRODUCT_PRICE}
+#     เช็คสถานะสินค้า    ${PRODUCT_AVAILABLE}
+# กดสินค้าใส่ตะกร้า
+#     เลือกจำนวนสินค้า
+#     กด add to cart
 
-เช็คชื่อสินค้า
+# เช็คชื่อสินค้า
     Wait Until Page Contains    ${PRODUCT_NAME}
-เช็ครูปสินค้า
-    Wait Until Element Contains    id:toy_image
+# เช็ครูปสินค้า
+    # Wait Until Element Contains    id:toy_image
 #เช็คแบรนด์สินค้า
 #    Wait Until Page Contains    ${PRODUCT_BRAND}
-เช็คเพศที่เหมาะสมของสินค้า
+# เช็คเพศที่เหมาะสมของสินค้า
     Wait Until Page Contains    ${PRODUCT_GENDER}
-เช็คอายุที่เหมาะสมของสินค้า
+# เช็คอายุที่เหมาะสมของสินค้า
     Wait Until Page Contains    ${PRODUCT_AGE}
 #เช็คราคาสินค้า
 #    Wait Until Page Contains    ${PRODUCT_PRICE}
 #เช็คสถานะสินค้า
 #    Wait Until Page Contains    ${PRODUCT_AVAILABLE}
-เลือกจำนวนสินค้า
-    Select From List By value    id:quantity    1   
-กด add to cart
-    Click Button    id:btn_addcart 
+# เลือกจำนวนสินค้า
+    Mouse over    /html/body/app-root/div/app-product-detail/div/div[2]/div[1]/div[2]/div[7]/div[2]/select
+    Click Element    /html/body/app-root/div/app-product-detail/div/div[2]/div[1]/div[2]/div[7]/div[2]/select/option[2]   
+# กด add to cart
+    Click Button    /html/body/app-root/div/app-product-detail/div/div[2]/div[2]/button[2] 
 
 ##fah
 เช็คข้อมูลสินค้าและราคารวม
