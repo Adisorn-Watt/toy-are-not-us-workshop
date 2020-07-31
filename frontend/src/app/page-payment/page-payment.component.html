@@ -66,15 +66,94 @@
     <h5>Select payment methods</h5>
     <div class="radio" id="pay_option">
       <label
-        ><input type="radio" id="Credit_card" name="optradio" checked /> Credit
-        Cards</label
+        ><input
+          type="radio"
+          id="Credit_card"
+          name="optradio"
+          (click)="show1 = !show1"
+          (change)="show2 = false"
+        />
+        Credit Cards</label
       >
+      <div *ngIf="show1">
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Credit_card_mastercard"
+            name="optradio"
+            (click)="clickPayment(' Credit card use Mastercard')"
+          />
+          Mastercard
+        </p>
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Credit_card_mastercard"
+            name="optradio"
+            (click)="clickPayment(' Credit card use Visa')"
+          />
+          Visa
+        </p>
+      </div>
     </div>
     <div class="radio">
       <label
-        ><input type="radio" id="Debit_card" name="optradio" /> Debit
-        Cards</label
+        ><input
+          type="radio"
+          id="Debit_card"
+          name="optradio"
+          (click)="show2 = !show2"
+          (change)="show1 = false"
+        />
+        Debit Cards</label
       >
+      <div *ngIf="show2">
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Debit_card_KBANK"
+            name="optradio"
+            (click)="clickPayment(' Debit Card use KBANK')"
+          />
+          KBANK
+        </p>
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Debit_card_SCB"
+            name="optradio"
+            (click)="clickPayment(' Debit Card use SCB')"
+          />
+          SCB
+        </p>
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Debit_card_TMB"
+            name="optradio"
+            (click)="clickPayment(' Debit Card use TMB')"
+          />
+          TMB
+        </p>
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Debit_card_BAY"
+            name="optradio"
+            (click)="clickPayment(' Debit Card use BAY')"
+          />
+          BAY
+        </p>
+        <p style="text-indent: 30px;">
+          <input
+            type="radio"
+            id="Debit_card_GSB"
+            name="optradio"
+            (click)="clickPayment(' Debit Card use GSB')"
+          />
+          GSB
+        </p>
+      </div>
     </div>
     <div class="radio">
       <label
@@ -82,6 +161,8 @@
           type="radio"
           id="Line_pay"
           name="optradio"
+          (change)="show1 = false"
+          (change)="show2 = false"
           (click)="clickPayment('linepay')"
         />
         Line Pay</label
