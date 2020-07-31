@@ -1,9 +1,5 @@
 *** Variables ***
-<<<<<<< HEAD
 ${URL}    http://localhost:4200/search
-=======
-${URL}    http://localhost/4200
->>>>>>> 94f37daf44169a11e7c574671e016dcef3dbd8f4
 
 *** Keywords ***
 
@@ -30,7 +26,7 @@ ${URL}    http://localhost/4200
     Close Browser
 #earth
 Search สินค้าที่ต้องการ
-    [Arguments]    ${PRODUCT_GENDER}    ${PRODUCT_AGE}    
+    [Arguments]    ${PRODUCT_AGE}    ${PRODUCT_GENDER}
     # เลือกอายุ    ${PRODUCT_AGE}
     # เลือกเพศ    ${PRODUCT_GENDER}
     # # กด search
@@ -38,9 +34,13 @@ Search สินค้าที่ต้องการ
     # คลิกเลือกของเล่น    
 
 # เลือกอายุ    
-    Select From List by Value    Over 8   #over8
+    Mouse over    //*[@id="age"]
+    Click Element    //*[@id="over8"]
+    Mouse over    //*[@id="gender"]
+    Click Element    //*[@id="neutral"]
+    # Select From List by Value    age    ${PRODUCT_AGE}   #over8
 # เลือกเพศ    
-    Select From List by Value    //*/html/body/app-root/div/app-page-search/div/div[2]/div[1]/div[2]/select    ${PRODUCT_GENDER}   #neutral
+    # Select From List by Value    gender    ${PRODUCT_GENDER}   #neutral
 # กด search    
 #     Click Button    btn_search
 # เช็คผลลัพธ์การค้นหา    
