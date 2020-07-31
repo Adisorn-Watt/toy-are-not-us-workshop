@@ -33,12 +33,7 @@
             <button style="color: red;">Delete</button>
           </th>
           <th>
-            <select
-              [(ngModel)]="cart.quantity"
-              id="quantity"
-              name="quantity"
-              class="form-control"
-            >
+            <select [(ngModel)]="cart.quantity" id="quantity" name="quantity" class="form-control">
               <option value="0">choose</option>
               <option value="1">1</option>
             </select>
@@ -51,46 +46,32 @@
 </div>
 
 <div class="card">
-  <div class="card-body">
-    <h5>Select Shipping Method</h5>
-    <div class="radio" [(ngModel)]="cart.shippingMethod">
-      <label
-        ><input
-          type="radio"
-          id="kerry"
-          name="optradio"
-          value="kerry"
-          checked
-        />Kerry</label
-      >
+  <div class="row">
+    <div class="card-body" style="margin-left: 20px;">
+      <h5>Select Shipping Method</h5>
+      <div class="radio" [(ngModel)]="cart.shippingMethod" style="text-indent: 10px;">
+        <label><input type="radio" id="kerry" name="optradio" value="kerry" checked />Kerry</label>
+      </div>
+      <div class="radio" style="text-indent: 10px;">
+        <label><input type="radio" id="lineman" name="optradio" value="lineman" />Lineman</label>
+      </div>
+      <div class="radio" style="text-indent: 10px;">
+        <label><input type="radio" id="EMS" name="optradio" value="EMS" />EMS</label>
+      </div>
     </div>
-    <div class="radio">
-      <label
-        ><input
-          type="radio"
-          id="lineman"
-          name="optradio"
-          value="lineman"
-        />Lineman</label
-      >
-    </div>
-    <div class="radio">
-      <label
-        ><input type="radio" id="EMS" name="optradio" value="EMS" />EMS</label
-      >
+
+    <div class="card-body col-md-6">
+      <h5>Order Summary</h5>
+      <p style="text-indent: 30px;">Subtotal(1): {{ (toy.toyPrice * 31.5).toFixed(2) }} THB</p>
+      <p style="text-indent: 30px;">Shipping Fee: 30.00 THB</p>
     </div>
   </div>
 </div>
 
 <div class="card">
   <div class="card-body" style="text-align: right;">
-    <button
-      type="submit"
-      class="btn btn-primary"
-      id="btn_checkout"
-      [routerLink]="['/shipping-address']"
-      style="width: 200px;"
-    >
+    <button type="submit" class="btn btn-primary" id="btn_checkout" [routerLink]="['/shipping-address']"
+      style="width: 200px;">
       <i class="fa fa-chevron-right"></i> Process to checkout
     </button>
   </div>
