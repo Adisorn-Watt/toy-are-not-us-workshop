@@ -19,12 +19,7 @@
       <div class="col-md-4">
         <label>Gender:</label>
         <br />
-        <select
-          [(ngModel)]="gender"
-          id="gender"
-          name="gender"
-          class="form-control"
-        >
+        <select [(ngModel)]="gender" id="gender" name="gender" class="form-control">
           <option id="gender" value="">Select gender..</option>
           <option id="male" value="Male">Male</option>
           <option id="female" value="Female">Female</option>
@@ -52,12 +47,8 @@
           </tr>
         </thead>
         <tbody *ngIf="toyList.length > 0">
-          <tr
-            *ngFor="let toy of toyList | product: age:gender"
-            [routerLink]="['/search', toy.toyID]"
-            id="product_{{ toy.toyID }}"
-            }}
-          >
+          <tr *ngFor="let toy of toyList | product: age:gender" [routerLink]="['/search', toy.toyID]"
+            id="product_{{ toy.toyID }}">
             <th><img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
