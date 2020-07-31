@@ -18,12 +18,6 @@ export class DataServiceService {
   public dataSubject = new Subject<number>();
   public dataState = this.dataSubject.asObservable();
 
-  public subjectdata(): void {
-    interval(1000).subscribe((x) =>
-      this.dataSubject.next(Math.floor(Math.random() * 800) + 100)
-    );
-  }
-
   private cartDetail = new BehaviorSubject('');
   currentCartDetail = this.cartDetail.asObservable();
   private selectedID = new BehaviorSubject('');

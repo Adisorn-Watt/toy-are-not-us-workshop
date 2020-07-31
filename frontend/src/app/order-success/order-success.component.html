@@ -41,7 +41,6 @@
               <h4 *ngIf="!toy.toyAvailable" style="color: red;">
                 Out of Stock
               </h4>
-              <button style="color: red;">Delete</button>
             </th>
             <th>1</th>
             <th>{{ (toy.toyPrice * 31.5).toFixed(2) }}</th>
@@ -74,11 +73,11 @@
 <div class="card">
   <div class="card-body">
     <div id="shipping_method" class="row">
-      <h5>Shipping Method:</h5>
+      <h5>Shipping Method: </h5>
       EMS
     </div>
     <div id="pay_mrthod" class="row">
-      <h5>Payment Method:</h5>
+      <h5>Payment Method: </h5>
       LinePay
     </div>
   </div>
