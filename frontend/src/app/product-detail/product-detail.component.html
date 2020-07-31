@@ -6,14 +6,18 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-4">
-        <img class="center-block img-responsive" [style.width.%]="80" [style.marginBottom.px]="30" [src]="toy.toyImage"
-          [title]="toy.toyName" />
+        <img
+          class="center-block img-responsive"
+          [style.width.%]="80"
+          [style.marginBottom.px]="30"
+          [src]="toy.toyImage"
+          [title]="toy.toyName"
+        />
       </div>
 
-      <br>
+      <br />
 
       <div class="col-md-6">
-
         <div class="row">
           <div class="col-md-4">Brand:</div>
           <div class="col-md-8">{{ toy.toyBrand }}</div>
@@ -44,7 +48,11 @@
           <div class="col-md-8" *ngIf="toy.toyAvailable" style="color: green;">
             In stock
           </div>
-          <div class="col-md-8" *ngIf="toy.toyAvailable == false" style="color: red;">
+          <div
+            class="col-md-8"
+            *ngIf="toy.toyAvailable == false"
+            style="color: red;"
+          >
             Out of Stock
           </div>
         </div>
@@ -61,10 +69,19 @@
       </div>
     </div>
     <div class="card-footer">
-      <button class="btn btn-outline-secondary" [routerLink]="['/search']" style="width: 200px;">
+      <button
+        class="btn btn-outline-secondary"
+        [routerLink]="['/search']"
+        style="width: 200px;"
+      >
         <i class="fa fa-chevron-left"></i> Back
       </button>
-      <button class="btn btn-outline-secondary" [routerLink]="['/shopping-cart']" style="width: 200px;">
+      <button
+        class="btn btn-outline-secondary"
+        [routerLink]="['/shopping-cart']"
+        style="width: 200px;"
+        onclick="updateID()"
+      >
         <i class="fa fa-chevron-right"></i> Add to cart
       </button>
     </div>

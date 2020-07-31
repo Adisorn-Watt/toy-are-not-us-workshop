@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <br>
+    <br />
 
     <div class="table-responsive">
       <table class="table">
@@ -44,7 +44,11 @@
           </tr>
         </thead>
         <tbody *ngIf="toyList.length > 0">
-          <tr *ngFor="let toy of toyList | product: age:gender" [routerLink]="['/search', toy.toyID]">
+          <tr
+            *ngFor="let toy of toyList | product: age:gender"
+            [routerLink]="['/search', toy.toyID]"
+            id="product_{{ toy.toyID }}"
+          >
             <th><img src="{{ toy.toyImage }}" width="50px" /></th>
             <th>{{ toy.toyName | uppercase }}</th>
             <th>{{ toy.toyBrand | uppercase }}</th>
