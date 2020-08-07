@@ -7,44 +7,234 @@
 	"item": [
 		{
 			"name": "get all toys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f43311dd-adb5-49de-b55f-479bd45f85d3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"all toys are 31\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(31);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 0 -> id is 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].product_id).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 30 -> id is 31\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[30].id).to.eql(31);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"product_name of \"+ data[\"id\"] + \"is \"+ data[\"product_name\"], function() {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(jsonData[0].product_name).to.eql(data[\"product_name\"]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://toyrnotusgroup1.com/toys",
+					"protocol": "https",
+					"host": [
+						"toyrnotusgroup1",
+						"com"
+					],
+					"path": [
+						"toys"
+					]
 				}
 			},
 			"response": []
 		},
 		{
 			"name": "filter age",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d773ef5c-23c9-4283-9bb9-60d5e64994e2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"age 3 to 5 = 10\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(10);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 0 -> id is 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 9 -> id is 28\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[9].id).to.eql(28);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"product_name of \"+ data[\"id\"] + \"is \"+ data[\"product_name\"], function() {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(jsonData[0].product_name).to.eql(data[\"product_name\"]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://toyrnotusgroup1.com/toys?age=\"3 to 5\"",
+					"protocol": "https",
+					"host": [
+						"toyrnotusgroup1",
+						"com"
+					],
+					"path": [
+						"toys"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "\"3 to 5\""
+						}
+					]
 				}
 			},
 			"response": []
 		},
 		{
 			"name": "filter gender",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0b6101d-fca9-4c87-be07-943871afb4aa",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Neutral = 18\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(18);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 0 -> id is 2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 17 -> id is 31\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[17].id).to.eql(31);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"product_name of \"+ data[\"id\"] + \"is \"+ data[\"product_name\"], function() {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(jsonData[0].product_name).to.eql(data[\"product_name\"]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://toyrnotusgroup1.com/toys?gender=\"Neutral\"",
+					"protocol": "https",
+					"host": [
+						"toyrnotusgroup1",
+						"com"
+					],
+					"path": [
+						"toys"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "\"Neutral\""
+						}
+					]
 				}
 			},
 			"response": []
 		},
 		{
 			"name": "filter age&gender",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1dcf4a4e-77fe-460f-9c78-c72ba32e0a43",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"3 to 5,Neutral = 4\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.eql(4);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 0 -> id is 2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"array 4 -> id is 11\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[4].id).to.eql(11);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"product_name of \"+ data[\"id\"] + \"is \"+ data[\"product_name\"], function() {\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.expect(jsonData[0].product_name).to.eql(data[\"product_name\"]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://toyrnotusgroup1.com/toys?age=\"3 to 5\"&gender=\"Neutral\"",
+					"protocol": "https",
+					"host": [
+						"toyrnotusgroup1",
+						"com"
+					],
+					"path": [
+						"toys"
+					],
+					"query": [
+						{
+							"key": "age",
+							"value": "\"3 to 5\""
+						},
+						{
+							"key": "gender",
+							"value": "\"Neutral\""
+						}
+					]
 				}
 			},
 			"response": []
