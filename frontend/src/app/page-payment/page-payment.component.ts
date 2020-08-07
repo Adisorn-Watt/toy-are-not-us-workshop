@@ -11,7 +11,8 @@ import { Cartdetail } from '../models/cartdetail';
 })
 export class PagePaymentComponent implements OnInit, OnDestroy {
   constructor(private service: DataServiceService) {}
-
+  show1 = false;
+  show2 = false;
   shipping;
   cart: Cartdetail;
   toyID = '';
