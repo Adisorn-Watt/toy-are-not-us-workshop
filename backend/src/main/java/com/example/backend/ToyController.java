@@ -20,27 +20,26 @@ public class ToyController {
     public PagingResponse getAllToy(
             @RequestParam(defaultValue = "1",name = "page") int page,
             @RequestParam(defaultValue = "10",name = "item_per_page") int itemPerPage,
-            @RequestParam(defaultValue = "None",name = "age") int age,
-            @RequestParam(defaultValue = "None",name = "gender") int gender
+            @RequestParam(defaultValue = "None",name = "age") String age,
+            @RequestParam(defaultValue = "None",name = "gender") String gender
     ){
-        PagingResponse pagingResponse = new PagingResponse(page,itemPerPage);
+        int pageInt = page -1;
+        PagingResponse pagingResponse = new PagingResponse(pageInt,itemPerPage);
         List<ToyResponse> toysResponseList = new ArrayList<>();
 
-
-        Pageable pageable = PageRequest.of(page-1, itemPerPage);
+        Pageable pageable = PageRequest.of(pageInt, itemPerPage);
         Page<Toy> toysPagination = toyRepository.findAll(pageable);
         Iterable<Toy> toys = toysPagination.getContent();
         for(Toy toy: toysPagination.getContent()){
             toysResponseList.add(new ToyResponse(
                     toy.getId(),
-                    toy.getToyID(),
-                    toy.getToyName(),
-                    toy.getToyGender(),
-                    toy.getToyAge(),
-                    toy.getToyPrice(),
-                    toy.getToyAvailable(),
-                    toy.getToyBrand(),
-                    toy.getToyImage()
+                    toy.getName(),
+                    toy.getGender(),
+                    toy.getAge(),
+                    toy.getPrice(),
+                    toy.getAvailable(),
+                    toy.getBrand(),
+                    toy.getImage()
             ));
         }
         pagingResponse.setToyResponses(toysResponseList);

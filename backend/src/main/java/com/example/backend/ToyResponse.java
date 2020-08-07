@@ -2,26 +2,24 @@ package com.example.backend;
 
 public class ToyResponse {
     private int id;
-    private int toyID;
-    private String toyName;
-    private String toyGender;
-    private String toyAge;
-    private int toyPrice;
-    private Boolean toyAvailable;
-    private String toyBrand;
-    private String toyImage;
+    private String name;
+    private String gender;
+    private String age;
+    private int price;
+    private Boolean available;
+    private String brand;
+    private String image;
 
 
-    public ToyResponse(int id, int toyID, String toyName, String toyGender, String toyAge, int toyPrice, Boolean toyAvailable, String toyBrand, String toyImage) {
+    public ToyResponse(int id, String name, String gender, String age, int price, Boolean available, String brand, String image) {
         this.id = id;
-        this.toyID = toyID;
-        this.toyName = toyName;
-        this.toyGender = toyGender;
-        this.toyAge = toyAge;
-        this.toyPrice = toyPrice;
-        this.toyAvailable = toyAvailable;
-        this.toyBrand = toyBrand;
-        this.toyImage = toyImage;
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+        this.price = price;
+        this.available = available;
+        this.brand = brand;
+        this.image = image;
     }
 
     public int getId() {
@@ -32,67 +30,59 @@ public class ToyResponse {
         this.id = id;
     }
 
-    public String getToyName() {
-        return toyName;
+    public String getName() {
+        return name;
     }
 
-    public void setToyName(String toyName) {
-        this.toyName = toyName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getToyID() {
-        return toyID;
+    public int getPrice() {
+        return price;
     }
 
-    public void setToyID(int toyID) {
-        this.toyID = toyID;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public int getToyPrice() {
-        return toyPrice;
+    public String getImage() {
+        return image;
     }
 
-    public void setToyPrice(int toyPrice) {
-        this.toyPrice = toyPrice;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getToyImage() {
-        return toyImage;
+    public String getGender() {
+        return gender;
     }
 
-    public void setToyImage(String toyImage) {
-        this.toyImage = toyImage;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getToyGender() {
-        return toyGender;
+    public String getAge() {
+        return age;
     }
 
-    public void setToyGender(String toyGender) {
-        this.toyGender = toyGender;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public String getToyAge() {
-        return toyAge;
+    public Boolean getAvailable() {
+        return available;
     }
 
-    public void setToyAge(String toyAge) {
-        this.toyAge = toyAge;
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 
-    public Boolean getToyAvailable() {
-        return toyAvailable;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setToyAvailable(Boolean toyAvailable) {
-        this.toyAvailable = toyAvailable;
-    }
-
-    public String getToyBrand() {
-        return toyBrand;
-    }
-
-    public void setToyBrand(String toyBrand) {
-        this.toyBrand = toyBrand;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 }
