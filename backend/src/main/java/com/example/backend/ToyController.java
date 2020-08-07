@@ -33,14 +33,14 @@ public class ToyController {
         for(Toy toy: toysPagination.getContent()){
             toysResponseList.add(new ToyResponse(
                     toy.getId(),
-                    toy.getProduct_name(),
-                    toy.getProduct_id(),
-                    toy.getProduct_price(),
-                    toy.getProduct_image(),
-                    toy.getProduct_gender(),
-                    toy.getProduct_age(),
-                    toy.getProduct_status(),
-                    toy.getProduct_brand()
+                    toy.getProductName(),
+                    toy.getProductId(),
+                    toy.getProductPrice(),
+                    toy.getProductImage(),
+                    toy.getProductGender(),
+                    toy.getProductAge(),
+                    toy.getProductStatus(),
+                    toy.getProductBrand()
             ));
         }
         pagingResponse.setToyResponses(toysResponseList);

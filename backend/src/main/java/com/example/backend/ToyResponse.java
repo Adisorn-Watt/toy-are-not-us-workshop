@@ -2,25 +2,25 @@ package com.example.backend;
 
 public class ToyResponse {
     private int id;
-    private String product_name;
-    private int product_id;
-    private int product_price;
-    private String product_image;
-    private String product_gender;
-    private String product_age;
-    private Boolean product_status;
-    private String product_brand;
+    private String productName;
+    private int productId;
+    private int productPrice;
+    private String productImage;
+    private String productGender;
+    private String productAge;
+    private Boolean productStatus;
+    private String productBrand;
 
-    public ToyResponse(int id, String product_name, int product_id, int product_price, String product_image, String product_gender, String product_age, Boolean product_status, String product_brand) {
+    public ToyResponse(int id, String productName, int productId, int productPrice, String productImage, String productGender, String productAge, Boolean productStatus, String productBrand) {
         this.id = id;
-        this.product_name = product_name;
-        this.product_id = product_id;
-        this.product_price = product_price;
-        this.product_image = product_image;
-        this.product_gender = product_gender;
-        this.product_age = product_age;
-        this.product_status = product_status;
-        this.product_brand = product_brand;
+        this.productName = productName;
+        this.productId = productId;
+        this.productPrice = productPrice;
+        this.productImage = productImage;
+        this.productGender = productGender;
+        this.productAge = productAge;
+        this.productStatus = productStatus;
+        this.productBrand = productBrand;
     }
 
     public int getId() {
@@ -31,67 +31,67 @@ public class ToyResponse {
         this.id = id;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public int getProduct_price() {
-        return product_price;
+    public int getProductPrice() {
+        return productPrice;
     }
 
-    public void setProduct_price(int product_price) {
-        this.product_price = product_price;
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public String getProduct_image() {
-        return product_image;
+    public String getProductImage() {
+        return productImage;
     }
 
-    public void setProduct_image(String product_image) {
-        this.product_image = product_image;
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
     }
 
-    public String getProduct_gender() {
-        return product_gender;
+    public String getProductGender() {
+        return productGender;
     }
 
-    public void setProduct_gender(String product_gender) {
-        this.product_gender = product_gender;
+    public void setProductGender(String productGender) {
+        this.productGender = productGender;
     }
 
-    public String getProduct_age() {
-        return product_age;
+    public String getProductAge() {
+        return productAge;
     }
 
-    public void setProduct_age(String product_age) {
-        this.product_age = product_age;
+    public void setProductAge(String productAge) {
+        this.productAge = productAge;
     }
 
-    public Boolean getProduct_status() {
-        return product_status;
+    public Boolean getProductStatus() {
+        return productStatus;
     }
 
-    public void setProduct_status(Boolean product_status) {
-        this.product_status = product_status;
+    public void setProductStatus(Boolean productStatus) {
+        this.productStatus = productStatus;
     }
 
-    public String getProduct_brand() {
-        return product_brand;
+    public String getProductBrand() {
+        return productBrand;
     }
 
-    public void setProduct_brand(String product_brand) {
-        this.product_brand = product_brand;
+    public void setProductBrand(String productBrand) {
+        this.productBrand = productBrand;
     }
 }
