@@ -27,20 +27,20 @@ public class ToyController {
         List<ToyResponse> toysResponseList = new ArrayList<>();
 
 
-        Pageable pageable = PageRequest.of(page, itemPerPage);
+        Pageable pageable = PageRequest.of(page-1, itemPerPage);
         Page<Toy> toysPagination = toyRepository.findAll(pageable);
         Iterable<Toy> toys = toysPagination.getContent();
         for(Toy toy: toysPagination.getContent()){
             toysResponseList.add(new ToyResponse(
                     toy.getId(),
-                    toy.getProductName(),
-                    toy.getProductId(),
-                    toy.getProductPrice(),
-                    toy.getProductImage(),
-                    toy.getProductGender(),
-                    toy.getProductAge(),
-                    toy.getProductStatus(),
-                    toy.getProductBrand()
+                    toy.getToyId(),
+                    toy.getToyName(),
+                    toy.getToyGender(),
+                    toy.getToyAge(),
+                    toy.getToyPrice(),
+                    toy.getToyAvailable(),
+                    toy.getToyBrand(),
+                    toy.getToyImage()
             ));
         }
         pagingResponse.setToyResponses(toysResponseList);

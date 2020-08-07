@@ -11,14 +11,14 @@ public class Toy {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String productName;
-    private int productId;
-    private int productPrice;
-    private String productImage;
-    private String productGender;
-    private String productAge;
-    private Boolean productStatus;
-    private String productBrand;
+    private int toyId;
+    private String toyName;
+    private String toyGender;
+    private String toyAge;
+    private int toyPrice;
+    private Boolean toyAvailable;
+    private String toyBrand;
+    private String toyImage;
 
     public int getId() {
         return id;
@@ -28,67 +28,67 @@ public class Toy {
         this.id = id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getToyName() {
+        return toyName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setToyName(String toyName) {
+        this.toyName = toyName;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getToyId() {
+        return toyId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setToyId(int toyId) {
+        this.toyId = toyId;
     }
 
-    public int getProductPrice() {
-        return productPrice;
+    public int getToyPrice() {
+        return toyPrice;
     }
 
-    public void setProductPrice(int productPrice) {
-        this.productPrice = productPrice;
+    public void setToyPrice(int toyPrice) {
+        this.toyPrice = toyPrice;
     }
 
-    public String getProductImage() {
-        return productImage;
+    public String getToyImage() {
+        return toyImage;
     }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
+    public void setToyImage(String toyImage) {
+        this.toyImage = toyImage;
     }
 
-    public String getProductGender() {
-        return productGender;
+    public String getToyGender() {
+        return toyGender;
     }
 
-    public void setProductGender(String productGender) {
-        this.productGender = productGender;
+    public void setToyGender(String toyGender) {
+        this.toyGender = toyGender;
     }
 
-    public String getProductAge() {
-        return productAge;
+    public String getToyAge() {
+        return toyAge;
     }
 
-    public void setProductAge(String productAge) {
-        this.productAge = productAge;
+    public void setToyAge(String toyAge) {
+        this.toyAge = toyAge;
     }
 
-    public Boolean getProductStatus() {
-        return productStatus;
+    public Boolean getToyAvailable() {
+        return toyAvailable;
     }
 
-    public void setProductStatus(Boolean productStatus) {
-        this.productStatus = productStatus;
+    public void setToyAvailable(Boolean toyAvailable) {
+        this.toyAvailable = toyAvailable;
     }
 
-    public String getProductBrand() {
-        return productBrand;
+    public String getToyBrand() {
+        return toyBrand;
     }
 
-    public void setProductBrand(String productBrand) {
-        this.productBrand = productBrand;
+    public void setToyBrand(String toyBrand) {
+        this.toyBrand = toyBrand;
     }
 }
