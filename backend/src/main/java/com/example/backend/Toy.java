@@ -11,7 +11,7 @@ public class Toy {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int toyId;
+    private int toyID;
     private String toyName;
     private String toyGender;
     private String toyAge;
@@ -36,12 +36,12 @@ public class Toy {
         this.toyName = toyName;
     }
 
-    public int getToyId() {
-        return toyId;
+    public int getToyID() {
+        return toyID;
     }
 
-    public void setToyId(int toyId) {
-        this.toyId = toyId;
+    public void setToyID(int toyID) {
+        this.toyID = toyID;
     }
 
     public int getToyPrice() {

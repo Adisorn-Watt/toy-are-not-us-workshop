@@ -2,7 +2,7 @@ package com.example.backend;
 
 public class ToyResponse {
     private int id;
-    private int toyId;
+    private int toyID;
     private String toyName;
     private String toyGender;
     private String toyAge;
@@ -12,9 +12,9 @@ public class ToyResponse {
     private String toyImage;
 
 
-    public ToyResponse(int id, int toyId, String toyName, String toyGender, String toyAge, int toyPrice, Boolean toyAvailable, String toyBrand, String toyImage) {
+    public ToyResponse(int id, int toyID, String toyName, String toyGender, String toyAge, int toyPrice, Boolean toyAvailable, String toyBrand, String toyImage) {
         this.id = id;
-        this.toyId = toyId;
+        this.toyID = toyID;
         this.toyName = toyName;
         this.toyGender = toyGender;
         this.toyAge = toyAge;
@@ -40,12 +40,12 @@ public class ToyResponse {
         this.toyName = toyName;
     }
 
-    public int getToyId() {
-        return toyId;
+    public int getToyID() {
+        return toyID;
     }
 
-    public void setToyId(int toyId) {
-        this.toyId = toyId;
+    public void setToyID(int toyID) {
+        this.toyID = toyID;
     }
 
     public int getToyPrice() {

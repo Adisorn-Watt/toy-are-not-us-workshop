@@ -33,7 +33,7 @@ public class ToyController {
         for(Toy toy: toysPagination.getContent()){
             toysResponseList.add(new ToyResponse(
                     toy.getId(),
-                    toy.getToyId(),
+                    toy.getToyID(),
                     toy.getToyName(),
                     toy.getToyGender(),
                     toy.getToyAge(),
